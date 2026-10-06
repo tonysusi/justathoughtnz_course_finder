@@ -1,0 +1,50 @@
+.debug-page { max-width: 960px; }
+
+.toolbar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
+button.danger { background: #b3261e; color: #fff; }
+button.small { padding: 4px 10px; font-size: 0.85rem; margin-left: auto; }
+
+.log { list-style: none; padding: 0; margin: 16px 0 32px; display: grid; gap: 12px; }
+/* Grid items default to min-width: auto, so wide <pre> JSON would stretch the card off-screen. */
+.log-entry { min-width: 0; }
+.log-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 0.9rem; }
+.log-text {
+  margin: 10px 0;
+  padding: 8px 12px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.log-results { margin: 0 0 8px; overflow-wrap: anywhere; }
+
+.tag { font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: var(--hit); }
+.tag-crisis { background: var(--crisis-bg); border: 1px solid var(--crisis-border); }
+.tag-error { background: var(--error-bg); }
+
+.log-entry details summary { cursor: pointer; font-weight: 600; font-size: 0.9rem; }
+.log-entry h3 { font-size: 0.9rem; margin: 14px 0 6px; }
+.log-entry pre {
+  margin: 0;
+  padding: 10px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.78rem;
+  max-height: 360px;
+  overflow: auto;
+}
+
+.scores { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.875rem; }
+.scores th, .scores td { text-align: left; padding: 4px 6px; border-bottom: 1px solid var(--border); }
+.scores .num { font-variant-numeric: tabular-nums; }
+.scores tr.hit { background: var(--hit); font-weight: 600; }
+.tag-source-hybrid { background: #e7e3f6; color: #3d2f7a; }
+@media (prefers-color-scheme: dark) { .tag-source-hybrid { background: #2e2850; color: #d6cffa; } }
+.cost-summary { margin-top: 16px; padding: 12px 16px; }
+.cost-summary .scores { margin-top: 0; }
+.cost-summary th.num, .cost-summary td.num { text-align: right; }
+.cost-summary tr.total td { font-weight: 700; border-top: 2px solid var(--border); }
+.cost-summary .hint { margin-top: 8px; }
+.tag-source-multiple-choice { background: #e1f0e4; color: #1f5a2c; }
+@media (prefers-color-scheme: dark) { .tag-source-multiple-choice { background: #1f3a26; color: #cdebd4; } }

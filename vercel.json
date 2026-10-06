@@ -1,0 +1,3 @@
+{
+  "redirects": [{ "source": "/questionnaire.html", "destination": "/hybrid.html", "permanent": true }]
+}
