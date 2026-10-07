@@ -1,17 +1,18 @@
 import { runMatch } from "../lib/match.js";
+import { logRun } from "../lib/debugLog/server.js";
 
 // Vercel Function (Node runtime, Web Request/Response signature).
-// User text is never logged or stored here; only the local dev server keeps a debug log.
+// The text and answers are saved to the debug log (Vercel Blob) only when DEBUG_LOG is "true" for this environment.
 export async function POST(request: Request): Promise<Response> {
-  let text: unknown;
-  let exclude: unknown;
+  let payload: { text?: unknown; exclude?: unknown; source?: unknown; answers?: unknown; about?: unknown };
   try {
-    ({ text, exclude } = (await request.json()) as { text?: unknown; exclude?: unknown });
+    payload = (await request.json()) as typeof payload;
   } catch {
     return Response.json({ error: "Invalid request." }, { status: 400 });
   }
 
-  const run = await runMatch(text, exclude);
+  const run = await runMatch(payload.text, payload.exclude);
   if (run.errorLog) console.error(`[api/match] ${run.errorLog}`);
+  await logRun(payload, run);
   return Response.json(run.body, { status: run.status, headers: { "Cache-Control": "no-store" } });
 }

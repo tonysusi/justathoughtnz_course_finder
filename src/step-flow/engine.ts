@@ -170,7 +170,7 @@ export function typedText(answers: StepAnswers, set: Question[]): string {
     .join("\n");
 }
 
-/** Visible questions and the labels of what was chosen, for the local debug column. */
+/** Visible questions and the labels of what was chosen, for the debug column. */
 export function describeAnswers(answers: StepAnswers, set: Question[]): { prompt: string; answer: string }[] {
   const visible = visibleAnswers(answers, set);
   return visibleQuestions(answers, set).flatMap((q) => {

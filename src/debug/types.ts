@@ -1,6 +1,6 @@
 import type { MatchAbout, MatchError, MatchResponse, MatchSource, RiskCheckResponse } from "../types";
 
-/** One query in the local debug log (logs/queries.jsonl). */
+/** One query in the debug log: logs/queries.jsonl locally, or a Vercel Blob when deployed. */
 export interface QueryLogEntry {
   id: string;
   time: string;

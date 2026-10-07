@@ -6,7 +6,7 @@ export interface ScoredCourse extends Course {
   nzslVersion?: { name: string; url: string };
 }
 
-/** JEV token counts for one request (no personal data), used for the local debug cost figures. */
+/** JEV token counts for one request (no personal data), used for the debug cost figures. */
 export interface TokenUsage {
   input_tokens: number;
   output_tokens: number;
@@ -39,10 +39,10 @@ export interface MatchError {
   error: string;
 }
 
-/** Who a query is about: the user, or the person they're supporting. Only used by the local debug log. */
+/** Who a query is about: the user, or the person they're supporting. Only used by the debug log. */
 export type MatchAbout = "self" | "them";
 
-/** Which option produced a query; only used by the local debug log. */
+/** Which option produced a query; only used by the debug log. */
 export type MatchSource = "free-text" | "hybrid" | "multiple-choice";
 
 /** Hybrid and Multiple choice answers by question id: an option id, option ids, or free text. */

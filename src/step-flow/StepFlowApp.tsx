@@ -7,6 +7,7 @@ import { CrisisPanel } from "../components/Crisis";
 import { SupportingOthers } from "../components/SupportingOthers";
 import { useMatch } from "../useMatch";
 import { checkTextRisk } from "./riskCheck";
+import { DEBUG_ENABLED } from "../debugFlag";
 import {
   buildSummary,
   describeAnswers,
@@ -73,7 +74,7 @@ export default function StepFlowApp({ set, source, navId }: { set: Question[]; s
   const text = typedText(answers, set);
   const textFlagged = !!text && answers.text_risk === "flagged" && answers.text_risk_for === text;
   const [checking, setChecking] = useState(false);
-  /** The last text risk check's JEV response, for the local debug column. */
+  /** The last text risk check's JEV response, for the debug column. */
   const [riskCheck, setRiskCheck] = useState<RiskCheckResponse | undefined>();
   const theirRiskFlagged = supporting && answers.their_risk === "flagged" && answers.text_risk_for === text;
 
@@ -165,7 +166,7 @@ export default function StepFlowApp({ set, source, navId }: { set: Question[]; s
 
   if (done && !loading && (own.data || theirs.data)) {
     return (
-      <Page current={navId} title={supporting ? "Support for them" : "Courses for you"} wide={import.meta.env.DEV}>
+      <Page current={navId} title={supporting ? "Support for them" : "Courses for you"} wide={DEBUG_ENABLED}>
         <div className="card form-row">
           <span className="hint">Based on your answers.</span>
           <button type="button" className="secondary" onClick={startAgain}>

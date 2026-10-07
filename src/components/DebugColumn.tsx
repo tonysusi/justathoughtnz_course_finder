@@ -1,4 +1,4 @@
-// Local dev only: the right-hand debug column on results pages. Not rendered in the production build.
+// The right-hand debug column on results pages. Only shown when debug is on (src/debugFlag.ts).
 import type { MatchResponse, RiskCheckResponse, TokenUsage } from "../types";
 import { DebugPanel } from "./DebugPanel";
 import { PRICING_SOURCE, costUsd, formatNzd } from "../debug/pricing";
@@ -40,7 +40,7 @@ export function DebugColumn({
 
   return (
     <aside className="results-debug" aria-label="Debug information">
-      <p className="eyebrow">Local debug · not deployed</p>
+      <p className="eyebrow">Debug · test version only</p>
 
       {answers && answers.length > 0 && (
         <section className="card debug-section">

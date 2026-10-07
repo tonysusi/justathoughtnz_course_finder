@@ -15,22 +15,49 @@ const pct = (n: number) => `${(n * 100).toFixed(0)}%`;
 const isMatch = (body: QueryLogEntry["body"]): body is MatchResponse => "results" in body;
 const isRiskCheck = (body: QueryLogEntry["body"]): body is RiskCheckResponse => "selfHarm" in body;
 
+// Deployed, the log API needs the DEBUG_TOKEN set in Vercel. It's kept for this browser tab only, never in the bundle.
+// The local dev server doesn't check it.
+const TOKEN_KEY = "debug-token";
+function readToken(): string {
+  try {
+    return sessionStorage.getItem(TOKEN_KEY) ?? "";
+  } catch {
+    return "";
+  }
+}
+function saveToken(token: string) {
+  try {
+    sessionStorage.setItem(TOKEN_KEY, token);
+  } catch {
+    // Private window or blocked storage: the token still works until the page reloads.
+  }
+}
+
 export default function DebugApp() {
   const [entries, setEntries] = useState<QueryLogEntry[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState<string | null>(null);
+  const [token, setToken] = useState(readToken);
+  const [needsToken, setNeedsToken] = useState(false);
   const fx = useFx();
 
   const load = useCallback(async () => {
     try {
-      const res = await fetch("/api/debug/log");
+      const res = await fetch("/api/debug/log", { headers: { "x-debug-token": token } });
+      if (res.status === 401) {
+        setNeedsToken(true);
+        setEntries(null);
+        setError(token ? "That debug token wasn't accepted." : null);
+        return;
+      }
       if (!res.ok) throw new Error();
       setEntries((await res.json()) as QueryLogEntry[]);
+      setNeedsToken(false);
       setError(null);
     } catch {
-      setError("Couldn't load the log. The debug page only works with the local dev server (npm run dev).");
+      setError("Couldn't load the log. Debug logging may be turned off for this deployment.");
     }
-  }, []);
+  }, [token]);
 
   useEffect(() => {
     load();
@@ -59,7 +86,7 @@ export default function DebugApp() {
 
   async function clear() {
     if (!window.confirm("Delete every entry in the query log? This can't be undone.")) return;
-    await fetch("/api/debug/log", { method: "DELETE" });
+    await fetch("/api/debug/log", { method: "DELETE", headers: { "x-debug-token": token } });
     await load();
   }
 
@@ -68,12 +95,28 @@ export default function DebugApp() {
       <Nav current="debug" />
       <main className="container debug-page">
         <header>
-          <p className="eyebrow">Local debug · not deployed</p>
+          <p className="eyebrow">Debug · test version only</p>
           <h1>JEV query log</h1>
           <p className="hint">
-            Every query sent from the local dev server, newest first. Stored in <code>logs/queries.jsonl</code> on this
-            computer until cleared.
+            Every query sent while debug is on, newest first. Locally it's stored in <code>logs/queries.jsonl</code> until
+            cleared; on the deployed site it's in Vercel Blob and deleted after 14 days.
           </p>
+          {needsToken && (
+            <form
+              className="toolbar"
+              onSubmit={(ev) => {
+                ev.preventDefault();
+                const value = new FormData(ev.currentTarget).get("token");
+                const next = typeof value === "string" ? value.trim() : "";
+                saveToken(next);
+                setToken(next);
+              }}
+            >
+              <label htmlFor="debug-token">Debug token</label>
+              <input id="debug-token" name="token" type="password" autoComplete="off" defaultValue={token} />
+              <button type="submit">Open log</button>
+            </form>
+          )}
           <div className="toolbar">
             <button type="button" className="secondary" onClick={load}>
               Refresh

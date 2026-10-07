@@ -3,7 +3,7 @@ import { CrisisBanner } from "./Crisis";
 import { Nav, type NavId } from "./Nav";
 
 /** Shared shell for the public pages: help banner, nav, content and footer. */
-/** @param wide A wider page, for results with the local debug column beside them. */
+/** @param wide A wider page, for results with the debug column beside them. */
 export function Page({
   current,
   title,

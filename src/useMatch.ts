@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { MatchAbout, MatchError, MatchResponse, MatchSource, StepAnswers } from "./types";
+import { DEBUG_ENABLED } from "./debugFlag";
 
 interface SubmitOptions {
   source: MatchSource;
@@ -10,12 +11,12 @@ interface SubmitOptions {
   about?: MatchAbout;
 }
 
-/** Sends text to /api/match. `source`, `answers` and `about` are only kept by the local debug log. */
+/** Sends text to /api/match. `source`, `answers` and `about` are only sent when debug is on, for the debug log. */
 export function useMatch() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [data, setData] = useState<MatchResponse | null>(null);
-  /** The text last sent to JEV, for the local debug column. */
+  /** The text last sent to JEV, for the debug column. */
   const [sent, setSent] = useState<string | null>(null);
 
   async function submit(text: string, { source, answers, exclude, about }: SubmitOptions) {
@@ -27,8 +28,8 @@ export function useMatch() {
       const res = await fetch("/api/match", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        // Answers are only for the local debug log, so they aren't sent from the deployed site.
-        body: JSON.stringify({ text, exclude, ...(import.meta.env.DEV && { source, answers, about }) }),
+        // Answers are only for the debug log, so they aren't sent when debug is off.
+        body: JSON.stringify({ text, exclude, ...(DEBUG_ENABLED && { source, answers, about }) }),
       });
       const body = (await res.json()) as MatchResponse | MatchError;
       if (!res.ok || "error" in body) {

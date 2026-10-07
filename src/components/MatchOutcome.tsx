@@ -4,6 +4,7 @@ import { SupportingOthers } from "./SupportingOthers";
 import type { RiskLevel } from "../step-flow/engine";
 import { Results } from "./Results";
 import { DebugColumn } from "./DebugColumn";
+import { DEBUG_ENABLED } from "../debugFlag";
 import type { RiskCheckResponse } from "../types";
 
 /**
@@ -31,7 +32,7 @@ export function MatchOutcome({
   risk?: RiskLevel;
   /** Hybrid's "Supporting someone else" answer. */
   supportingOthers?: boolean;
-  /** Extra details for the local debug column. */
+  /** Extra details for the debug column. */
   debug?: {
     sent?: string | null;
     shareSent?: string | null;
@@ -48,8 +49,8 @@ export function MatchOutcome({
     hasOutcome && (supportingOthers || (!!data && data.flags.someoneElse >= data.thresholds.someoneElse));
   // Free text has one list, which may be for them or for the user; Hybrid's supporting path keeps them apart.
   const shareable = shareData ? shareData.results.length > 0 : !!data && showOthers && data.results.length > 0;
-  // Two columns (courses | debug) only on the local dev server; deployed pages show the courses alone.
-  const showDebug = import.meta.env.DEV && hasOutcome;
+  // Two columns (courses | debug) only when debug is on; otherwise the courses alone.
+  const showDebug = DEBUG_ENABLED && hasOutcome;
 
   return (
     <>

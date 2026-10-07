@@ -20,21 +20,26 @@ const MAX_TIME = 9_999_999_999_999;
 const pathFor = (entry: QueryLogEntry) =>
   `${PREFIX}${String(MAX_TIME - Date.parse(entry.time)).padStart(13, "0")}-${entry.id}.json`;
 
+// When this function instance last purged, so writes don't each list the whole store.
+let lastPurge = 0;
+
 export async function append(entry: QueryLogEntry): Promise<void> {
   await put(pathFor(entry), JSON.stringify(entry), {
     access: "private",
     addRandomSuffix: false,
     contentType: "application/json",
   });
+  // Old entries go even if nobody opens /debug.html.
+  if (Date.now() - lastPurge > 3_600_000) {
+    lastPurge = Date.now();
+    await purgeExpired();
+  }
 }
 
 /** Newest first, up to READ_LIMIT. Deletes anything past the retention period on the way. */
 export async function read(): Promise<QueryLogEntry[]> {
-  const { blobs } = await list({ prefix: PREFIX, limit: READ_LIMIT });
-  const cutoff = Date.now() - retentionMs();
-  const expired = blobs.filter((b) => b.uploadedAt.getTime() < cutoff);
-  const current = blobs.filter((b) => b.uploadedAt.getTime() >= cutoff);
-  if (expired.length) await purgeExpired();
+  await purgeExpired();
+  const { blobs: current } = await list({ prefix: PREFIX, limit: READ_LIMIT });
 
   const entries: (QueryLogEntry | undefined)[] = [];
   // A few at a time so a full page doesn't open 200 requests at once.

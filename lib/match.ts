@@ -109,7 +109,7 @@ function followOnsFirst(list: ScoredCourse[]): ScoredCourse[] {
 
 export class InputError extends Error {}
 
-/** The exact request sent to JEV and the response it returned. Only kept by the local debug log. */
+/** The exact request sent to JEV and the response it returned. Only kept by the debug log. */
 export interface JevExchange {
   request?: SystemOneRequestPayload;
   response?: unknown;
