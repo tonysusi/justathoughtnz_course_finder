@@ -8,6 +8,7 @@ import {
 } from "@typesafe-ai/sdk";
 import { COURSES, type Course } from "../src/data/courses.js";
 import type { MatchError, MatchResponse, RiskCheckResponse, ScoredCourse } from "../src/types.js";
+import { AOD_COURSE_IDS, withAodCourse } from "./aodRule.js";
 
 export const CONFIG = {
   model: "jev-latest",
@@ -21,6 +22,8 @@ export const CONFIG = {
     offTopic: 0.7,
     // Shows the "supporting someone else" services panel.
     someoneElse: 0.5,
+    // Free text (or typed text without an AOD stage answer): adds the top-scoring AOD course to the results.
+    aod: 0.5,
   },
 };
 
@@ -68,6 +71,10 @@ function buildQuestions(courses: Course[]): Questions {
         false: "The writer is mainly describing their own concerns.",
       },
     ),
+    aod: noul("Does this message mention a concern about alcohol or drug use, their own or someone else's?", {
+      true: "It mentions drinking, drug use or substance use as something the writer, or someone they support, is concerned about.",
+      false: "It doesn't mention any concern about alcohol or drug use.",
+    }),
   };
   // Asks about the person's *main* concern; "would benefit" scored general wellbeing courses high for everything.
   for (const course of courses) {
@@ -118,11 +125,14 @@ export interface JevExchange {
 /**
  * @param exclude Course ids ruled out for certain by the caller (the Hybrid and Multiple choice life-stage and
  *   prerequisite rules). They aren't sent to JEV and can't be returned.
+ * @param aodCourse The AOD course the Hybrid or Multiple choice stage answer points to. It's always shown, added last
+ *   if JEV didn't rank it. Without one, the top-scoring AOD course is added when the aod flag is hit.
  */
 export async function matchCourses(
   text: string,
   exchange: JevExchange = {},
   exclude: string[] = [],
+  aodCourse?: string,
 ): Promise<MatchResponse> {
   const state = text.trim();
   if (!state) throw new InputError("Please describe what you'd like support with.");
@@ -148,15 +158,27 @@ export async function matchCourses(
       nzslVersion: nzslVersionFor(c.id),
     }))
     .sort((a, b) => b.probability - a.probability);
-  const results = followOnsFirst(all.filter((c) => c.probability >= CONFIG.thresholds.match)).slice(
+  const matched = followOnsFirst(all.filter((c) => c.probability >= CONFIG.thresholds.match)).slice(
     0,
     CONFIG.thresholds.maxResults,
   );
 
+  const flags = {
+    selfHarm: prob("self_harm"),
+    offTopic: prob("off_topic"),
+    someoneElse: prob("someone_else"),
+    aod: prob("aod"),
+  };
+  const results = withAodCourse(matched, all, {
+    aodHit: flags.aod >= CONFIG.thresholds.aod,
+    offTopicHit: flags.offTopic >= CONFIG.thresholds.offTopic,
+    aodCourse,
+  });
+
   return {
     results,
     all,
-    flags: { selfHarm: prob("self_harm"), offTopic: prob("off_topic"), someoneElse: prob("someone_else") },
+    flags,
     thresholds: CONFIG.thresholds,
     excluded: MATCHABLE.filter((c) => exclude.includes(c.id)).map((c) => c.name),
     model,
@@ -174,7 +196,7 @@ export interface MatchRun<T = MatchResponse> {
 }
 
 /** Shared by api/match.ts (Vercel) and the local dev server, which also logs the run. */
-export async function runMatch(text: unknown, exclude?: unknown): Promise<MatchRun> {
+export async function runMatch(text: unknown, exclude?: unknown, aodCourse?: unknown): Promise<MatchRun> {
   const exchange: JevExchange = {};
   const started = Date.now();
   if (typeof text !== "string") {
@@ -189,7 +211,8 @@ export async function runMatch(text: unknown, exclude?: unknown): Promise<MatchR
   try {
     // Only known course ids are honoured; anything else in `exclude` is ignored.
     const excludeIds = Array.isArray(exclude) ? MATCHABLE.map((c) => c.id).filter((id) => exclude.includes(id)) : [];
-    const body = await matchCourses(text, exchange, excludeIds);
+    const aodId = typeof aodCourse === "string" && AOD_COURSE_IDS.includes(aodCourse) ? aodCourse : undefined;
+    const body = await matchCourses(text, exchange, excludeIds, aodId);
     return { status: 200, body, exchange, durationMs: Date.now() - started };
   } catch (err) {
     const { status, message, log } = describeError(err);

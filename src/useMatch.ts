@@ -7,6 +7,8 @@ interface SubmitOptions {
   answers?: StepAnswers;
   /** Course ids ruled out by the Hybrid or Multiple choice rules. */
   exclude?: string[];
+  /** The AOD course the stage answer points to; always shown in the results. */
+  aodCourse?: string;
   /** Who the text describes: the user, or the person they're supporting. */
   about?: MatchAbout;
 }
@@ -19,7 +21,7 @@ export function useMatch() {
   /** The text last sent to JEV, for the debug column. */
   const [sent, setSent] = useState<string | null>(null);
 
-  async function submit(text: string, { source, answers, exclude, about }: SubmitOptions) {
+  async function submit(text: string, { source, answers, exclude, aodCourse, about }: SubmitOptions) {
     setLoading(true);
     setError(null);
     setData(null);
@@ -29,7 +31,7 @@ export function useMatch() {
         method: "POST",
         headers: { "content-type": "application/json" },
         // Answers are only for the debug log, so they aren't sent when debug is off.
-        body: JSON.stringify({ text, exclude, ...(DEBUG_ENABLED && { source, answers, about }) }),
+        body: JSON.stringify({ text, exclude, aodCourse, ...(DEBUG_ENABLED && { source, answers, about }) }),
       });
       const body = (await res.json()) as MatchResponse | MatchError;
       if (!res.ok || "error" in body) {

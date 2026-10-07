@@ -58,13 +58,20 @@ function localApi(): Plugin {
 
         if (path === "/api/match") {
           if (req.method !== "POST") return sendJson(res, 405, { error: "Method not allowed." });
-          let payload: { text?: unknown; source?: unknown; answers?: unknown; exclude?: unknown; about?: unknown };
+          let payload: {
+            text?: unknown;
+            source?: unknown;
+            answers?: unknown;
+            exclude?: unknown;
+            aodCourse?: unknown;
+            about?: unknown;
+          };
           try {
             payload = (await readJson(req)) as typeof payload;
           } catch {
             return sendJson(res, 400, { error: "Invalid request." });
           }
-          const run = await runMatch(payload.text, payload.exclude);
+          const run = await runMatch(payload.text, payload.exclude, payload.aodCourse);
           if (run.errorLog) console.error(`[api/match] ${run.errorLog}`);
           await log.append(buildEntry(payload, run));
           return sendJson(res, run.status, run.body);

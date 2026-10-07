@@ -194,6 +194,19 @@ export function riskLevel(answers: StepAnswers): RiskLevel | undefined {
   return answers.risk === "yes" || answers.risk === "unsure" ? answers.risk : undefined;
 }
 
+// The AOD stage answer settles which alcohol and drug course to show; lib/match.ts always includes it.
+const AOD_STAGE_COURSE: Record<string, string> = {
+  unsure: "thinking_about_change",
+  ready: "taking_action",
+  relapse: "getting_back_on_track",
+};
+
+/** The AOD course for the stage chosen (Hybrid and Multiple choice), or undefined if none, or "I don't know". */
+export function aodCourse(answers: StepAnswers, about: "self" | "them" = "self"): string | undefined {
+  const stage = about === "them" ? answers.their_aod_stage : answers.aod_stage;
+  return typeof stage === "string" ? AOD_STAGE_COURSE[stage] : undefined;
+}
+
 /** Course ids to leave out, based on rules the answers settle for certain. */
 export function excludedCourses(answers: StepAnswers, about: "self" | "them" = "self"): string[] {
   if (about === "them") {

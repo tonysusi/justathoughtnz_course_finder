@@ -4,6 +4,8 @@ export interface ScoredCourse extends Course {
   probability: number;
   /** The NZSL version of this course, if one exists. */
   nzslVersion?: { name: string; url: string };
+  /** Set when a rule added the course rather than JEV's score (the AOD rule in lib/match.ts). */
+  addedByRule?: "aod";
 }
 
 /** JEV token counts for one request (no personal data), used for the debug cost figures. */
@@ -15,8 +17,16 @@ export interface TokenUsage {
 export interface MatchResponse {
   results: ScoredCourse[];
   all: ScoredCourse[];
-  flags: { selfHarm: number; offTopic: number; someoneElse: number };
-  thresholds: { match: number; selfHarm: number; offTopic: number; someoneElse: number; maxResults: number };
+  /** `aod` is missing on entries logged before it was added. */
+  flags: { selfHarm: number; offTopic: number; someoneElse: number; aod?: number };
+  thresholds: {
+    match: number;
+    selfHarm: number;
+    offTopic: number;
+    someoneElse: number;
+    maxResults: number;
+    aod?: number;
+  };
   /** Names of courses ruled out before matching (Hybrid and Multiple choice rules). */
   excluded: string[];
   /** Missing on entries logged before it was added. */

@@ -11,6 +11,7 @@ import { DEBUG_ENABLED } from "../debugFlag";
 import {
   buildSummary,
   describeAnswers,
+  aodCourse,
   excludedCourses,
   hasOwnConcerns,
   hasTheirConcerns,
@@ -90,13 +91,19 @@ export default function StepFlowApp({ set, source, navId }: { set: Question[]; s
     }
     setDone(true);
     if (hasOwnConcerns(sent)) {
-      own.submit(buildSummary(sent, "self", set), { source, answers: sent, exclude: excludedCourses(sent) });
+      own.submit(buildSummary(sent, "self", set), {
+        source,
+        answers: sent,
+        exclude: excludedCourses(sent),
+        aodCourse: aodCourse(sent),
+      });
     }
     if (hasTheirConcerns(sent)) {
       theirs.submit(buildSummary(sent, "them", set), {
         source,
         answers: sent,
         exclude: excludedCourses(sent, "them"),
+        aodCourse: aodCourse(sent, "them"),
         about: "them",
       });
     }
