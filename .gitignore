@@ -4,6 +4,10 @@ dist/
 
 # Local env
 .env
+.env.local
+
+# Local debug query log (test answers)
+logs/
 
 # Compiled Java class files
 *.class
