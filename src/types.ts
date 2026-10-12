@@ -8,7 +8,13 @@ export interface ScoredCourse extends Course {
   addedByRule?: "aod" | "mood";
 }
 
-/** JEV token counts for one request (no personal data), used for the debug cost figures. */
+/** Which AI service scored a request. Missing on entries logged before Azure was added (JEV). */
+export type ScoringProvider = "jev" | "azure";
+
+/** Azure content filter self-harm severity for the text; "blocked": the filter rejected it. */
+export type FilterSeverity = "safe" | "low" | "medium" | "high" | "blocked";
+
+/** Token counts for one request (no personal data), used for the debug cost figures. */
 export interface TokenUsage {
   input_tokens: number;
   output_tokens: number;
@@ -17,8 +23,18 @@ export interface TokenUsage {
 export interface MatchResponse {
   results: ScoredCourse[];
   all: ScoredCourse[];
-  /** `aod` is missing on entries logged before it was added. */
-  flags: { selfHarm: number; offTopic: number; someoneElse: number; aod?: number };
+  /**
+   * `aod` is missing on entries logged before it was added. `selfHarm` is what the app acts on: 1 when the Azure
+   * content filter flagged self-harm, otherwise the model's score (`selfHarmModel`).
+   */
+  flags: {
+    selfHarm: number;
+    offTopic: number;
+    someoneElse: number;
+    aod?: number;
+    selfHarmModel?: number;
+    filterSelfHarm?: FilterSeverity;
+  };
   thresholds: {
     match: number;
     selfHarm: number;
@@ -32,17 +48,35 @@ export interface MatchResponse {
   /** Missing on entries logged before it was added. */
   usage?: TokenUsage;
   model: string;
+  provider?: ScoringProvider;
+  /** AI_PROVIDER=compare only: the second provider's scores for the same text, for the debug view. */
+  compare?: CompareScores;
+}
+
+/** The second provider's scores in compare mode. `error` is a safe log line when it failed. */
+export interface CompareScores {
+  provider: ScoringProvider;
+  model?: string;
+  flags?: MatchResponse["flags"];
+  /** Course id → P(yes). */
+  courses?: Record<string, number>;
+  otherAtRisk?: number;
+  error?: string;
 }
 
 /** Result of the Hybrid and Multiple choice self-harm check on typed text. */
 export interface RiskCheckResponse {
-  /** Risk to the person filling it in. */
+  /** Risk to the person filling it in: 1 when the Azure content filter flagged self-harm, else the model's score. */
   selfHarm: number;
   /** Risk to someone they're supporting. */
   otherAtRisk: number;
   usage?: TokenUsage;
   threshold: number;
   model: string;
+  provider?: ScoringProvider;
+  selfHarmModel?: number;
+  filterSelfHarm?: FilterSeverity;
+  compare?: CompareScores;
 }
 
 export interface MatchError {

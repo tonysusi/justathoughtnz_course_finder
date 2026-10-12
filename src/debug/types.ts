@@ -19,6 +19,11 @@ export interface QueryLogEntry {
   durationMs: number;
   body: MatchResponse | RiskCheckResponse | MatchError;
   errorLog?: string;
+  /** Which service scored it. Missing on entries logged before Azure was added (JEV). */
+  provider?: "jev" | "azure";
+  /** The scoring service's request and response; named before Azure was added, so they hold Azure's too. */
   jevRequest?: unknown;
   jevResponse?: unknown;
+  /** AI_PROVIDER=compare only: the second provider's request and response, or its error. */
+  compare?: { provider: "jev" | "azure"; request?: unknown; response?: unknown; error?: string };
 }

@@ -8,7 +8,7 @@ export interface DebugMatch {
   /** e.g. "you" or "the person they support" when there are two matches. */
   label?: string;
   data: MatchResponse;
-  /** The text JEV received. */
+  /** The text the scoring service received. */
   sent?: string | null;
 }
 
@@ -58,7 +58,10 @@ export function DebugColumn({
 
       {matches.map((m) => (
         <section key={m.label ?? "match"} className="card debug-section">
-          <h2>Sent to JEV{m.label && ` (${m.label})`}</h2>
+          <h2>
+            Sent to {m.data.provider === "azure" ? "Azure" : "JEV"}
+            {m.label && ` (${m.label})`}
+          </h2>
           <blockquote className="debug-text">{m.sent ?? "—"}</blockquote>
         </section>
       ))}
@@ -101,6 +104,11 @@ export function DebugColumn({
           <p className="hint">
             Risk check: writer {pct(riskCheck.selfHarm)} · person they support {pct(riskCheck.otherAtRisk)} (threshold{" "}
             {pct(riskCheck.threshold)})
+            {riskCheck.filterSelfHarm && ` · Azure content filter self-harm: ${riskCheck.filterSelfHarm}`}
+            {riskCheck.compare &&
+              (riskCheck.compare.error
+                ? ` · ${riskCheck.compare.provider} failed: ${riskCheck.compare.error}`
+                : ` · ${riskCheck.compare.provider}: writer ${pct(riskCheck.compare.flags?.selfHarm ?? 0)}, person they support ${pct(riskCheck.compare.otherAtRisk ?? 0)}${riskCheck.compare.flags?.filterSelfHarm ? `, filter ${riskCheck.compare.flags.filterSelfHarm}` : ""}`)}
           </p>
         )}
       </section>

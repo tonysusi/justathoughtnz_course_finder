@@ -260,16 +260,24 @@ function LogRow({
             </tbody>
           </table>
         )}
-        <h3>JEV request</h3>
+        <h3>{PROVIDER_LABEL[e.provider ?? "jev"]} request</h3>
         <pre>
-          {e.jevRequest ? JSON.stringify(e.jevRequest, null, 2) : "Not sent (request failed before reaching JEV)."}
+          {e.jevRequest ? JSON.stringify(e.jevRequest, null, 2) : "Not sent (request failed before reaching the service)."}
         </pre>
-        <h3>JEV response</h3>
+        <h3>{PROVIDER_LABEL[e.provider ?? "jev"]} response</h3>
         <pre>{e.jevResponse ? JSON.stringify(e.jevResponse, null, 2) : "No response."}</pre>
+        {e.compare && (
+          <>
+            <h3>{PROVIDER_LABEL[e.compare.provider]} (compare) {e.compare.error ? "error" : "response"}</h3>
+            <pre>{e.compare.error ?? JSON.stringify(e.compare.response, null, 2)}</pre>
+          </>
+        )}
       </details>
     </li>
   );
 }
+
+const PROVIDER_LABEL = { jev: "JEV", azure: "Azure" } as const;
 
 const fmtInt = (n: number) => Math.round(n).toLocaleString("en-NZ");
 

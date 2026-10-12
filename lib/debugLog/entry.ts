@@ -35,8 +35,10 @@ export function buildEntry(payload: LogPayload, run: MatchRun<MatchResponse | Ri
     durationMs: run.durationMs,
     body: run.body,
     errorLog: run.errorLog,
+    provider: run.exchange.provider,
     jevRequest: run.exchange.request,
     jevResponse: run.exchange.response,
+    ...(run.exchange.compare && { compare: run.exchange.compare }),
   };
 }
 

@@ -89,8 +89,8 @@ function localApi(): Plugin {
 }
 
 export default defineConfig(({ mode }) => {
-  // Make .env.local values (e.g. TYPESAFE_API_KEY) available to the server-side handler only.
-  Object.assign(process.env, loadEnv(mode, process.cwd(), "TYPESAFE_"));
+  // Make .env.local values (e.g. TYPESAFE_API_KEY, AZURE_OPENAI_*, AI_PROVIDER) available to the server-side handler only.
+  Object.assign(process.env, loadEnv(mode, process.cwd(), ["TYPESAFE_", "AZURE_OPENAI_", "AI_PROVIDER"]));
   // VITE_DEBUG=true (set in Vercel) builds the debug panels and /debug.html into the deployed site.
   const debug = loadEnv(mode, process.cwd(), "VITE_").VITE_DEBUG === "true";
   return {
