@@ -4,8 +4,8 @@ export interface ScoredCourse extends Course {
   probability: number;
   /** The NZSL version of this course, if one exists. */
   nzslVersion?: { name: string; url: string };
-  /** Set when a rule added the course rather than JEV's score (the AOD rule in lib/match.ts). */
-  addedByRule?: "aod";
+  /** Set when a rule added the course rather than JEV's score: lib/aodRule.ts, or lib/moodRule.ts with the crisis panel. */
+  addedByRule?: "aod" | "mood";
 }
 
 /** JEV token counts for one request (no personal data), used for the debug cost figures. */
