@@ -1,8 +1,11 @@
-import type { MatchResponse, MatchSource } from "../types";
+import type { MatchResponse, MatchSource, ScoredCourse } from "../types";
 import { COURSES } from "../data/courses";
+import { withMoodCourse } from "../../lib/moodRule";
 
 const ALL_COURSES_URL = "https://www.justathought.co.nz/courses";
 const NZSL_COURSES = COURSES.filter((c) => c.nzslVersionOf);
+/** Closest courses offered for later when the crisis panel shows but none clear the match threshold. */
+const CRISIS_FALLBACK_COUNT = 3;
 
 /** Hybrid and Multiple choice users can't "describe more", so they get Start again instead. */
 function NextSteps({ source, onStartAgain }: { source: MatchSource; onStartAgain?: () => void }) {
@@ -63,6 +66,27 @@ export function Results({
     );
   }
 
+  // Someone shown the crisis panel always gets courses for later: the matches, or failing that the closest few,
+  // plus a low-mood course. Checked before off-topic, so a message only about self-harm still offers courses.
+  if (crisisShown) {
+    const matched = data.results.length > 0;
+    return (
+      <CourseList
+        data={data}
+        courses={withMoodCourse(matched ? data.results : data.all.slice(0, CRISIS_FALLBACK_COUNT), data.all)}
+        heading={heading ?? "Courses for later"}
+        note={
+          forSomeoneElse
+            ? "You could share these with the person you're supporting, or do them yourself. They're online courses."
+            : matched
+              ? undefined
+              : "When you feel ready, these online courses might help."
+        }
+        browseAll={!matched}
+      />
+    );
+  }
+
   // Off-topic only applies to free text; a Hybrid or Multiple choice "Something else" gets the not-covered message below.
   if (source === "free-text" && data.flags.offTopic >= data.thresholds.offTopic) {
     return (
@@ -74,8 +98,7 @@ export function Results({
   }
 
   if (data.results.length === 0) {
-    // Don't ask someone shown the crisis panel to "add more detail".
-    if (crisisShown || forSomeoneElse) return null;
+    if (forSomeoneElse) return null;
     return (
       <p className="alert">
         We couldn't find a course that clearly fits. You could talk to your GP, or free call or text{" "}
@@ -88,7 +111,7 @@ export function Results({
   return (
     <CourseList
       data={data}
-      heading={heading ?? (crisisShown ? "Courses for later" : "Courses that might help")}
+      heading={heading ?? "Courses that might help"}
       note={
         forSomeoneElse
           ? "You could share these with the person you're supporting, or do them yourself. They're online courses."
@@ -98,13 +121,26 @@ export function Results({
   );
 }
 
-function CourseList({ data, heading, note }: { data: MatchResponse; heading: string; note?: string }) {
+function CourseList({
+  data,
+  courses = data.results,
+  heading,
+  note,
+  browseAll = false,
+}: {
+  data: MatchResponse;
+  courses?: ScoredCourse[];
+  heading: string;
+  note?: string;
+  /** Adds a "browse all courses" link under the list. */
+  browseAll?: boolean;
+}) {
   return (
     <section>
       <h2>{heading}</h2>
       {note && <p className="hint">{note}</p>}
       <ol className="results">
-        {data.results.map((c) => (
+        {courses.map((c) => (
           <li key={c.id} className="card course">
             <h3>
               <a href={c.url} target="_blank" rel="noopener noreferrer">
@@ -124,6 +160,13 @@ function CourseList({ data, heading, note }: { data: MatchResponse; heading: str
           </li>
         ))}
       </ol>
+      {browseAll && (
+        <p className="hint">
+          <a href={ALL_COURSES_URL} target="_blank" rel="noopener noreferrer">
+            Browse all courses
+          </a>
+        </p>
+      )}
       <p className="hint nzsl-line">
         <span className="badge">NZSL</span> NZ Sign Language versions:{" "}
         {NZSL_COURSES.map((c, i) => (
