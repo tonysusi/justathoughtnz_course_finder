@@ -1,6 +1,8 @@
 import type { MatchResponse } from "../types";
 
 const pct = (n: number) => `${(n * 100).toFixed(1)}%`;
+const RULE_LABEL = { aod: "AOD rule", mood: "mood rule", life_stage: "life-stage rule" } as const;
+const ruleLabel = (name: string, rule?: keyof typeof RULE_LABEL) => (rule ? `${name} (added by ${RULE_LABEL[rule]})` : name);
 
 export function DebugPanel({ data, label }: { data: MatchResponse; label?: string }) {
   const { thresholds: t, flags } = data;
@@ -32,7 +34,7 @@ export function DebugPanel({ data, label }: { data: MatchResponse; label?: strin
           {data.all.map((c) => (
             <Row
               key={c.id}
-              label={data.results.some((r) => r.id === c.id && r.addedByRule) ? `${c.name} (added by AOD rule)` : c.name}
+              label={ruleLabel(c.name, data.results.find((r) => r.id === c.id)?.addedByRule)}
               value={c.probability}
               hit={data.results.some((r) => r.id === c.id)}
             />

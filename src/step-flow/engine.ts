@@ -2,7 +2,8 @@
 // question set; these helpers decide which questions show, check answers, and build the summary sent to JEV.
 //
 // Answers are turned into a short third-person summary (buildSummary) and sent to JEV like free text.
-// Life-stage and prerequisite rules are applied in code (excludedCourses) rather than left to JEV.
+// Life-stage and prerequisite rules are applied in code (excludedCourses) rather than left to JEV, except that typed
+// text can bring the pregnancy and postnatal courses back (see excludedCourses).
 
 import type { StepAnswers } from "../types";
 
@@ -202,6 +203,11 @@ const AOD_STAGE_COURSE: Record<string, string> = {
 };
 
 /** The AOD course for the stage chosen (Hybrid and Multiple choice), or undefined if none, or "I don't know". */
+/** "I've had a baby in the last year" always shows Postnatal Wellbeing (lib/lifeStageRule.ts). Own path only. */
+export function lifeStageCourse(answers: StepAnswers): string | undefined {
+  return chose(answers, "details", "baby") || answers.life_stage === "baby" ? "postnatal" : undefined;
+}
+
 export function aodCourse(answers: StepAnswers, about: "self" | "them" = "self"): string | undefined {
   const stage = about === "them" ? answers.their_aod_stage : answers.aod_stage;
   return typeof stage === "string" ? AOD_STAGE_COURSE[stage] : undefined;
@@ -217,8 +223,15 @@ export function excludedCourses(answers: StepAnswers, about: "self" | "them" = "
   }
   const out: string[] = [];
   // "details" in Hybrid, "life_stage" in Multiple choice.
-  if (!chose(answers, "details", "pregnant") && answers.life_stage !== "pregnant") out.push("pregnancy");
-  if (!chose(answers, "details", "baby") && answers.life_stage !== "baby") out.push("postnatal");
+  const pregnant = chose(answers, "details", "pregnant") || answers.life_stage === "pregnant";
+  const baby = chose(answers, "details", "baby") || answers.life_stage === "baby";
+  // Someone who ticked another topic but typed about a pregnancy or baby, e.g. "I'm 20 weeks pregnant" under Anxiety:
+  // both courses are left for JEV, whose matchCondition only accepts their own pregnancy or a baby under 12 months.
+  // Tick-only answers, and anyone who answered the pregnancy question, keep the code rule.
+  const ownText = ["other_text", "extra"].some((id) => typeof answers[id] === "string" && answers[id].trim() !== "");
+  const leaveToJev = !pregnant && !baby && ownText;
+  if (!pregnant && !leaveToJev) out.push("pregnancy");
+  if (!baby && !leaveToJev) out.push("postnatal");
   if (answers.panic_done !== "yes") out.push("panic_next_steps");
   return out;
 }
