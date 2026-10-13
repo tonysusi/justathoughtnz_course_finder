@@ -8,7 +8,7 @@ This app asks *"What would you like help with?"* and uses TypeSafe's **JEV** mod
 
 > The Hybrid and Multiple choice questions are a **draft for clinical review**. They're plain-language triage, not a clinical screening tool.
 
-- **Multiple choice** (`/multiple-choice.html`): a simpler flow for comparison. Step one has seven merged topics (Worry or feeling anxious, Low mood, Trouble sleeping, Coping and wellbeing, Pregnancy or a recent baby, Alcohol or drug use, Something else). Worry, Low mood and Coping each get their own short follow-up step for more detail; the others go straight to their existing follow-ups (pregnancy or recent baby, the panic course, alcohol stage). Then an optional "Anything else" box (the only free text) and the risk question when triggered. It uses the same step-by-step engine as Hybrid (`src/step-flow/`) with its own question set (`src/multiple-choice/questions.ts`).
+- **Multiple choice** (`/multiple-choice.html`): a simpler flow for comparison. Step one has six merged topics (Worry or feeling anxious, Low mood, Trouble sleeping, Coping and wellbeing, Pregnancy or a baby under one, Alcohol or drug use). Worry, Low mood and Coping each get their own short follow-up step for more detail; the others go straight to their existing follow-ups (pregnancy or baby, the panic course, alcohol stage). Then the risk question when triggered. There's no free text: **courses are matched by fixed rules in the browser, with no AI** (`src/multiple-choice/rules.ts`), so nothing is sent to JEV or saved to the debug log. It uses the same step-by-step engine as Hybrid (`src/step-flow/`) with its own question set (`src/multiple-choice/questions.ts`).
 
 `/` (Home) introduces the options and links to each.
 

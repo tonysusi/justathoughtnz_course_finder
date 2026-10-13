@@ -54,11 +54,18 @@ export function useMatch() {
     }
   }
 
+  /** Shows results worked out in the browser (Multiple choice's rules), without calling /api/match. */
+  function show(result: MatchResponse) {
+    setError(null);
+    setSent(null);
+    setData(result);
+  }
+
   function reset() {
     setError(null);
     setData(null);
     setSent(null);
   }
 
-  return { loading, error, data, sent, submit, reset };
+  return { loading, error, data, sent, submit, show, reset };
 }

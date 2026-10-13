@@ -32,6 +32,8 @@ export interface MatchResponse {
   /** Missing on entries logged before it was added. */
   usage?: TokenUsage;
   model: string;
+  /** Multiple choice only (matched by rules, no AI): the answer that led to each course id, for the debug panel. */
+  ruleReasons?: Record<string, string>;
 }
 
 /** Result of the Hybrid and Multiple choice self-harm check on typed text. */
