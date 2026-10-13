@@ -127,7 +127,7 @@ export const COURSES: Course[] = [
     url: "https://www.justathought.co.nz/courses/pregnancy-wellbeing",
     description:
       "A course for people experiencing persistent anxiety, depression or low mood during pregnancy. Developed by clinicians and mothers, it teaches practical skills for supporting mental health and wellbeing while preparing for a growing whānau.",
-    matchCondition: "Only a match if the person says they are pregnant.",
+    matchCondition: "Only a match if the person says they are pregnant or mentions a pregnancy in the conversation.",
   },
   {
     id: "postnatal",
@@ -135,7 +135,7 @@ export const COURSES: Course[] = [
     url: "https://www.justathought.co.nz/courses/postnatal-wellbeing",
     description:
       "A course for people experiencing anxiety or depression after childbirth. It teaches practical CBT-based skills for improving wellbeing and supporting recovery while caring for a new baby and growing whānau.",
-    matchCondition: "Only a match if the person says they have recently had a baby.",
+    matchCondition: "Only a match if the person says they have recently had a baby or mentions a new born or baby in the conversation.",
   },
   {
     id: "staying_on_track_nzsl",
