@@ -11,6 +11,8 @@
   --error-bg: #fdecec;
   --hit: #e3f1ef;
   --bar: #cfe3e0;
+  --pro: #2e7d32;
+  --con: #c62828;
   color-scheme: light dark;
 }
 
@@ -28,6 +30,8 @@
     --error-bg: #3a1e1e;
     --hit: #1f3633;
     --bar: #2a4a46;
+    --pro: #66bb6a;
+    --con: #ef6b6b;
   }
 }
 
@@ -142,6 +146,32 @@ code { font-size: 0.85em; }
 .option-card h2 { margin: 0 0 6px; }
 .option-card p { margin: 0 0 12px; color: var(--muted); }
 .option-cta { color: var(--accent); font-weight: 700; }
+
+/* Front page pros and cons (src/home/HomeApp.tsx). */
+.visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.comparison { margin-top: 40px; }
+.comparison h2 { margin: 0 0 4px; }
+.comparison-key { margin-top: 6px; }
+.key-pro, .key-con { font-weight: 700; }
+.key-pro { color: var(--pro); margin-right: 12px; }
+.key-con { color: var(--con); }
+.comparison-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 0.875rem; background: var(--surface); border: 1px solid var(--border); }
+.comparison-table th, .comparison-table td { text-align: left; vertical-align: top; padding: 10px; border-bottom: 1px solid var(--border); }
+.comparison-table thead th { font-size: 0.95rem; }
+.comparison-table td { width: 33.33%; }
+.comparison-area { margin: 0 0 8px; color: var(--accent); font-weight: 700; }
+.comparison-table ul { list-style: none; margin: 0; padding: 0; }
+.comparison-table ul + ul { margin-top: 6px; }
+.comparison-table li { position: relative; margin: 0 0 6px; padding-left: 1.1em; }
+.comparison-table li::before { position: absolute; left: 0; font-weight: 700; }
+.comparison-table .pros li::before { content: "\2713" / ""; color: var(--pro); }
+.comparison-table .cons li::before { content: "\2717" / ""; color: var(--con); }
+@media (max-width: 640px) {
+  .comparison-table, .comparison-table tbody, .comparison-table tr, .comparison-table th, .comparison-table td { display: block; }
+  .comparison-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .comparison-table td { width: auto; }
+  .comparison-table td::before { content: attr(data-label); display: block; margin-bottom: 4px; font-weight: 700; }
+}
 
 /* Step-by-step options (Hybrid and Multiple choice) */
 button.secondary { background: transparent; color: var(--accent); border: 1px solid var(--border); }
