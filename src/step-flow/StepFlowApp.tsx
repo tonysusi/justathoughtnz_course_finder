@@ -13,6 +13,7 @@ import {
   describeAnswers,
   aodCourse,
   excludedCourses,
+  lifeStageCourse,
   hasOwnConcerns,
   hasTheirConcerns,
   isAnswered,
@@ -96,6 +97,7 @@ export default function StepFlowApp({ set, source, navId }: { set: Question[]; s
         answers: sent,
         exclude: excludedCourses(sent),
         aodCourse: aodCourse(sent),
+        lifeStageCourse: lifeStageCourse(sent),
       });
     }
     if (hasTheirConcerns(sent)) {

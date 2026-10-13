@@ -5,7 +5,7 @@ export interface ScoredCourse extends Course {
   /** The NZSL version of this course, if one exists. */
   nzslVersion?: { name: string; url: string };
   /** Set when a rule added the course rather than JEV's score: lib/aodRule.ts, or lib/moodRule.ts with the crisis panel. */
-  addedByRule?: "aod" | "mood";
+  addedByRule?: "aod" | "mood" | "life_stage";
 }
 
 /** JEV token counts for one request (no personal data), used for the debug cost figures. */
