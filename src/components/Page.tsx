@@ -3,23 +3,12 @@ import { CrisisBanner } from "./Crisis";
 import { Nav, type NavId } from "./Nav";
 
 /** Shared shell for the public pages: help banner, nav, content and footer. */
-/** @param wide A wider page, for results with the debug column beside them. */
-export function Page({
-  current,
-  title,
-  children,
-  wide = false,
-}: {
-  current: NavId;
-  title: string;
-  children: ReactNode;
-  wide?: boolean;
-}) {
+export function Page({ current, title, children }: { current: NavId; title: string; children: ReactNode }) {
   return (
     <>
       <CrisisBanner />
       <Nav current={current} />
-      <main className={wide ? "container wide" : "container"}>
+      <main className="container">
         <header>
           <p className="eyebrow">Just a Thought · internal prototype</p>
           <h1>{title}</h1>

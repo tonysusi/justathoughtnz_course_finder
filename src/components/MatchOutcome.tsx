@@ -49,7 +49,7 @@ export function MatchOutcome({
     hasOutcome && (supportingOthers || (!!data && data.flags.someoneElse >= data.thresholds.someoneElse));
   // Free text has one list, which may be for them or for the user; Hybrid's supporting path keeps them apart.
   const shareable = shareData ? shareData.results.length > 0 : !!data && showOthers && data.results.length > 0;
-  // Two columns (courses | debug) only when debug is on; otherwise the courses alone.
+  // The collapsed test details panel, below the courses, only when debug is on.
   const showDebug = DEBUG_ENABLED && hasOutcome;
 
   return (
@@ -62,8 +62,7 @@ export function MatchOutcome({
         </p>
       )}
 
-      <div className={showDebug ? "results-layout" : undefined}>
-        <div className="results-main" aria-live="polite">
+      <div className="results-main" aria-live="polite">
           {showCrisis && <CrisisPanel variant={variant} />}
           {showOthers && <SupportingOthers withCourses={shareable} />}
           {shareData && <Results data={shareData} source={source} variant="share" />}
@@ -77,9 +76,10 @@ export function MatchOutcome({
               heading={shareData && !showCrisis ? "Courses for you" : undefined}
             />
           )}
-        </div>
+      </div>
 
-        {showDebug && (
+      {/* Below the courses, collapsed: the courses are what stakeholders should see first. */}
+      {showDebug && (
           <DebugColumn
             matches={[
               ...(shareData ? [{ label: "the person they support", data: shareData, sent: debug?.shareSent }] : []),
@@ -89,7 +89,6 @@ export function MatchOutcome({
             riskCheck={debug?.riskCheck}
           />
         )}
-      </div>
     </>
   );
 }
