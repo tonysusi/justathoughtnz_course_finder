@@ -216,8 +216,8 @@ export const HYBRID_QUESTIONS: Question[] = [
       },
       {
         id: "ready",
-        label: "They're ready to make changes, or already making them",
-        summary: "They are ready to change their alcohol or drug use, or are already making changes.",
+        label: "They're curious about making changes, or already making them",
+        summary: "They are curious about changing their alcohol or drug use, or are already making changes.",
       },
       {
         id: "relapse",
@@ -264,8 +264,8 @@ export const HYBRID_QUESTIONS: Question[] = [
       },
       {
         id: "ready",
-        label: "I'm ready to make changes, or already making them",
-        summary: "They are ready to change their alcohol or drug use, or are already making changes.",
+        label: "I'm curious about making changes, or already making them",
+        summary: "They are curious about changing their alcohol or drug use, or are already making changes.",
       },
       {
         id: "relapse",
