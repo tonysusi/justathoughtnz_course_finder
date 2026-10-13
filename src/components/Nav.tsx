@@ -5,8 +5,8 @@ export type NavId = "home" | "free-text" | "hybrid" | "multiple-choice" | "debug
 const LINKS: { id: NavId; label: string; href: string }[] = [
   { id: "home", label: "Home", href: "/" },
   { id: "free-text", label: "Free text", href: "/free-text.html" },
-  { id: "hybrid", label: "Hybrid", href: "/hybrid.html" },
   { id: "multiple-choice", label: "Multiple choice", href: "/multiple-choice.html" },
+  { id: "hybrid", label: "Hybrid", href: "/hybrid.html" },
   ...(DEBUG_ENABLED ? [{ id: "debug" as const, label: "Debug", href: "/debug.html" }] : []),
 ];
 

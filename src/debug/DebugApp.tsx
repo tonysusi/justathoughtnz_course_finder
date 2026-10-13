@@ -277,8 +277,8 @@ const fmtInt = (n: number) => Math.round(n).toLocaleString("en-NZ");
 function CostSummary({ entries, fx }: { entries: QueryLogEntry[]; fx: FxRate }) {
   const groups: { label: string; filter: (e: QueryLogEntry) => boolean }[] = [
     { label: "Free text", filter: (e) => (e.source ?? "free-text") === "free-text" },
-    { label: "Hybrid", filter: (e) => e.source === "hybrid" },
     { label: "Multiple choice", filter: (e) => e.source === "multiple-choice" },
+    { label: "Hybrid", filter: (e) => e.source === "hybrid" },
     { label: "All", filter: () => true },
   ];
   let unpriced = 0;
