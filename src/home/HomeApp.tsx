@@ -5,8 +5,8 @@ type Points = { pros: string[]; cons: string[] };
 
 const OPTIONS: { id: Option; name: string }[] = [
   { id: "free", name: "Free text" },
-  { id: "hybrid", name: "Hybrid" },
   { id: "mc", name: "Multiple choice" },
+  { id: "hybrid", name: "Hybrid" },
 ];
 
 // For stakeholders: plain language. Based on the project team's internal review and synthetic tests (Oct 2026),
@@ -147,8 +147,8 @@ export default function HomeApp() {
   return (
     <Page current="home" title="Find a course that could help">
       <p>
-        Three ways to find a Just a Thought course, so we can compare them. Free text and Hybrid use AI to match
-        courses; Multiple choice uses fixed rules, with no AI.
+        Three ways to find a Just a Thought course, so we can compare them. Free text uses AI to match courses,
+        Multiple choice uses fixed rules with no AI, and Hybrid combines tick boxes with AI.
       </p>
       <div className="option-cards">
         <a className="card option-card" href="/free-text.html">
@@ -156,26 +156,28 @@ export default function HomeApp() {
           <p>Describe in your own words what you'd like support with, and get matching courses.</p>
           <span className="option-cta">Start →</span>
         </a>
-        <a className="card option-card" href="/hybrid.html">
-          <h2>Hybrid</h2>
-          <p>Tick a few short questions, one at a time, add your own words if you like, and get matching courses.</p>
-          <span className="option-cta">Start →</span>
-        </a>
         <a className="card option-card" href="/multiple-choice.html">
           <h2>Multiple choice</h2>
           <p>Pick from one list of topics, answer any quick follow-ups, and get matching courses.</p>
           <span className="option-cta">Start →</span>
         </a>
+        <a className="card option-card" href="/hybrid.html">
+          <h2>Hybrid</h2>
+          <p>Tick a few short questions, one at a time, add your own words if you like, and get matching courses.</p>
+          <span className="option-cta">Start →</span>
+        </a>
       </div>
 
       <section className="comparison" aria-labelledby="comparison-heading">
-        <h2 id="comparison-heading">Pros and cons</h2>
+        <div className="comparison-head">
+          <h2 id="comparison-heading">Pros and cons</h2>
+          <p className="hint comparison-key">
+            <span className="key-pro">✓ pro</span> <span className="key-con">✗ con</span>
+          </p>
+        </div>
         <p className="hint">
           From the project team's internal review and test messages, not testing with users. Draft for discussion; the
           safety points need clinical review.
-        </p>
-        <p className="hint comparison-key">
-          <span className="key-pro">✓ pro</span> <span className="key-con">✗ con</span>
         </p>
         <table className="comparison-table">
           <thead>
