@@ -1,6 +1,6 @@
 # JEV Course Finder (internal prototype)
 
-This app asks *"What type of mental health support would you like to learn about?"* and uses TypeSafe's **JEV** model to suggest Just a Thought courses.
+This app asks *"What would you like help with?"* and uses TypeSafe's **JEV** model to suggest Just a Thought courses.
 
 ## Three options
 - **Free text** (`/free-text.html`): people describe what they'd like help with in their own words.
