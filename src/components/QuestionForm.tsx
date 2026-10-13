@@ -14,7 +14,7 @@ export function QuestionForm({ loading, onSubmit }: { loading: boolean; onSubmit
   return (
     <form className="card form" onSubmit={handleSubmit}>
       <label htmlFor="question" className="question">
-        What type of mental health support would you like to learn about?
+        What would you like help with?
       </label>
       <textarea
         id="question"
