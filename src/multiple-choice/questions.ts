@@ -27,7 +27,7 @@ const TOPICS: Option[] = [
   { id: "coping", label: "Coping and wellbeing", summary: "coping skills and wellbeing" },
   {
     id: "perinatal",
-    label: "Pregnancy or having recently had a baby",
+    label: "Pregnancy or a baby under one",
     summary: "their mental wellbeing during pregnancy or after having a baby",
   },
   { id: "aod", label: "Alcohol or drug use", summary: "their alcohol or drug use" },
@@ -77,7 +77,7 @@ export const MULTIPLE_CHOICE_QUESTIONS: Question[] = [
     showIf: (a) => chose(a, "concerns", "perinatal"),
     options: [
       { id: "pregnant", label: "I'm pregnant", summary: "They are pregnant." },
-      { id: "baby", label: "I've recently had a baby", summary: "They have recently had a baby." },
+      { id: "baby", label: "I've had a baby in the last year", summary: "They have had a baby in the last year." },
     ],
   },
   {

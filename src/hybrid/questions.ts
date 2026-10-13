@@ -2,7 +2,7 @@
 // Needs clinical review before use beyond the internal team.
 //
 // Step one has six broad groups matching the Just a Thought site's course menu (Anxiety, Low mood, Wellbeing,
-// Pregnancy & postnatal, Alcohol and drug support) plus "Something else". A "Tell us a bit more" step then asks
+// Pregnancy or a new baby, Alcohol and drug support) plus "Something else". A "Tell us a bit more" step then asks
 // for details within each chosen group.
 
 import type { StepAnswers } from "../types";
@@ -20,7 +20,7 @@ const GROUPS: Option[] = [
   },
   {
     id: "perinatal",
-    label: "Pregnancy & postnatal",
+    label: "Pregnancy or a new baby",
     summary: "their mental wellbeing during pregnancy or after having a baby",
   },
   { id: "aod", label: "Alcohol and drug support", summary: "their alcohol or drug use" },
@@ -89,7 +89,7 @@ export const DETAILS: Record<string, Option[]> = {
   // Full-sentence summaries: these state their life stage rather than a topic.
   perinatal: [
     { id: "pregnant", label: "I'm pregnant", summary: "They are pregnant." },
-    { id: "baby", label: "I've recently had a baby", summary: "They have recently had a baby." },
+    { id: "baby", label: "I've had a baby in the last year", summary: "They have had a baby in the last year." },
   ],
 };
 
@@ -167,7 +167,7 @@ export const HYBRID_QUESTIONS: Question[] = [
     // Only for groups with details (not alcohol and drug, which has its own follow-up, or "Something else").
     showIf: (a) => detailOptions(a).length > 0,
     optionsFor: detailOptions,
-    // At least one detail for each chosen group, e.g. pregnant or recently had a baby, so the rules apply correctly.
+    // At least one detail for each chosen group, e.g. pregnant or had a baby in the last year, so the rules apply correctly.
     validate: (a) => {
       const ids = Array.isArray(a.details) ? a.details : [];
       return chosenGroups(a)
