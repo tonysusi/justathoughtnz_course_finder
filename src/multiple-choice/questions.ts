@@ -2,10 +2,10 @@
 // Needs clinical review before use beyond the internal team.
 //
 // Merged topics, then a short follow-up step for each topic chosen (one per topic, unlike Hybrid's single
-// grouped details step), then only the other follow-ups that apply. The only free text is the optional last box.
-// Topic wording and summaries are shared with Hybrid (DETAILS), so both match courses the same way.
+// grouped details step), then only the other follow-ups that apply. No free text: courses come from fixed rules
+// (rules.ts), with no AI. Option wording is shared with Hybrid (DETAILS).
 
-import { TEXT_HINT, chose, riskQuestion, type Option, type Question } from "../step-flow/engine";
+import { chose, riskQuestion, type Option, type Question } from "../step-flow/engine";
 import { DETAILS } from "../hybrid/questions";
 
 /** Detail options by id, from Hybrid's DETAILS so wording and summaries match. */
@@ -31,8 +31,6 @@ const TOPICS: Option[] = [
     summary: "their mental wellbeing during pregnancy or after having a baby",
   },
   { id: "aod", label: "Alcohol or drug use", summary: "their alcohol or drug use" },
-  // No text box here: the only free text in this option is the last step.
-  { id: "other", label: "Something else, or I'm not sure", summary: "something else, or they are not sure" },
 ];
 
 /** Topics that lead to the risk question: low mood or alcohol or drug use. */
@@ -117,14 +115,6 @@ export const MULTIPLE_CHOICE_QUESTIONS: Question[] = [
         summary: "They made changes to their alcohol or drug use but are finding it hard to keep them up.",
       },
     ],
-  },
-  {
-    id: "extra",
-    prompt: "Anything else you'd like to add?",
-    hint: TEXT_HINT,
-    kind: "text",
-    optional: true,
-    maxLength: 500,
   },
   riskQuestion((a) => RISK_TRIGGER_TOPICS.some((id) => chose(a, "concerns", id))),
 ];

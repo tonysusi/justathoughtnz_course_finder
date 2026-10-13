@@ -26,13 +26,24 @@ import {
   type Option,
   type Question,
 } from "./engine";
-import type { MatchSource, RiskCheckResponse } from "../types";
+import type { MatchResponse, MatchSource, RiskCheckResponse } from "../types";
 import type { NavId } from "../components/Nav";
 
 /**
  * The step-by-step flow shared by the Hybrid and Multiple choice options; each passes its own question set.
+ * `matchLocally` (Multiple choice) works out the courses from the answers in the browser instead of calling JEV.
  */
-export default function StepFlowApp({ set, source, navId }: { set: Question[]; source: MatchSource; navId: NavId }) {
+export default function StepFlowApp({
+  set,
+  source,
+  navId,
+  matchLocally,
+}: {
+  set: Question[];
+  source: MatchSource;
+  navId: NavId;
+  matchLocally?: (answers: StepAnswers) => MatchResponse;
+}) {
   const [answers, setAnswers] = useState<StepAnswers>({});
   const [step, setStep] = useState(0);
   /** Shown after a "Yes" or "not sure" risk answer, before anything else. */
@@ -90,7 +101,9 @@ export default function StepFlowApp({ set, source, navId }: { set: Question[]; s
       return;
     }
     setDone(true);
-    if (hasOwnConcerns(sent)) {
+    if (hasOwnConcerns(sent) && matchLocally) {
+      own.show(matchLocally(sent));
+    } else if (hasOwnConcerns(sent)) {
       own.submit(buildSummary(sent, "self", set), {
         source,
         answers: sent,

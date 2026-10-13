@@ -28,8 +28,11 @@ export function DebugColumn({
   riskCheck?: RiskCheckResponse;
 }) {
   const fx = useFx();
+  // Multiple choice: matched by rules, so there's no AI request, cost or score to show for it.
+  const ruled = matches.filter((m) => m.data.ruleReasons);
+  const scored = matches.filter((m) => !m.data.ruleReasons);
   const rows: { label: string; usage?: TokenUsage; model: string }[] = [
-    ...matches.map((m) => ({
+    ...scored.map((m) => ({
       label: `Match${m.label ? ` (${m.label})` : ""}`,
       usage: m.data.usage,
       model: m.data.model,
@@ -59,56 +62,73 @@ export function DebugColumn({
         </section>
       )}
 
-      {matches.map((m) => (
+      {ruled.map((m) => (
+        <section key={`rules-${m.label ?? "match"}`} className="debug-section">
+          <h2>Matched by rules (no AI)</h2>
+          <p className="hint">Courses come from the answers by fixed rules (src/multiple-choice/rules.ts).</p>
+          <dl className="debug-answers">
+            {m.data.results.map((c) => (
+              <div key={c.id}>
+                <dt>{c.addedByRule ? `Added by the ${c.addedByRule} rule` : m.data.ruleReasons?.[c.id]}</dt>
+                <dd>{c.name}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      ))}
+
+      {scored.map((m) => (
         <section key={m.label ?? "match"} className="debug-section">
           <h2>Sent to JEV{m.label && ` (${m.label})`}</h2>
           <blockquote className="debug-text">{m.sent ?? "—"}</blockquote>
         </section>
       ))}
 
-      <section className="debug-section">
-        <h2>Tokens and cost</h2>
-        <table className="debug-cost">
-          <thead>
-            <tr>
-              <th>Request</th>
-              <th className="num">In</th>
-              <th className="num">Out</th>
-              <th className="num">Cost</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((r, i) => (
-              <tr key={r.label}>
-                <td>{r.label}</td>
-                <td className="num">{r.usage ? fmt(r.usage.input_tokens) : "–"}</td>
-                <td className="num">{r.usage ? fmt(r.usage.output_tokens) : "–"}</td>
-                <td className="num">{costs[i] === undefined ? "–" : formatNzd(costs[i]!, fx)}</td>
+      {rows.length > 0 && (
+        <section className="debug-section">
+          <h2>Tokens and cost</h2>
+          <table className="debug-cost">
+            <thead>
+              <tr>
+                <th>Request</th>
+                <th className="num">In</th>
+                <th className="num">Out</th>
+                <th className="num">Cost</th>
               </tr>
-            ))}
-            {rows.length > 1 && (
-              <tr className="total">
-                <td>Total</td>
-                <td className="num">{fmt(rows.reduce((s, r) => s + (r.usage?.input_tokens ?? 0), 0))}</td>
-                <td className="num">{fmt(rows.reduce((s, r) => s + (r.usage?.output_tokens ?? 0), 0))}</td>
-                <td className="num">{formatNzd(total, fx)}</td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-        <p className="hint">
-          US$0.042 per million input tokens, output free ({PRICING_SOURCE}). 1 USD = {fx.nzdPerUsd} NZD (
-          {fx.live ? `ECB rate for ${fx.date}` : "saved rate"}).
-        </p>
-        {riskCheck && (
+            </thead>
+            <tbody>
+              {rows.map((r, i) => (
+                <tr key={r.label}>
+                  <td>{r.label}</td>
+                  <td className="num">{r.usage ? fmt(r.usage.input_tokens) : "–"}</td>
+                  <td className="num">{r.usage ? fmt(r.usage.output_tokens) : "–"}</td>
+                  <td className="num">{costs[i] === undefined ? "–" : formatNzd(costs[i]!, fx)}</td>
+                </tr>
+              ))}
+              {rows.length > 1 && (
+                <tr className="total">
+                  <td>Total</td>
+                  <td className="num">{fmt(rows.reduce((s, r) => s + (r.usage?.input_tokens ?? 0), 0))}</td>
+                  <td className="num">{fmt(rows.reduce((s, r) => s + (r.usage?.output_tokens ?? 0), 0))}</td>
+                  <td className="num">{formatNzd(total, fx)}</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
           <p className="hint">
-            Risk check: writer {pct(riskCheck.selfHarm)} · person they support {pct(riskCheck.otherAtRisk)} (threshold{" "}
-            {pct(riskCheck.threshold)})
+            US$0.042 per million input tokens, output free ({PRICING_SOURCE}). 1 USD = {fx.nzdPerUsd} NZD (
+            {fx.live ? `ECB rate for ${fx.date}` : "saved rate"}).
           </p>
-        )}
-      </section>
+          {riskCheck && (
+            <p className="hint">
+              Risk check: writer {pct(riskCheck.selfHarm)} · person they support {pct(riskCheck.otherAtRisk)} (threshold{" "}
+              {pct(riskCheck.threshold)})
+            </p>
+          )}
+        </section>
+      )}
 
-      {matches.map((m) => (
+      {scored.map((m) => (
         <DebugPanel key={`scores-${m.label ?? "match"}`} data={m.data} label={m.label} />
       ))}
     </details>
