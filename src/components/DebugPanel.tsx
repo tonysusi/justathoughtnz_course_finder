@@ -7,8 +7,8 @@ const ruleLabel = (name: string, rule?: keyof typeof RULE_LABEL) => (rule ? `${n
 export function DebugPanel({ data, label }: { data: MatchResponse; label?: string }) {
   const { thresholds: t, flags } = data;
   return (
-    <details className="card debug" open>
-      <summary>Debug: JEV scores{label && ` (${label})`}</summary>
+    <section className="debug debug-section">
+      <h2>JEV scores{label && ` (${label})`}</h2>
       <p className="hint">
         Model <code>{data.model}</code> · match ≥ {pct(t.match)} (max {t.maxResults}) · self-harm ≥ {pct(t.selfHarm)} ·
         off-topic ≥ {pct(t.offTopic)}
@@ -41,7 +41,7 @@ export function DebugPanel({ data, label }: { data: MatchResponse; label?: strin
           ))}
         </tbody>
       </table>
-    </details>
+    </section>
   );
 }
 

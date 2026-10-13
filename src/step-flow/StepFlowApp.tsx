@@ -7,7 +7,6 @@ import { CrisisPanel } from "../components/Crisis";
 import { SupportingOthers } from "../components/SupportingOthers";
 import { useMatch } from "../useMatch";
 import { checkTextRisk } from "./riskCheck";
-import { DEBUG_ENABLED } from "../debugFlag";
 import {
   buildSummary,
   describeAnswers,
@@ -175,7 +174,7 @@ export default function StepFlowApp({ set, source, navId }: { set: Question[]; s
 
   if (done && !loading && (own.data || theirs.data)) {
     return (
-      <Page current={navId} title={supporting ? "Support for them" : "Courses for you"} wide={DEBUG_ENABLED}>
+      <Page current={navId} title={supporting ? "Support for them" : "Courses for you"}>
         <div className="card form-row">
           <span className="hint">Based on your answers.</span>
           <button type="button" className="secondary" onClick={startAgain}>

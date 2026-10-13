@@ -1,4 +1,5 @@
-// The right-hand debug column on results pages. Only shown when debug is on (src/debugFlag.ts).
+// The test details panel below the courses on results pages. Only shown when debug is on (src/debugFlag.ts).
+// Collapsed each time results appear, so stakeholders don't mistake it for part of the design.
 import type { MatchResponse, RiskCheckResponse, TokenUsage } from "../types";
 import { DebugPanel } from "./DebugPanel";
 import { PRICING_SOURCE, costUsd, formatNzd } from "../debug/pricing";
@@ -39,11 +40,13 @@ export function DebugColumn({
   const total = costs.reduce<number>((sum, c) => sum + (c ?? 0), 0);
 
   return (
-    <aside className="results-debug" aria-label="Debug information">
-      <p className="eyebrow">Debug · test version only</p>
+    <details className="card results-debug">
+      <summary>
+        Show test details <span className="hint">For the project team, not part of the design.</span>
+      </summary>
 
       {answers && answers.length > 0 && (
-        <section className="card debug-section">
+        <section className="debug-section">
           <h2>Answers chosen</h2>
           <dl className="debug-answers">
             {answers.map((a) => (
@@ -57,13 +60,13 @@ export function DebugColumn({
       )}
 
       {matches.map((m) => (
-        <section key={m.label ?? "match"} className="card debug-section">
+        <section key={m.label ?? "match"} className="debug-section">
           <h2>Sent to JEV{m.label && ` (${m.label})`}</h2>
           <blockquote className="debug-text">{m.sent ?? "—"}</blockquote>
         </section>
       ))}
 
-      <section className="card debug-section">
+      <section className="debug-section">
         <h2>Tokens and cost</h2>
         <table className="debug-cost">
           <thead>
@@ -108,6 +111,6 @@ export function DebugColumn({
       {matches.map((m) => (
         <DebugPanel key={`scores-${m.label ?? "match"}`} data={m.data} label={m.label} />
       ))}
-    </aside>
+    </details>
   );
 }

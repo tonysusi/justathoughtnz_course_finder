@@ -178,12 +178,13 @@ button.secondary { background: transparent; color: var(--accent); border: 1px so
 .choice.disabled { cursor: not-allowed; opacity: 0.55; }
 
 /* Results with the debug column (when debug is on): courses left, debug right; stacked on narrow screens. */
-.container.wide { max-width: 1200px; }
-.results-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 420px); gap: 24px; align-items: start; }
 .results-main { min-width: 0; }
-.results-debug { display: grid; gap: 12px; min-width: 0; margin-top: 16px; font-size: 0.875rem; }
-.results-debug .eyebrow { margin: 0; }
-.results-debug .debug { margin-top: 0; }
+/* Test details: collapsed below the courses (DebugColumn.tsx). */
+.results-debug { margin-top: 32px; font-size: 0.875rem; }
+.results-debug > summary { cursor: pointer; font-weight: 600; }
+.results-debug > summary .hint { display: block; font-weight: 400; margin-top: 2px; }
+.results-debug .debug-section { border-top: 1px solid var(--border); margin-top: 16px; padding-top: 16px; }
+.results-debug .debug { margin-top: 16px; font-size: inherit; }
 .debug-section h2 { font-size: 0.95rem; margin: 0 0 8px; }
 .debug-text { margin: 0; padding: 8px 10px; border-left: 3px solid var(--accent); background: var(--bg); white-space: pre-wrap; overflow-wrap: anywhere; }
 .debug-answers { margin: 0; display: grid; gap: 6px; }
@@ -193,6 +194,3 @@ button.secondary { background: transparent; color: var(--accent); border: 1px so
 .debug-cost th, .debug-cost td { text-align: left; padding: 4px 6px; border-bottom: 1px solid var(--border); }
 .debug-cost .num { text-align: right; font-variant-numeric: tabular-nums; }
 .debug-cost tr.total td { font-weight: 700; }
-@media (max-width: 900px) {
-  .results-layout { grid-template-columns: minmax(0, 1fr); }
-}
