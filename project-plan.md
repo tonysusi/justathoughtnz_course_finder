@@ -6,7 +6,7 @@
 - Free-text input, with results linking to justathought.co.nz.
 - Shows the top 5 matches, ranked, at a match probability of 0.65 or higher, with a debug panel showing every score.
 - An always-visible 1737/111 banner, plus a crisis panel when JEV's self-harm probability is 0.35 or higher.
-- Answers are never stored or logged, and a privacy notice sits on the form.
+- Answers are stored only while the debug log is on: always locally (`logs/queries.jsonl`), and when deployed only if `DEBUG_LOG=true`, kept for `DEBUG_RETENTION_DAYS` (default 14). Turn it off before real users can reach the site (see README). A notice on the form says whether answers are saved, based on `VITE_DEBUG`.
 - Stack: Vite + React + TypeScript, and a Vercel Function at `api/match.ts` using `@typesafe-ai/sdk`.
 
 ## Status

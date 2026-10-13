@@ -54,9 +54,11 @@ export function MatchOutcome({
 
   return (
     <>
+      {/* The text couldn't be checked for risk, so the error always carries the banner's support line. */}
       {error && (
         <p className="alert alert-error" role="alert">
-          {error}
+          {error} Need to talk? Free call or text <a href="tel:1737">1737</a> any time. In an emergency call{" "}
+          <a href="tel:111">111</a>.
         </p>
       )}
 
