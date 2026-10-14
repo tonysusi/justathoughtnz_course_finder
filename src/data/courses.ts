@@ -128,7 +128,7 @@ export const COURSES: Course[] = [
     description:
       "A course for people experiencing persistent anxiety, depression or low mood during pregnancy. Developed by clinicians and mothers, it teaches practical skills for supporting mental health and wellbeing while preparing for a growing whānau.",
     matchCondition:
-      "Only a match if the person says they are pregnant themselves, including indirect wording such as expecting a baby. Not a match if the pregnancy is someone else's or was in the past.",
+      "Only a match if the person says they are pregnant themselves, including indirect wording such as expecting a baby or being weeks along, and including when they are a surrogate carrying the pregnancy. Not a match if the pregnancy is someone else's (such as a partner, or a surrogate carrying a baby for them) or was in the past, or if they're trying to get pregnant or having fertility treatment but aren't pregnant yet.",
   },
   {
     id: "postnatal",
@@ -137,7 +137,7 @@ export const COURSES: Course[] = [
     description:
       "A course for people experiencing anxiety or depression after childbirth. It teaches practical CBT-based skills for improving wellbeing and supporting recovery while caring for a new baby and growing whānau.",
     matchCondition:
-      "Only a match if the person says they have recently had a baby themselves, including mentioning their own newborn or a baby under 12 months old. This includes when the main concern is coping with a young baby, such as exhaustion, broken sleep, feeling overwhelmed or short-tempered, not only anxiety or depression. Not a match if the baby is someone else's or is more than a year old.",
+      "Only a match if the person has their own baby under 18 months old, as a mother, father, partner, adoptive or whāngai parent, or other main carer, including mentioning their own newborn. This includes when the main concern is coping with a young baby, such as exhaustion, broken sleep, feeling overwhelmed, short-tempered or feeding difficulties, not only anxiety or depression. Not a match if the baby is someone else's, is more than 18 months old, or after a pregnancy loss.",
   },
   {
     id: "staying_on_track_nzsl",

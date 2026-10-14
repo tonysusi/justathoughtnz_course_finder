@@ -5,6 +5,7 @@ import { COURSES } from "../data/courses";
 import { aodCourse } from "../step-flow/engine";
 import type { MatchResponse, ScoredCourse, StepAnswers } from "../types";
 import { MULTIPLE_CHOICE_QUESTIONS } from "./questions";
+import { applyClinicalRules } from "../../lib/clinicalRules";
 
 /** Follow-up answer → course, per topic. "not_sure" offers every course in that topic. */
 const DETAIL_COURSES: Record<string, Record<string, string>> = {
@@ -70,8 +71,11 @@ export function matchByRules(answers: StepAnswers): MatchResponse {
     probability: picks.some((p) => p.id === c.id) ? 1 : 0,
     nzslVersion: nzslVersionFor(c.id),
   });
-  const results = picks.map((p) => scored(MATCHABLE.find((c) => c.id === p.id)!));
-  const all = [...results, ...MATCHABLE.filter((c) => !picks.some((p) => p.id === c.id)).map(scored)];
+  const picked = picks.map((p) => scored(MATCHABLE.find((c) => c.id === p.id)!));
+  const all = [...picked, ...MATCHABLE.filter((c) => !picks.some((p) => p.id === c.id)).map(scored)];
+  // The same clinical rules as the AI options. Every pick is something they chose, so the rules only add courses here
+  // (e.g. Depression with sleep, Coping with Stress with OCD or panic).
+  const results = applyClinicalRules(picked, all, { required: picks.map((p) => p.id) });
   return {
     results,
     all,

@@ -4,7 +4,6 @@ import { Page } from "../components/Page";
 import { PrivacyNotice } from "../components/PrivacyNotice";
 import { MatchOutcome } from "../components/MatchOutcome";
 import { CrisisPanel } from "../components/Crisis";
-import { SupportingOthers } from "../components/SupportingOthers";
 import { useMatch } from "../useMatch";
 import { checkTextRisk } from "./riskCheck";
 import {
@@ -20,6 +19,7 @@ import {
   supportingSomeoneElse,
   optionsOf,
   riskLevel,
+  RISK_QUESTION_IDS,
   TEXT_HINT,
   visibleAnswers,
   visibleQuestions,
@@ -50,8 +50,6 @@ export default function StepFlowApp({
   const [support, setSupport] = useState(false);
   /** Set once "Find courses" is pressed; results show when the matches come back. */
   const [done, setDone] = useState(false);
-  /** Their text says the person they're supporting may be at risk: show the services, skip course matching. */
-  const [servicesOnly, setServicesOnly] = useState(false);
   // Separate matches: courses for the user, and courses to share with the person they're supporting.
   const own = useMatch();
   const theirs = useMatch();
@@ -82,24 +80,24 @@ export default function StepFlowApp({
   const risk = riskLevel(visibleAnswers(answers, set));
   const supporting = supportingSomeoneElse(answers);
 
-  // Typed text JEV flagged for self-harm risk. Shows the crisis panel with the results even if they answer "No".
+  // Typed text JEV flagged brings up the risk question; the crisis panel then follows their answer only.
   const text = typedText(answers, set);
-  const textFlagged = !!text && answers.text_risk === "flagged" && answers.text_risk_for === text;
   const [checking, setChecking] = useState(false);
   /** The last text risk check's JEV response, for the debug column. */
   const [riskCheck, setRiskCheck] = useState<RiskCheckResponse | undefined>();
-  const theirRiskFlagged = supporting && answers.their_risk === "flagged" && answers.text_risk_for === text;
+  // Their text says the person they support may be at risk, or the risk question about them was answered Yes or
+  // Not sure. From visible answers, as for `risk`.
+  const theirAnswer = visibleAnswers(answers, set).risk_them;
+  const theirRiskFlagged =
+    supporting &&
+    ((answers.their_risk === "flagged" && answers.text_risk_for === text) ||
+      theirAnswer === "yes" ||
+      theirAnswer === "unsure");
 
   function findCourses(current: StepAnswers = answers) {
     const sent = visibleAnswers(current, set);
-    if (
-      supportingSomeoneElse(sent) &&
-      current.their_risk === "flagged" &&
-      current.text_risk_for === typedText(current, set)
-    ) {
-      setServicesOnly(true);
-      return;
-    }
+    // The person they're supporting may be at risk: the services panel is highlighted, and courses are still found
+    // for the writer and to share (clinical lead, Oct 2026).
     setDone(true);
     if (hasOwnConcerns(sent) && matchLocally) {
       own.show(matchLocally(sent));
@@ -124,7 +122,8 @@ export default function StepFlowApp({
   }
 
   /** The last step before the risk question's place, where typed text is checked. */
-  const beforeRisk = question?.id !== "risk" && questions.slice(step + 1).every((q) => q.id === "risk");
+  const isRisk = (q: { id: string }) => RISK_QUESTION_IDS.includes(q.id);
+  const beforeRisk = !!question && !isRisk(question) && questions.slice(step + 1).every(isRisk);
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -139,13 +138,19 @@ export default function StepFlowApp({
       let current = answers;
       if (text && answers.text_risk_for !== text) {
         setChecking(true);
-        const result = await checkTextRisk(text, source);
+        const result = await checkTextRisk(text, source, supporting);
         setRiskCheck(result.response);
         setChecking(false);
-        current = { ...answers, text_risk: result.self, their_risk: result.other, text_risk_for: text };
+        current = {
+          ...answers,
+          text_risk: result.self,
+          their_risk: result.other,
+          their_topic: result.otherTopic,
+          text_risk_for: text,
+        };
         setAnswers(current);
       }
-      if (visibleQuestions(current, set).some((q) => q.id === "risk")) {
+      if (visibleQuestions(current, set).some(isRisk)) {
         setStep(step + 1);
       } else {
         findCourses(current);
@@ -164,25 +169,9 @@ export default function StepFlowApp({
     setStep(0);
     setSupport(false);
     setDone(false);
-    setServicesOnly(false);
     setRiskCheck(undefined);
     own.reset();
     theirs.reset();
-  }
-
-  if (servicesOnly) {
-    return (
-      <Page current={navId} title="Support for them">
-        <div className="card form-row">
-          <span className="hint">Based on what you've told us.</span>
-          <button type="button" className="secondary" onClick={startAgain}>
-            Start again
-          </button>
-        </div>
-        {risk && <CrisisPanel variant={risk === "unsure" ? "unsure" : "risk"} />}
-        <SupportingOthers urgent />
-      </Page>
-    );
   }
 
   if (done && !loading && (own.data || theirs.data)) {
@@ -200,8 +189,9 @@ export default function StepFlowApp({
           shareData={theirs.data}
           source={source}
           onStartAgain={startAgain}
-          risk={risk ?? (textFlagged ? "yes" : undefined)}
+          risk={risk}
           supportingOthers={supporting}
+          othersUrgent={theirRiskFlagged}
           debug={{ sent: own.sent, shareSent: theirs.sent, answers: describeAnswers(answers, set), riskCheck }}
         />
         {!own.data && (

@@ -123,6 +123,7 @@ export function DebugColumn({
             <p className="hint">
               Risk check: writer {pct(riskCheck.selfHarm)} · person they support {pct(riskCheck.otherAtRisk)} (threshold{" "}
               {pct(riskCheck.threshold)})
+              {riskCheck.theirTopic !== undefined && ` · their topics ${pct(riskCheck.theirTopic)}`}
             </p>
           )}
         </section>

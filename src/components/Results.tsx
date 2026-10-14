@@ -1,6 +1,7 @@
 import type { MatchResponse, MatchSource, ScoredCourse } from "../types";
 import { COURSES } from "../data/courses";
 import { withMoodCourse } from "../../lib/moodRule";
+import { AodSupport, GeneralSupport } from "./SupportNotes";
 
 const ALL_COURSES_URL = "https://www.justathought.co.nz/courses";
 const NZSL_COURSES = COURSES.filter((c) => c.nzslVersionOf);
@@ -34,20 +35,26 @@ export function Results({
   source,
   onStartAgain,
   crisisShown = false,
+  forLater = false,
   forSomeoneElse = false,
   variant = "default",
   heading,
+  support = {},
 }: {
   data: MatchResponse;
   source: MatchSource;
   onStartAgain?: () => void;
   /** When the crisis panel is showing, courses are offered as "for later". */
   crisisShown?: boolean;
+  /** Pregnancy loss support is showing: courses for later, as with the crisis panel but without a mood course. */
+  forLater?: boolean;
   /** When the "supporting someone else" panel is showing, courses are offered to share or to do themselves. */
   forSomeoneElse?: boolean;
   /** "share": courses matched for the person they're supporting, to pass on to them. */
   variant?: "default" | "share";
   heading?: string;
+  /** Support lines under the courses: the general one, and the alcohol and drug one. */
+  support?: SupportLines;
 }) {
   if (variant === "share") {
     if (data.results.length === 0) {
@@ -60,6 +67,7 @@ export function Results({
     return (
       <CourseList
         data={data}
+        support={support}
         heading="Courses to share with them"
         note="You could send them a link to any of these. They're online courses."
       />
@@ -68,12 +76,16 @@ export function Results({
 
   // Someone shown the crisis panel always gets courses for later: the matches, or failing that the closest few,
   // plus a low-mood course. Checked before off-topic, so a message only about self-harm still offers courses.
-  if (crisisShown) {
+  // Pregnancy loss is handled the same way, without the mood course, and never offers the pregnancy or baby courses.
+  if (crisisShown || forLater) {
     const matched = data.results.length > 0;
+    const pool = forLater ? data.all.filter((c) => c.id !== "pregnancy" && c.id !== "postnatal") : data.all;
+    const base = matched ? data.results : pool.slice(0, CRISIS_FALLBACK_COUNT);
     return (
       <CourseList
         data={data}
-        courses={withMoodCourse(matched ? data.results : data.all.slice(0, CRISIS_FALLBACK_COUNT), data.all)}
+        support={support}
+        courses={crisisShown ? withMoodCourse(base, data.all) : base}
         heading={heading ?? "Courses for later"}
         note={
           forSomeoneElse
@@ -111,6 +123,7 @@ export function Results({
   return (
     <CourseList
       data={data}
+      support={support}
       heading={heading ?? "Courses that might help"}
       note={
         forSomeoneElse
@@ -121,13 +134,20 @@ export function Results({
   );
 }
 
+export interface SupportLines {
+  general?: boolean;
+  aod?: boolean;
+}
+
 function CourseList({
+  support = {},
   data,
   courses = data.results,
   heading,
   note,
   browseAll = false,
 }: {
+  support?: SupportLines;
   data: MatchResponse;
   courses?: ScoredCourse[];
   heading: string;
@@ -167,6 +187,8 @@ function CourseList({
           </a>
         </p>
       )}
+      {support.general && <GeneralSupport />}
+      {support.aod && <AodSupport />}
       <p className="hint nzsl-line">
         <span className="badge">NZSL</span> NZ Sign Language versions:{" "}
         {NZSL_COURSES.map((c, i) => (

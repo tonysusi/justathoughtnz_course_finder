@@ -5,7 +5,7 @@ export const LIFE_STAGE_COURSE_IDS = ["pregnancy", "postnatal"];
 
 /**
  * Makes sure the courses the life-stage answers point to are shown: "I'm pregnant" always shows Pregnancy Wellbeing
- * and "I've had a baby in the last year" always shows Postnatal Wellbeing. Any JEV didn't already include are added
+ * and "I have a baby under 18 months" always shows Postnatal Wellbeing. Any JEV didn't already include are added
  * last, which can take the list past maxResults.
  *
  * @param all Every scored course, highest probability first.
