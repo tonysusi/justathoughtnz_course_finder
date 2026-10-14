@@ -8,6 +8,10 @@
   --accent-text: #ffffff;
   --crisis-bg: #fff4e5;
   --crisis-border: #e8a33d;
+  --youth-bg: #e8f1fb;
+  --youth-border: #3b7dc4;
+  --loss-bg: #f4effa;
+  --loss-border: #8a68b8;
   --error-bg: #fdecec;
   --hit: #e3f1ef;
   --bar: #cfe3e0;
@@ -27,6 +31,10 @@
     --accent-text: #0f1a19;
     --crisis-bg: #3a2c16;
     --crisis-border: #c98a2b;
+    --youth-bg: #16263a;
+    --youth-border: #4f8fd6;
+    --loss-bg: #271f33;
+    --loss-border: #9b7bc4;
     --error-bg: #3a1e1e;
     --hit: #1f3633;
     --bar: #2a4a46;
@@ -118,6 +126,15 @@ button:disabled { opacity: 0.55; cursor: not-allowed; }
 .crisis-banner a, .crisis-panel a { font-weight: 700; }
 .crisis-panel { margin-top: 16px; background: var(--crisis-bg); border: 2px solid var(--crisis-border); }
 .crisis-panel h2 { margin-top: 0; }
+/* Support boxes beside the courses (SupportNotes.tsx): spaced like the crisis panel, each in its own colour. */
+.youth-support, .loss-support, .aod-support, .general-support { margin-top: 16px; }
+.youth-support { background: var(--youth-bg); border: 2px solid var(--youth-border); }
+.loss-support { background: var(--loss-bg); border: 2px solid var(--loss-border); }
+.youth-support h2, .loss-support h2 { margin-top: 0; }
+.youth-support a, .loss-support a { font-weight: 700; }
+/* The general support reminder and the alcohol and drug line: the site's light teal, no outline, so they stand apart from
+   the white course cards without looking like an alert. */
+.general-support, .aod-support { background: var(--hit); border-color: transparent; }
 
 .results { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
 .course p { margin: 8px 0 0; }

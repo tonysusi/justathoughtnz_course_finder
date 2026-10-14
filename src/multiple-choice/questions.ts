@@ -27,13 +27,13 @@ const TOPICS: Option[] = [
   { id: "coping", label: "Coping and wellbeing", summary: "coping skills and wellbeing" },
   {
     id: "perinatal",
-    label: "Pregnancy or a baby under one",
+    label: "Pregnancy or a baby under 18 months",
     summary: "their mental wellbeing during pregnancy or after having a baby",
   },
   { id: "aod", label: "Alcohol or drug use", summary: "their alcohol or drug use" },
 ];
 
-/** Topics that lead to the risk question: low mood or alcohol or drug use. */
+/** Topics that lead to the risk question: low mood or alcohol or drug use (and a baby under 18 months, below). */
 const RISK_TRIGGER_TOPICS = ["low_mood", "aod"];
 
 /** A follow-up asking for more detail about one topic from step one. */
@@ -75,7 +75,7 @@ export const MULTIPLE_CHOICE_QUESTIONS: Question[] = [
     showIf: (a) => chose(a, "concerns", "perinatal"),
     options: [
       { id: "pregnant", label: "I'm pregnant", summary: "They are pregnant." },
-      { id: "baby", label: "I've had a baby in the last year", summary: "They have had a baby in the last year." },
+      { id: "baby", label: "I have a baby under 18 months", summary: "They have a baby under 18 months old." },
     ],
   },
   {
@@ -116,5 +116,5 @@ export const MULTIPLE_CHOICE_QUESTIONS: Question[] = [
       },
     ],
   },
-  riskQuestion((a) => RISK_TRIGGER_TOPICS.some((id) => chose(a, "concerns", id))),
+  riskQuestion((a) => RISK_TRIGGER_TOPICS.some((id) => chose(a, "concerns", id)) || a.life_stage === "baby"),
 ];

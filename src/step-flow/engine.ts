@@ -100,6 +100,35 @@ export function riskQuestion(triggeredBy: (answers: StepAnswers) => boolean): Qu
   };
 }
 
+/** Ids of the risk questions, which come after all typed text: about the person they support, then about them. */
+export const RISK_QUESTION_IDS = ["risk_them", "risk"];
+
+/**
+ * DRAFT, for clinical sign-off. The risk question about someone they're supporting (Hybrid's supporting path, and
+ * Free text when the text is about someone else), asked when a topic about them brings it up (low mood, alcohol
+ * and drugs or a young baby) or their typed text does (the internal `their_topic` answer). Not asked when the text
+ * already says the person may be at risk: the services panel is highlighted then anyway. Comes just before
+ * riskQuestion.
+ */
+export function theirRiskQuestion(triggeredBy: (answers: StepAnswers) => boolean): Question {
+  return {
+    id: "risk_them",
+    about: "them",
+    prompt: "Has the person you're supporting talked about ending their life or harming themselves?",
+    hint: "We ask this so we can point you both to the right support.",
+    kind: "single",
+    showIf: (a) =>
+      supportingSomeoneElse(a) &&
+      a.their_risk !== "flagged" &&
+      (triggeredBy(a) || a.their_topic === "flagged" || a.their_risk === "unknown"),
+    options: [
+      { id: "no", label: "No" },
+      { id: "yes", label: "Yes" },
+      { id: "unsure", label: "I'm not sure" },
+    ],
+  };
+}
+
 export function optionsOf(q: Question, answers: StepAnswers): Option[] {
   return q.optionsFor ? q.optionsFor(answers) : (q.options ?? []);
 }
@@ -203,9 +232,15 @@ const AOD_STAGE_COURSE: Record<string, string> = {
 };
 
 /** The AOD course for the stage chosen (Hybrid and Multiple choice), or undefined if none, or "I don't know". */
-/** "I've had a baby in the last year" always shows Postnatal Wellbeing (lib/lifeStageRule.ts). Own path only. */
-export function lifeStageCourse(answers: StepAnswers): string | undefined {
-  return chose(answers, "details", "baby") || answers.life_stage === "baby" ? "postnatal" : undefined;
+/**
+ * "I'm pregnant" always shows Pregnancy Wellbeing and "I have a baby under 18 months" always shows Postnatal
+ * Wellbeing (lib/lifeStageRule.ts). Hybrid can have both ticked. Own path only.
+ */
+export function lifeStageCourses(answers: StepAnswers): string[] {
+  const out: string[] = [];
+  if (chose(answers, "details", "pregnant") || answers.life_stage === "pregnant") out.push("pregnancy");
+  if (chose(answers, "details", "baby") || answers.life_stage === "baby") out.push("postnatal");
+  return out;
 }
 
 export function aodCourse(answers: StepAnswers, about: "self" | "them" = "self"): string | undefined {
@@ -218,7 +253,8 @@ export function excludedCourses(answers: StepAnswers, about: "self" | "them" = "
   if (about === "them") {
     // Pregnancy isn't asked about the person they're supporting, so those courses aren't suggested for them.
     const out = ["pregnancy", "postnatal"];
-    if (answers.their_panic_done !== "yes") out.push("panic_next_steps");
+    // Finished Overcoming Panic: offer only the follow-on course, as Multiple choice does.
+    out.push(answers.their_panic_done === "yes" ? "panic" : "panic_next_steps");
     return out;
   }
   const out: string[] = [];
@@ -232,7 +268,7 @@ export function excludedCourses(answers: StepAnswers, about: "self" | "them" = "
   const leaveToJev = !pregnant && !baby && ownText;
   if (!pregnant && !leaveToJev) out.push("pregnancy");
   if (!baby && !leaveToJev) out.push("postnatal");
-  if (answers.panic_done !== "yes") out.push("panic_next_steps");
+  out.push(answers.panic_done === "yes" ? "panic" : "panic_next_steps");
   return out;
 }
 

@@ -9,7 +9,8 @@ import {
 import { COURSES, type Course } from "../src/data/courses.js";
 import type { MatchError, MatchResponse, RiskCheckResponse, ScoredCourse } from "../src/types.js";
 import { AOD_COURSE_IDS, withAodCourse } from "./aodRule.js";
-import { LIFE_STAGE_COURSE_IDS, withLifeStageCourse } from "./lifeStageRule.js";
+import { LIFE_STAGE_COURSE_IDS, withLifeStageCourses } from "./lifeStageRule.js";
+import { applyClinicalRules } from "./clinicalRules.js";
 
 export const CONFIG = {
   model: "jev-latest",
@@ -25,6 +26,8 @@ export const CONFIG = {
     someoneElse: 0.5,
     // Free text (or typed text without an AOD stage answer): adds the top-scoring AOD course to the results.
     aod: 0.5,
+    // Low mood, own baby under 18 months, pregnancy loss, trying to conceive, under 16.
+    topic: 0.5,
   },
 };
 
@@ -46,7 +49,7 @@ const SELF_HARM_QUESTION = noul(
   },
 );
 
-/** Risk check only: whether someone the writer is supporting may be at risk (not the writer themselves). */
+/** Whether someone the writer is supporting may be at risk (not the writer themselves). */
 const OTHER_AT_RISK_QUESTION = noul(
   "Does this message suggest that someone the writer is worried about or supporting, such as a family member or friend, may be considering suicide or harming themselves?",
   {
@@ -55,9 +58,56 @@ const OTHER_AT_RISK_QUESTION = noul(
   },
 );
 
+// Topics that bring up the risk question (clinical lead, Oct 2026): low mood, alcohol and drugs, a new baby.
+const LOW_MOOD_QUESTION = noul("Does this message describe the writer's own low mood, sadness or loss of interest?", {
+  true: "The writer describes feeling low, down, sad, flat, hopeless or losing interest in things.",
+  false: "The writer doesn't describe their own low mood.",
+});
+
+const AOD_QUESTION = noul("Does this message mention a concern about alcohol or drug use, their own or someone else's?", {
+  true: "It mentions drinking, drug use or substance use as something the writer, or someone they support, is concerned about.",
+  false: "It doesn't mention any concern about alcohol or drug use.",
+});
+
+const NEW_BABY_QUESTION = noul(
+  "Does the writer say they have their own baby under 18 months old, as a parent, partner, adoptive or whāngai parent, or other main carer?",
+  {
+    true: "The writer has, or is the main carer of, their own baby under 18 months old.",
+    false: "No baby under 18 months is the writer's own, or no baby is mentioned.",
+  },
+);
+
+// The same topics for someone the writer is supporting: brings up the risk question worded about them.
+const THEIR_TOPIC_QUESTION = noul(
+  "Does this message describe someone the writer is worried about or supporting having low mood, alcohol or drug use concerns, or a baby under 18 months?",
+  {
+    true: "Another person, such as a family member, partner or friend, is described as feeling low, down or hopeless, as having problems with alcohol or drugs, or as having a baby under 18 months.",
+    false: "No other person is described with low mood, alcohol or drug concerns or a young baby.",
+  },
+);
+
 function buildQuestions(courses: Course[]): Questions {
   const questions: Questions = {
     self_harm: SELF_HARM_QUESTION,
+    other_at_risk: OTHER_AT_RISK_QUESTION,
+    their_topic: THEIR_TOPIC_QUESTION,
+    low_mood: LOW_MOOD_QUESTION,
+    new_baby: NEW_BABY_QUESTION,
+    pregnancy_loss: noul("Does the writer describe their own pregnancy loss, such as a miscarriage or stillbirth?", {
+      true: "The writer has lost a pregnancy or a baby at or before birth.",
+      false: "The writer doesn't describe their own pregnancy loss.",
+    }),
+    trying_to_conceive: noul(
+      "Does the writer say they're trying to get pregnant, including fertility treatment such as IVF, but aren't pregnant yet?",
+      {
+        true: "The writer is trying to conceive or having fertility treatment and isn't pregnant yet.",
+        false: "The writer isn't trying to conceive, or is already pregnant.",
+      },
+    ),
+    under_16: noul("Does the writer say they're under 16 years old?", {
+      true: "The writer states their own age as 15 or younger.",
+      false: "The writer doesn't state an age under 16.",
+    }),
     off_topic: noul(
       "Is this message unrelated to mental health, emotional wellbeing, sleep, stress or alcohol and drug use?",
       {
@@ -72,10 +122,7 @@ function buildQuestions(courses: Course[]): Questions {
         false: "The writer is mainly describing their own concerns.",
       },
     ),
-    aod: noul("Does this message mention a concern about alcohol or drug use, their own or someone else's?", {
-      true: "It mentions drinking, drug use or substance use as something the writer, or someone they support, is concerned about.",
-      false: "It doesn't mention any concern about alcohol or drug use.",
-    }),
+    aod: AOD_QUESTION,
   };
   // Asks about the person's *main* concern; "would benefit" scored general wellbeing courses high for everything.
   for (const course of courses) {
@@ -128,15 +175,16 @@ export interface JevExchange {
  *   prerequisite rules). They aren't sent to JEV and can't be returned.
  * @param aodCourse The AOD course the Hybrid or Multiple choice stage answer points to. It's always shown, added last
  *   if JEV didn't rank it. Without one, the top-scoring AOD course is added when the aod flag is hit.
- * @param lifeStageCourse The course a Hybrid or Multiple choice life-stage answer points to ("I've had a baby in the
- *   last year": Postnatal Wellbeing). Always shown, added last if JEV didn't rank it.
+ * @param lifeStageCourses The courses the Hybrid or Multiple choice life-stage answers point to ("I'm pregnant":
+ *   Pregnancy Wellbeing; "I have a baby under 18 months": Postnatal Wellbeing). Always shown, added last if JEV
+ *   didn't rank them.
  */
 export async function matchCourses(
   text: string,
   exchange: JevExchange = {},
   exclude: string[] = [],
   aodCourse?: string,
-  lifeStageCourse?: string,
+  lifeStageCourses: string[] = [],
 ): Promise<MatchResponse> {
   const state = text.trim();
   if (!state) throw new InputError("Please describe what you'd like support with.");
@@ -171,16 +219,31 @@ export async function matchCourses(
     selfHarm: prob("self_harm"),
     offTopic: prob("off_topic"),
     someoneElse: prob("someone_else"),
+    otherAtRisk: prob("other_at_risk"),
+    theirTopic: prob("their_topic"),
     aod: prob("aod"),
+    lowMood: prob("low_mood"),
+    newBaby: prob("new_baby"),
+    pregnancyLoss: prob("pregnancy_loss"),
+    tryingToConceive: prob("trying_to_conceive"),
+    under16: prob("under_16"),
   };
-  const results = withLifeStageCourse(
-    withAodCourse(matched, all, {
-      aodHit: flags.aod >= CONFIG.thresholds.aod,
-      offTopicHit: flags.offTopic >= CONFIG.thresholds.offTopic,
-      aodCourse,
-    }),
+  const results = applyClinicalRules(
+    withLifeStageCourses(
+      withAodCourse(matched, all, {
+        aodHit: flags.aod >= CONFIG.thresholds.aod,
+        offTopicHit: flags.offTopic >= CONFIG.thresholds.offTopic,
+        aodCourse,
+      }),
+      all,
+      lifeStageCourses,
+    ),
     all,
-    lifeStageCourse,
+    {
+      required: [...(aodCourse ? [aodCourse] : []), ...lifeStageCourses],
+      tryingToConceive: flags.tryingToConceive >= CONFIG.thresholds.topic,
+      pregnancyLoss: flags.pregnancyLoss >= CONFIG.thresholds.topic,
+    },
   );
 
   return {
@@ -208,7 +271,7 @@ export async function runMatch(
   text: unknown,
   exclude?: unknown,
   aodCourse?: unknown,
-  lifeStageCourse?: unknown,
+  lifeStageCourses?: unknown,
 ): Promise<MatchRun> {
   const exchange: JevExchange = {};
   const started = Date.now();
@@ -225,9 +288,10 @@ export async function runMatch(
     // Only known course ids are honoured; anything else in `exclude` is ignored.
     const excludeIds = Array.isArray(exclude) ? MATCHABLE.map((c) => c.id).filter((id) => exclude.includes(id)) : [];
     const aodId = typeof aodCourse === "string" && AOD_COURSE_IDS.includes(aodCourse) ? aodCourse : undefined;
-    const lifeStageId =
-      typeof lifeStageCourse === "string" && LIFE_STAGE_COURSE_IDS.includes(lifeStageCourse) ? lifeStageCourse : undefined;
-    const body = await matchCourses(text, exchange, excludeIds, aodId, lifeStageId);
+    const lifeStageIds = Array.isArray(lifeStageCourses)
+      ? LIFE_STAGE_COURSE_IDS.filter((id) => lifeStageCourses.includes(id))
+      : [];
+    const body = await matchCourses(text, exchange, excludeIds, aodId, lifeStageIds);
     return { status: 200, body, exchange, durationMs: Date.now() - started };
   } catch (err) {
     const { status, message, log } = describeError(err);
@@ -236,8 +300,8 @@ export async function runMatch(
 }
 
 /**
- * Hybrid and Multiple choice only: scores typed text for risk to the writer (decides whether to ask the risk question) and to
- * someone they're supporting (goes straight to the services panel). Sends just those two questions.
+ * Hybrid only: scores typed text to decide whether to ask the risk question (self-harm, or a mention of low mood,
+ * alcohol and drugs or a new baby), and whether someone they're supporting may be at risk.
  */
 export async function runRiskCheck(text: unknown): Promise<MatchRun<RiskCheckResponse>> {
   const exchange: JevExchange = {};
@@ -250,7 +314,14 @@ export async function runRiskCheck(text: unknown): Promise<MatchRun<RiskCheckRes
     exchange.request = {
       state,
       model: CONFIG.model,
-      questions: { self_harm: SELF_HARM_QUESTION, other_at_risk: OTHER_AT_RISK_QUESTION },
+      questions: {
+        self_harm: SELF_HARM_QUESTION,
+        other_at_risk: OTHER_AT_RISK_QUESTION,
+        their_topic: THEIR_TOPIC_QUESTION,
+        low_mood: LOW_MOOD_QUESTION,
+        aod: AOD_QUESTION,
+        new_baby: NEW_BABY_QUESTION,
+      },
     };
     const jevResponse = await getClient().systemOne(exchange.request);
     exchange.response = jevResponse;
@@ -263,7 +334,12 @@ export async function runRiskCheck(text: unknown): Promise<MatchRun<RiskCheckRes
       body: {
         selfHarm: prob("self_harm"),
         otherAtRisk: prob("other_at_risk"),
+        theirTopic: prob("their_topic"),
+        lowMood: prob("low_mood"),
+        aod: prob("aod"),
+        newBaby: prob("new_baby"),
         threshold: CONFIG.thresholds.selfHarm,
+        topicThreshold: CONFIG.thresholds.topic,
         model: jevResponse.model,
         usage: { input_tokens: jevResponse.usage.input_tokens, output_tokens: jevResponse.usage.output_tokens },
       },

@@ -9,8 +9,8 @@ interface SubmitOptions {
   exclude?: string[];
   /** The AOD course the stage answer points to; always shown in the results. */
   aodCourse?: string;
-  /** The course a life-stage answer points to (Postnatal Wellbeing); always shown in the results. */
-  lifeStageCourse?: string;
+  /** The courses the life-stage answers point to (Pregnancy or Postnatal Wellbeing); always shown in the results. */
+  lifeStageCourses?: string[];
   /** Who the text describes: the user, or the person they're supporting. */
   about?: MatchAbout;
 }
@@ -23,7 +23,7 @@ export function useMatch() {
   /** The text last sent to JEV, for the debug column. */
   const [sent, setSent] = useState<string | null>(null);
 
-  async function submit(text: string, { source, answers, exclude, aodCourse, lifeStageCourse, about }: SubmitOptions) {
+  async function submit(text: string, { source, answers, exclude, aodCourse, lifeStageCourses, about }: SubmitOptions) {
     setLoading(true);
     setError(null);
     setData(null);
@@ -37,7 +37,7 @@ export function useMatch() {
           text,
           exclude,
           aodCourse,
-          lifeStageCourse,
+          lifeStageCourses,
           ...(DEBUG_ENABLED && { source, answers, about }),
         }),
       });

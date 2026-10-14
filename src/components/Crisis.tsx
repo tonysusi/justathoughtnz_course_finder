@@ -1,4 +1,5 @@
-// Wording to be confirmed by a clinical/safety lead before use beyond the internal team.
+// Crisis panel wording from the clinical lead (Oct 2026). Their draft said "you have to go through this alone";
+// "don't have to" is used here pending their confirmation.
 
 export function CrisisBanner() {
   return (
@@ -35,7 +36,8 @@ export function CrisisPanel({ variant = "risk" }: { variant?: "risk" | "unsure" 
     <section className="card crisis-panel" role="alert">
       <h2>You don't have to go through this alone</h2>
       <p>
-        If you're thinking about harming yourself, please talk to someone now. You can free call or text{" "}
+        We're sorry you're feeling this way. If you're thinking about harming yourself or ending your life, please talk
+        to someone now. You can free call or text{" "}
         <a href="tel:1737">
           <strong>1737</strong>
         </a>{" "}

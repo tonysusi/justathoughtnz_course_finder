@@ -6,7 +6,15 @@
 // for details within each chosen group.
 
 import type { StepAnswers } from "../types";
-import { TEXT_HINT, chose, riskQuestion, supportingSomeoneElse, type Option, type Question } from "../step-flow/engine";
+import {
+  TEXT_HINT,
+  chose,
+  riskQuestion,
+  supportingSomeoneElse,
+  theirRiskQuestion,
+  type Option,
+  type Question,
+} from "../step-flow/engine";
 
 // Step one: six broad groups. "Supporting someone else" is shown greyed out (coming soon); the supporting path
 // below is kept so it can be switched back on by removing `disabled`.
@@ -89,7 +97,7 @@ export const DETAILS: Record<string, Option[]> = {
   // Full-sentence summaries: these state their life stage rather than a topic.
   perinatal: [
     { id: "pregnant", label: "I'm pregnant", summary: "They are pregnant." },
-    { id: "baby", label: "I've had a baby in the last year", summary: "They have had a baby in the last year." },
+    { id: "baby", label: "I have a baby under 18 months", summary: "They have a baby under 18 months old." },
   ],
 };
 
@@ -149,6 +157,7 @@ const THEIR_CONCERNS: Option[] = [
 ];
 
 /** Own-path topics that lead to the risk question being asked. */
+/** Topics that bring up the risk question: low mood, alcohol or drug use, and a baby (below). */
 const RISK_TRIGGER_CONCERNS = ["low_mood", "aod"];
 
 export const HYBRID_QUESTIONS: Question[] = [
@@ -167,7 +176,7 @@ export const HYBRID_QUESTIONS: Question[] = [
     // Only for groups with details (not alcohol and drug, which has its own follow-up, or "Something else").
     showIf: (a) => detailOptions(a).length > 0,
     optionsFor: detailOptions,
-    // At least one detail for each chosen group, e.g. pregnant or had a baby in the last year, so the rules apply correctly.
+    // At least one detail for each chosen group, e.g. pregnant or a baby under 18 months, so the rules apply correctly.
     validate: (a) => {
       const ids = Array.isArray(a.details) ? a.details : [];
       return chosenGroups(a)
@@ -302,6 +311,13 @@ export const HYBRID_QUESTIONS: Question[] = [
     optional: true,
     maxLength: 500,
   },
+  // About the person they're supporting, when low mood or alcohol or drug use is chosen for them, or typed text
+  // mentions those or a young baby for them. Then the user's own question, if their text brings it up.
+  theirRiskQuestion((a) => RISK_TRIGGER_CONCERNS.some((id) => chose(a, "their_concerns", id))),
   // Only asked on their own path when low mood or alcohol or drug use is chosen, or typed text is flagged.
-  riskQuestion((a) => !supportingSomeoneElse(a) && RISK_TRIGGER_CONCERNS.some((id) => chose(a, "concerns", id))),
+  riskQuestion(
+    (a) =>
+      !supportingSomeoneElse(a) &&
+      (RISK_TRIGGER_CONCERNS.some((id) => chose(a, "concerns", id)) || chose(a, "details", "baby")),
+  ),
 ];

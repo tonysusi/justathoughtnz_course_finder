@@ -36,21 +36,23 @@ const COMPARISON: { angle: string; points: Record<Option, Points> }[] = [
     angle: "Safety",
     points: {
       free: {
-        pros: ["The AI checks what people write for signs of self-harm and shows crisis support."],
+        pros: [
+          "Asks a direct risk question when what people write suggests risk, or mentions low mood, alcohol and drugs or a new baby.",
+        ],
         cons: [
-          "Never asks directly about risk.",
+          "Relies on the AI to decide when to ask.",
           "If the AI service is down, only the 1737 and 111 support line is shown.",
         ],
       },
       hybrid: {
         pros: [
-          "Asks a direct risk question when answers or typed text suggest risk.",
+          "Asks a direct risk question for low mood, alcohol and drugs or a new baby, or when typed text suggests risk.",
           "Still asks if the AI check fails.",
         ],
         cons: ["People who tick other topics and type nothing are never asked."],
       },
       mc: {
-        pros: ["Asks the risk question for low mood or alcohol and drug use, without relying on AI."],
+        pros: ["Asks the risk question for low mood, alcohol and drug use or a new baby, without relying on AI."],
         cons: ["People who choose only other topics are never asked, and there's no typed text to check."],
       },
     },

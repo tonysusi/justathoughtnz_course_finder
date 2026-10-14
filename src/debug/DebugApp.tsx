@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import type { MatchResponse, MatchSource, RiskCheckResponse } from "../types";
 import type { QueryLogEntry } from "./types";
 import { Nav } from "../components/Nav";
+import { AOD_COURSE_IDS } from "../../lib/aodRule";
 import { useFx } from "./useFx";
 import { PRICING_SOURCE, costUsd, formatNzd, formatUsd, usageOf, type FxRate } from "./pricing";
 
@@ -160,12 +161,18 @@ function LogRow({
   const body = e.body;
   const ok = isMatch(body);
   const riskCheck = isRiskCheck(body) ? body : undefined;
+  // The crisis panel now follows the risk answer only; this tag shows JEV's self-harm flag.
   const crisis = ok && body.flags.selfHarm >= body.thresholds.selfHarm;
   const offTopic = ok && body.flags.offTopic >= body.thresholds.offTopic;
   const someoneElse =
     (ok && body.flags.someoneElse >= body.thresholds.someoneElse) ||
     (Array.isArray((e.answers as { concerns?: unknown })?.concerns) &&
       (e.answers as { concerns: unknown[] }).concerns.includes("someone_else"));
+  // The support boxes, on the same rules as MatchOutcome.
+  const topic = (n?: number) => ok && n !== undefined && n >= (body.thresholds.topic ?? 1);
+  const youth = topic(ok ? body.flags.under16 : undefined);
+  const loss = topic(ok ? body.flags.pregnancyLoss : undefined);
+  const aod = ok && !someoneElse && body.results.some((c) => AOD_COURSE_IDS.includes(c.id));
   const source = e.source ?? "free-text";
   const risk = (e.answers as { risk?: unknown } | undefined)?.risk;
   const riskAnswer = risk === "yes" || risk === "unsure" ? risk : undefined;
@@ -193,10 +200,13 @@ function LogRow({
         {e.kind === "risk-check" && <span className="tag tag-crisis">Risk check</span>}
         {e.about === "them" && <span className="tag">About the person they support</span>}
         {riskAnswer && <span className="tag tag-crisis">Risk answer: {riskAnswer === "yes" ? "Yes" : "Not sure"}</span>}
-        {crisis && <span className="tag tag-crisis">Crisis panel</span>}
-        {someoneElse && <span className="tag">Supporting someone</span>}
+        {crisis && <span className="tag tag-crisis">Self-harm flag</span>}
+        {youth && <span className="tag tag-youth">Youth box</span>}
+        {loss && <span className="tag tag-loss">Pregnancy loss box</span>}
+        {aod && <span className="tag tag-aod">AOD box</span>}
+        {someoneElse && <span className="tag tag-others">Supporting someone box</span>}
         {offTopic && <span className="tag">Off-topic</span>}
-        {!ok && <span className="tag tag-error">Error</span>}
+        {!ok && !riskCheck && <span className="tag tag-error">Error</span>}
         <button
           type="button"
           className="secondary small"

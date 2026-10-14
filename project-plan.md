@@ -17,13 +17,15 @@
 - [x] Hybrid option (formerly Questionnaire) alongside free text (draft questions)
 - [x] AI-assisted review of questions; non-clinical fixes applied
 - [x] Draft direct risk question added (support screen on Yes/Not sure)
-- [ ] Clinical review: risk question wording and responses, crisis wording/threshold, courses under crisis panel, age eligibility, pregnancy loss, "recently had a baby" timeframe
+- [x] Clinical review answered (14 Oct 2026): 31 questions on the risk question, crisis wording and threshold (35% kept), courses under the crisis panel, age (16+, youth box), pregnancy loss, the baby timeframe (18 months), alcohol and drugs and course matching. Applied in code.
+- [ ] Clinical lead to confirm: crisis wording ("don't have to go through this alone"; their draft said "have to"), and services for pregnancy loss (currently 1737 and their GP or midwife) and alcohol and drugs (1737, local CADS, GP)
+- [ ] Clinical lead to confirm the risk question about someone they're supporting (asked in Free text and Hybrid's supporting path when the text or answers mention their low mood, alcohol and drugs or a young baby): "Has the person you're supporting talked about ending their life or harming themselves?" Yes or Not sure highlights the at-risk services, not the crisis panel. The writer's own question is still asked after it when their own text brings it up.
 - [x] "Supporting someone else" route with other services (draft list)
 - [x] Questions about the person being supported, with "Courses to share with them"
 - [x] Step one regrouped into six groups (site course menu) with a grouped "Tell us a bit more" step; "Supporting someone else" greyed out
 - [x] Third option: Multiple choice (flat topic list, only free text is the last box)
 - [ ] Service team review of the supporting-others service list and wording
-- [ ] Clinical review: the risk question is only asked when triggered (decision 6 Oct 2026). Triggers: low mood or alcohol/drug use on the user's own path, or JEV self-harm ≥ 0.35 on any typed text (either path). The clinical review recommended asking everyone.
+- [x] Risk question triggers (clinical lead, 14 Oct 2026): low mood, alcohol and drugs or a baby under 18 months ticked, or typed text that JEV flags for self-harm (≥ 0.35) or a mention of those topics. Free text now asks it too. The crisis panel follows the answer only.
 - [ ] Cultural advisor review
 - [ ] Tune the thresholds
 - [ ] Create a repo and deploy a Vercel preview
