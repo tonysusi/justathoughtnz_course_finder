@@ -9,7 +9,7 @@ import {
 import { COURSES, type Course } from "../src/data/courses.js";
 import type { MatchError, MatchResponse, RiskCheckResponse, ScoredCourse } from "../src/types.js";
 import { AOD_COURSE_IDS, withAodCourse } from "./aodRule.js";
-import { LIFE_STAGE_COURSE_IDS, withLifeStageCourse } from "./lifeStageRule.js";
+import { LIFE_STAGE_COURSE_IDS, withLifeStageCourses } from "./lifeStageRule.js";
 
 export const CONFIG = {
   model: "jev-latest",
@@ -128,15 +128,16 @@ export interface JevExchange {
  *   prerequisite rules). They aren't sent to JEV and can't be returned.
  * @param aodCourse The AOD course the Hybrid or Multiple choice stage answer points to. It's always shown, added last
  *   if JEV didn't rank it. Without one, the top-scoring AOD course is added when the aod flag is hit.
- * @param lifeStageCourse The course a Hybrid or Multiple choice life-stage answer points to ("I've had a baby in the
- *   last year": Postnatal Wellbeing). Always shown, added last if JEV didn't rank it.
+ * @param lifeStageCourses The courses the Hybrid or Multiple choice life-stage answers point to ("I'm pregnant":
+ *   Pregnancy Wellbeing; "I've had a baby in the last year": Postnatal Wellbeing). Always shown, added last if JEV
+ *   didn't rank them.
  */
 export async function matchCourses(
   text: string,
   exchange: JevExchange = {},
   exclude: string[] = [],
   aodCourse?: string,
-  lifeStageCourse?: string,
+  lifeStageCourses: string[] = [],
 ): Promise<MatchResponse> {
   const state = text.trim();
   if (!state) throw new InputError("Please describe what you'd like support with.");
@@ -173,14 +174,14 @@ export async function matchCourses(
     someoneElse: prob("someone_else"),
     aod: prob("aod"),
   };
-  const results = withLifeStageCourse(
+  const results = withLifeStageCourses(
     withAodCourse(matched, all, {
       aodHit: flags.aod >= CONFIG.thresholds.aod,
       offTopicHit: flags.offTopic >= CONFIG.thresholds.offTopic,
       aodCourse,
     }),
     all,
-    lifeStageCourse,
+    lifeStageCourses,
   );
 
   return {
@@ -208,7 +209,7 @@ export async function runMatch(
   text: unknown,
   exclude?: unknown,
   aodCourse?: unknown,
-  lifeStageCourse?: unknown,
+  lifeStageCourses?: unknown,
 ): Promise<MatchRun> {
   const exchange: JevExchange = {};
   const started = Date.now();
@@ -225,9 +226,10 @@ export async function runMatch(
     // Only known course ids are honoured; anything else in `exclude` is ignored.
     const excludeIds = Array.isArray(exclude) ? MATCHABLE.map((c) => c.id).filter((id) => exclude.includes(id)) : [];
     const aodId = typeof aodCourse === "string" && AOD_COURSE_IDS.includes(aodCourse) ? aodCourse : undefined;
-    const lifeStageId =
-      typeof lifeStageCourse === "string" && LIFE_STAGE_COURSE_IDS.includes(lifeStageCourse) ? lifeStageCourse : undefined;
-    const body = await matchCourses(text, exchange, excludeIds, aodId, lifeStageId);
+    const lifeStageIds = Array.isArray(lifeStageCourses)
+      ? LIFE_STAGE_COURSE_IDS.filter((id) => lifeStageCourses.includes(id))
+      : [];
+    const body = await matchCourses(text, exchange, excludeIds, aodId, lifeStageIds);
     return { status: 200, body, exchange, durationMs: Date.now() - started };
   } catch (err) {
     const { status, message, log } = describeError(err);

@@ -48,6 +48,8 @@ function pick(answers: StepAnswers): { id: string; reason: string }[] {
         const id = d === "panic" && answers.panic_done === "yes" ? "panic_next_steps" : map[d];
         add(id, chosen.includes("not_sure") ? `${topic}: not sure` : `${topic}: ${d}`);
       }
+      // Worry and low mood ticked together: also offer Mixed Depression and Anxiety.
+      if (topic === "low_mood" && concerns.includes("worry")) add("mixed", "worry + low mood");
     } else if (topic === "sleep") {
       add("insomnia", "sleep");
     } else if (topic === "perinatal") {

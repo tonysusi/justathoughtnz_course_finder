@@ -64,7 +64,7 @@ function localApi(): Plugin {
             answers?: unknown;
             exclude?: unknown;
             aodCourse?: unknown;
-            lifeStageCourse?: unknown;
+            lifeStageCourses?: unknown;
             about?: unknown;
           };
           try {
@@ -72,7 +72,7 @@ function localApi(): Plugin {
           } catch {
             return sendJson(res, 400, { error: "Invalid request." });
           }
-          const run = await runMatch(payload.text, payload.exclude, payload.aodCourse, payload.lifeStageCourse);
+          const run = await runMatch(payload.text, payload.exclude, payload.aodCourse, payload.lifeStageCourses);
           if (run.errorLog) console.error(`[api/match] ${run.errorLog}`);
           await log.append(buildEntry(payload, run));
           return sendJson(res, run.status, run.body);

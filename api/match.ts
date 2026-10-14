@@ -8,7 +8,7 @@ export async function POST(request: Request): Promise<Response> {
     text?: unknown;
     exclude?: unknown;
     aodCourse?: unknown;
-    lifeStageCourse?: unknown;
+    lifeStageCourses?: unknown;
     source?: unknown;
     answers?: unknown;
     about?: unknown;
@@ -19,7 +19,7 @@ export async function POST(request: Request): Promise<Response> {
     return Response.json({ error: "Invalid request." }, { status: 400 });
   }
 
-  const run = await runMatch(payload.text, payload.exclude, payload.aodCourse, payload.lifeStageCourse);
+  const run = await runMatch(payload.text, payload.exclude, payload.aodCourse, payload.lifeStageCourses);
   if (run.errorLog) console.error(`[api/match] ${run.errorLog}`);
   await logRun(payload, run);
   return Response.json(run.body, { status: run.status, headers: { "Cache-Control": "no-store" } });

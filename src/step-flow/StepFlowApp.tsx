@@ -12,7 +12,7 @@ import {
   describeAnswers,
   aodCourse,
   excludedCourses,
-  lifeStageCourse,
+  lifeStageCourses,
   hasOwnConcerns,
   hasTheirConcerns,
   isAnswered,
@@ -109,7 +109,7 @@ export default function StepFlowApp({
         answers: sent,
         exclude: excludedCourses(sent),
         aodCourse: aodCourse(sent),
-        lifeStageCourse: lifeStageCourse(sent),
+        lifeStageCourses: lifeStageCourses(sent),
       });
     }
     if (hasTheirConcerns(sent)) {

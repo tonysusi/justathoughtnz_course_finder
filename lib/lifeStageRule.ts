@@ -1,21 +1,22 @@
 import type { ScoredCourse } from "../src/types.js";
 
-/** Courses a Hybrid or Multiple choice life-stage answer can require. Pregnancy Wellbeing could be added here too. */
-export const LIFE_STAGE_COURSE_IDS = ["postnatal"];
+/** Courses a Hybrid or Multiple choice life-stage answer can require. */
+export const LIFE_STAGE_COURSE_IDS = ["pregnancy", "postnatal"];
 
 /**
- * Makes sure the course a life-stage answer points to is shown: "I've had a baby in the last year" always shows
- * Postnatal Wellbeing. If JEV didn't already include it, it's added last, which can take the list one past
- * maxResults.
+ * Makes sure the courses the life-stage answers point to are shown: "I'm pregnant" always shows Pregnancy Wellbeing
+ * and "I've had a baby in the last year" always shows Postnatal Wellbeing. Any JEV didn't already include are added
+ * last, which can take the list past maxResults.
  *
  * @param all Every scored course, highest probability first.
  */
-export function withLifeStageCourse(
+export function withLifeStageCourses(
   results: ScoredCourse[],
   all: ScoredCourse[],
-  lifeStageCourse?: string,
+  lifeStageCourses: string[] = [],
 ): ScoredCourse[] {
-  const pick = all.find((c) => c.id === lifeStageCourse);
-  if (!pick || results.some((c) => c.id === pick.id)) return results;
-  return [...results, { ...pick, addedByRule: "life_stage" }];
+  const added = lifeStageCourses
+    .map((id) => all.find((c) => c.id === id))
+    .filter((c): c is ScoredCourse => !!c && !results.some((r) => r.id === c.id));
+  return [...results, ...added.map((c) => ({ ...c, addedByRule: "life_stage" as const }))];
 }
