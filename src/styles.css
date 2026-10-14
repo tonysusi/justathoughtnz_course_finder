@@ -132,7 +132,7 @@ button:disabled { opacity: 0.55; cursor: not-allowed; }
 .loss-support { background: var(--loss-bg); border: 2px solid var(--loss-border); }
 .youth-support h2, .loss-support h2 { margin-top: 0; }
 .youth-support a, .loss-support a { font-weight: 700; }
-/* "If things get worse" and the alcohol and drug line: the site's light teal, no outline, so they stand apart from
+/* The general support reminder and the alcohol and drug line: the site's light teal, no outline, so they stand apart from
    the white course cards without looking like an alert. */
 .general-support, .aod-support { background: var(--hit); border-color: transparent; }
 

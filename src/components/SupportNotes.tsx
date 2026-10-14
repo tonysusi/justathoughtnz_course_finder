@@ -35,8 +35,8 @@ export function YouthSupport() {
 export function GeneralSupport() {
   return (
     <p className="card general-support">
-      If things get worse, you can talk to your GP or a trained counsellor. Free call or text{" "}
-      <a href="tel:1737">1737</a> any time. In an emergency, call <a href="tel:111">111</a>.
+      A gentle reminder to contact your primary care clinician (GP, nurse) or free call / text{" "}
+      <a href="tel:1737">1737</a> any time for more support. In an emergency, call <a href="tel:111">111</a>.
     </p>
   );
 }
