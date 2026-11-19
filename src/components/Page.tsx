@@ -16,7 +16,11 @@ export function Page({ current, title, children }: { current: NavId; title: stri
         {children}
       </main>
       <footer className="container footer">
-        AI-assisted suggestions using TypeSafe JEV. Not clinical advice. Internal prototype for testing only.
+        {/* Only the hidden Free text and Hybrid pages (and Debug) use AI; Home now leads to Multiple choice only. */}
+        {current === "free-text" || current === "hybrid" || current === "debug"
+          ? "AI-assisted suggestions using TypeSafe JEV."
+          : "Suggestions from fixed rules. No AI is used."}{" "}
+        Not clinical advice. Internal prototype for testing only.
       </footer>
     </>
   );

@@ -19,6 +19,7 @@ import {
   supportingSomeoneElse,
   optionsOf,
   riskLevel,
+  OWN_RISK_QUESTION_IDS,
   RISK_QUESTION_IDS,
   TEXT_HINT,
   visibleAnswers,
@@ -129,7 +130,7 @@ export default function StepFlowApp({
     e.preventDefault();
     if (!isAnswered(question, answers) || loading || checking) return;
     // Support comes first: handled here in the browser, not by JEV.
-    if (question.id === "risk" && risk) {
+    if (question.id === OWN_RISK_QUESTION_IDS.at(-1) && risk) {
       setSupport(true);
       return;
     }

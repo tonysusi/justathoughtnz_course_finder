@@ -9,7 +9,7 @@ import type { StepAnswers } from "../types";
 import {
   TEXT_HINT,
   chose,
-  riskQuestion,
+  riskQuestions,
   supportingSomeoneElse,
   theirRiskQuestion,
   type Option,
@@ -315,7 +315,7 @@ export const HYBRID_QUESTIONS: Question[] = [
   // mentions those or a young baby for them. Then the user's own question, if their text brings it up.
   theirRiskQuestion((a) => RISK_TRIGGER_CONCERNS.some((id) => chose(a, "their_concerns", id))),
   // Only asked on their own path when low mood or alcohol or drug use is chosen, or typed text is flagged.
-  riskQuestion(
+  ...riskQuestions(
     (a) =>
       !supportingSomeoneElse(a) &&
       (RISK_TRIGGER_CONCERNS.some((id) => chose(a, "concerns", id)) || chose(a, "details", "baby")),

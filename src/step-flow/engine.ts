@@ -85,23 +85,33 @@ export function hasTheirConcerns(answers: StepAnswers): boolean {
  * - typed text JEV scores at or above the self-harm threshold, or a check that failed (checked by StepFlowApp,
  *   stored as the internal `text_risk` answer). It must be last in a set so all typed text comes before it.
  */
-export function riskQuestion(triggeredBy: (answers: StepAnswers) => boolean): Question {
-  return {
-    id: "risk",
-    prompt: "Lately, have you had thoughts of ending your life or harming yourself?",
+export function riskQuestions(triggeredBy: (answers: StepAnswers) => boolean): Question[] {
+  // Two questions, wording from the user (Nov 2026), both always asked together. Any Yes shows the crisis panel;
+  // "I'm not sure" or "I'd prefer not to say" shows the gentler one (riskLevel).
+  const ask = (id: string, prompt: string): Question => ({
+    id,
+    prompt,
     hint: "We ask this so we can point you to the right support.",
     kind: "single",
     showIf: (a) => triggeredBy(a) || a.text_risk === "flagged" || a.text_risk === "unknown",
     options: [
       { id: "no", label: "No" },
       { id: "yes", label: "Yes" },
-      { id: "unsure", label: "I'm not sure, or I'd rather not say" },
+      { id: "unsure", label: "I'm not sure" },
+      { id: "prefer_not", label: "I'd prefer not to say" },
     ],
-  };
+  });
+  return [
+    ask("risk_harm", "Have you recently had thoughts about hurting yourself?"),
+    ask("risk_life", "Have you recently had thoughts about ending your life or not wanting to be alive?"),
+  ];
 }
 
+/** The writer's own risk questions, in order. Support is shown after the last one. */
+export const OWN_RISK_QUESTION_IDS = ["risk_harm", "risk_life"];
+
 /** Ids of the risk questions, which come after all typed text: about the person they support, then about them. */
-export const RISK_QUESTION_IDS = ["risk_them", "risk"];
+export const RISK_QUESTION_IDS = ["risk_them", ...OWN_RISK_QUESTION_IDS];
 
 /**
  * DRAFT, for clinical sign-off. The risk question about someone they're supporting (Hybrid's supporting path, and
@@ -219,9 +229,15 @@ export function describeAnswers(answers: StepAnswers, set: Question[]): { prompt
 
 export type RiskLevel = "yes" | "unsure";
 
-/** The risk answer if it calls for support to be shown; undefined for "No" or not yet answered. */
+/**
+ * The risk answers if they call for support to be shown: "yes" if either question is Yes, "unsure" if either is
+ * "I'm not sure" or "I'd prefer not to say"; undefined for No to both, or not yet answered.
+ */
 export function riskLevel(answers: StepAnswers): RiskLevel | undefined {
-  return answers.risk === "yes" || answers.risk === "unsure" ? answers.risk : undefined;
+  const given = OWN_RISK_QUESTION_IDS.map((id) => answers[id]);
+  if (given.includes("yes")) return "yes";
+  if (given.includes("unsure") || given.includes("prefer_not")) return "unsure";
+  return undefined;
 }
 
 // The AOD stage answer settles which alcohol and drug course to show; lib/match.ts always includes it.

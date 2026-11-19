@@ -4,8 +4,11 @@
 // Merged topics, then a short follow-up step for each topic chosen (one per topic, unlike Hybrid's single
 // grouped details step), then only the other follow-ups that apply. No free text: courses come from fixed rules
 // (rules.ts), with no AI. Option wording is shared with Hybrid (DETAILS).
+//
+// Follow-up prompts are first-person sentence starters that the options complete, e.g. "I'm experiencing… Feeling
+// down" (Nov 2026). Step one and the risk questions are asked as questions (engine.ts has the risk wording).
 
-import { chose, riskQuestion, type Option, type Question } from "../step-flow/engine";
+import { chose, riskQuestions, type Option, type Question } from "../step-flow/engine";
 import { DETAILS } from "../hybrid/questions";
 
 /** Detail options by id, from Hybrid's DETAILS so wording and summaries match. */
@@ -19,18 +22,18 @@ const detail = (id: string): Option => {
 
 const NOT_SURE: Option = { id: "not_sure", label: "I'm not sure" };
 
-// Step one: merged topics. Those with details get their own follow-up step below.
+// Step one: merged topics, as first-person statements (Nov 2026; draft wording to review). Those with details get their own follow-up step below.
 const TOPICS: Option[] = [
-  { id: "worry", label: "Worry or feeling anxious", summary: "worry or feeling anxious" },
-  { id: "low_mood", label: "Low mood", summary: "low mood" },
-  { id: "sleep", label: "Trouble sleeping", summary: "trouble getting to sleep or staying asleep" },
-  { id: "coping", label: "Coping and wellbeing", summary: "coping skills and wellbeing" },
+  { id: "worry", label: "I worry or feel anxious", summary: "worry or feeling anxious" },
+  { id: "low_mood", label: "I feel low or down", summary: "low mood" },
+  { id: "sleep", label: "I have trouble sleeping", summary: "trouble getting to sleep or staying asleep" },
+  { id: "coping", label: "I'd like to cope better and improve my wellbeing", summary: "coping skills and wellbeing" },
   {
     id: "perinatal",
-    label: "Pregnancy or a baby under 18 months",
+    label: "I'm pregnant or have a baby under 18 months",
     summary: "their mental wellbeing during pregnancy or after having a baby",
   },
-  { id: "aod", label: "Alcohol or drug use", summary: "their alcohol or drug use" },
+  { id: "aod", label: "I'm thinking about my alcohol or drug use", summary: "their alcohol or drug use" },
 ];
 
 /** Topics that lead to the risk question: low mood or alcohol or drug use (and a baby under 18 months, below). */
@@ -50,27 +53,68 @@ const followUp = (topic: string, prompt: string, optionIds: string[], summaryPre
 export const MULTIPLE_CHOICE_QUESTIONS: Question[] = [
   {
     id: "concerns",
-    prompt: "What would you like help with?",
+    prompt: "What would you like some help with?",
     hint: "Choose any that apply.",
     kind: "multi",
     options: TOPICS,
   },
   followUp(
     "worry",
-    "What kind of worry or anxiety?",
+    "My worry or anxiety includes…",
     ["worry", "panic", "social", "health", "stress", "ocd"],
     "Their worry or anxiety involves",
   ),
-  followUp("low_mood", "What's your low mood like?", ["down", "mixed"], "Their low mood involves"),
-  followUp(
-    "coping",
-    "What would you like help with for coping and wellbeing?",
-    ["coping", "mindfulness"],
-    "For coping and wellbeing, they would like",
-  ),
+  // Multiple choice's own low mood options (Nov 2026), not Hybrid's DETAILS. Courses: rules.ts.
+  {
+    id: "low_mood_detail",
+    prompt: "What best describes how you are feeling?",
+    hint: "Choose any that apply.",
+    kind: "multi",
+    showIf: (a) => chose(a, "concerns", "low_mood"),
+    options: [
+      { id: "sad", label: "I have been feeling sad, down or flat", summary: "feeling sad, down or flat" },
+      { id: "interest", label: "I've lost interest in things I usually enjoy", summary: "losing interest in things" },
+      { id: "mixed", label: "I feel low as well as worried or anxious", summary: "low mood together with worry or anxiety" },
+      {
+        id: "drained",
+        label: "I feel emotionally drained or just not myself",
+        summary: "feeling emotionally drained or not themselves",
+      },
+      NOT_SURE,
+    ],
+    summaryPrefix: "Their low mood involves",
+  },
+  // Multiple choice's own wellbeing options (Nov 2026), not Hybrid's DETAILS. Courses: rules.ts.
+  {
+    id: "coping_detail",
+    prompt: "What would help you feel better in yourself?",
+    hint: "Choose any that apply.",
+    kind: "multi",
+    showIf: (a) => chose(a, "concerns", "coping"),
+    options: [
+      {
+        id: "cope",
+        label: "I want to find better ways to cope when things get tough",
+        summary: "better ways to cope when things get tough",
+      },
+      { id: "calmer", label: "I want to feel calmer and less overwhelmed", summary: "feeling calmer and less overwhelmed" },
+      {
+        id: "present",
+        label: "I want to be more present and enjoy the moment",
+        summary: "being more present and enjoying the moment (mindfulness)",
+      },
+      {
+        id: "skills",
+        label: "I want to build everyday skills to support my wellbeing",
+        summary: "everyday skills to support their wellbeing",
+      },
+      NOT_SURE,
+    ],
+    summaryPrefix: "For coping and wellbeing, they would like",
+  },
   {
     id: "life_stage",
-    prompt: "Which of these is true for you?",
+    prompt: "Right now…",
     kind: "single",
     showIf: (a) => chose(a, "concerns", "perinatal"),
     options: [
@@ -80,22 +124,22 @@ export const MULTIPLE_CHOICE_QUESTIONS: Question[] = [
   },
   {
     id: "panic_done",
-    prompt: "Have you finished the Overcoming Panic course?",
+    prompt: "With the Overcoming Panic course, I…",
     kind: "single",
     showIf: (a) => chose(a, "concerns", "worry") && chose(a, "worry_detail", "panic"),
     options: [
-      { id: "yes", label: "Yes", summary: "They have finished the Overcoming Panic course." },
+      { id: "yes", label: "Finished it", summary: "They have finished the Overcoming Panic course." },
       {
         id: "started",
-        label: "I started it but didn't finish",
+        label: "Started it but didn't finish",
         summary: "They started the Overcoming Panic course but did not finish it.",
       },
-      { id: "no", label: "No", summary: "They have not done the Overcoming Panic course." },
+      { id: "no", label: "Haven't done it", summary: "They have not done the Overcoming Panic course." },
     ],
   },
   {
     id: "aod_stage",
-    prompt: "Which best describes where you are with alcohol or drug use?",
+    prompt: "With my alcohol or drug use…",
     kind: "single",
     showIf: (a) => chose(a, "concerns", "aod"),
     options: [
@@ -116,5 +160,5 @@ export const MULTIPLE_CHOICE_QUESTIONS: Question[] = [
       },
     ],
   },
-  riskQuestion((a) => RISK_TRIGGER_TOPICS.some((id) => chose(a, "concerns", id)) || a.life_stage === "baby"),
+  ...riskQuestions((a) => RISK_TRIGGER_TOPICS.some((id) => chose(a, "concerns", id)) || a.life_stage === "baby"),
 ];

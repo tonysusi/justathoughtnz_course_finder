@@ -2,11 +2,10 @@ import { DEBUG_ENABLED } from "../debugFlag";
 export type NavId = "home" | "free-text" | "hybrid" | "multiple-choice" | "debug";
 
 // Debug only exists locally and in builds with VITE_DEBUG (debug.html isn't built otherwise), so it's hidden elsewhere.
+// Free text and Hybrid are hidden from the UI (Nov 2026) but still built, so they're reachable by URL and on Debug.
 const LINKS: { id: NavId; label: string; href: string }[] = [
   { id: "home", label: "Home", href: "/" },
-  { id: "free-text", label: "Free text", href: "/free-text.html" },
-  { id: "multiple-choice", label: "Multiple choice", href: "/multiple-choice.html" },
-  { id: "hybrid", label: "Hybrid", href: "/hybrid.html" },
+  { id: "multiple-choice", label: "Find a course", href: "/multiple-choice.html" },
   ...(DEBUG_ENABLED ? [{ id: "debug" as const, label: "Debug", href: "/debug.html" }] : []),
 ];
 

@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Page } from "../components/Page";
 import { QuestionForm } from "../components/QuestionForm";
 import { MatchOutcome } from "../components/MatchOutcome";
-import { RISK_QUESTION, RiskQuestionCard, THEIR_RISK_QUESTION } from "../components/RiskQuestionCard";
+import { RISK_QUESTIONS, RiskQuestionCard, THEIR_RISK_QUESTION } from "../components/RiskQuestionCard";
+import { riskLevel } from "../step-flow/engine";
 import { useMatch } from "../useMatch";
 import type { MatchResponse } from "../types";
 
@@ -39,10 +40,11 @@ export default function FreeTextApp() {
   const { loading, error, data, sent, submit } = useMatch();
   /** The risk questions' answers for the current results; null until answered (or if they aren't asked). */
   const [theirAnswer, setTheirAnswer] = useState<string | null>(null);
-  const [riskAnswer, setRiskAnswer] = useState<string | null>(null);
-  // Both can be asked: about the person they're supporting first, then about the writer.
+  const [riskAnswers, setRiskAnswers] = useState<Record<string, string>>({});
+  // Both can be asked: about the person they're supporting first, then the writer's own two questions.
   const askTheirs = !!data && asksTheirRiskQuestion(data) && theirAnswer === null;
-  const askRisk = !askTheirs && !!data && asksRiskQuestion(data) && riskAnswer === null;
+  const nextRisk = RISK_QUESTIONS.find((q) => !(q.id in riskAnswers));
+  const askRisk = !askTheirs && !!data && asksRiskQuestion(data) ? nextRisk : undefined;
 
   return (
     <Page current="free-text" title="Find a course">
@@ -50,20 +52,24 @@ export default function FreeTextApp() {
         loading={loading}
         onSubmit={(text) => {
           setTheirAnswer(null);
-          setRiskAnswer(null);
+          setRiskAnswers({});
           submit(text, { source: "free-text" });
         }}
       />
       {askTheirs ? (
         <RiskQuestionCard key="them" question={THEIR_RISK_QUESTION} onAnswer={setTheirAnswer} />
       ) : askRisk ? (
-        <RiskQuestionCard key="self" question={RISK_QUESTION} onAnswer={setRiskAnswer} />
+        <RiskQuestionCard
+          key={askRisk.id}
+          question={askRisk}
+          onAnswer={(answer) => setRiskAnswers((prev) => ({ ...prev, [askRisk.id]: answer }))}
+        />
       ) : (
         <MatchOutcome
           error={error}
           data={data}
           source="free-text"
-          risk={riskAnswer === "yes" || riskAnswer === "unsure" ? riskAnswer : undefined}
+          risk={riskLevel(riskAnswers)}
           othersUrgent={!!data && (theirRiskFlagged(data) || isRisk(theirAnswer))}
           debug={{ sent }}
         />
