@@ -2,7 +2,6 @@
 // DRAFT mapping, alongside the questions: needs clinical review before use beyond the internal team.
 
 import { COURSES } from "../data/courses";
-import { aodCourse } from "../step-flow/engine";
 import type { MatchResponse, ScoredCourse, StepAnswers } from "../types";
 import { MULTIPLE_CHOICE_QUESTIONS } from "./questions";
 import { applyClinicalRules } from "../../lib/clinicalRules";
@@ -25,6 +24,15 @@ const DETAIL_COURSES: Record<string, Record<string, string | string[]>> = {
     present: "mindfulness",
     skills: "staying_on_track",
   },
+};
+
+/** Alcohol and other drug stage → course(s), Multiple choice only (Nov 2026). "Thinking" offers two. */
+const AOD_STAGE_COURSES: Record<string, string[]> = {
+  unsure: ["thinking_about_change"],
+  thinking: ["thinking_about_change", "taking_action"],
+  ready: ["taking_action"],
+  relapse: ["getting_back_on_track"],
+  building: ["getting_back_on_track"],
 };
 
 /** Step-one topics, in the order they're listed. */
@@ -64,7 +72,8 @@ function pick(answers: StepAnswers): { id: string; reason: string }[] {
       if (answers.life_stage === "pregnant") add("pregnancy", "perinatal: pregnant");
       if (answers.life_stage === "baby") add("postnatal", "perinatal: baby");
     } else if (topic === "aod") {
-      add(aodCourse(answers), `aod: ${answers.aod_stage}`);
+      const stage = typeof answers.aod_stage === "string" ? answers.aod_stage : "";
+      for (const id of AOD_STAGE_COURSES[stage] ?? []) add(id, `aod: ${stage}`);
     }
   }
   return out;

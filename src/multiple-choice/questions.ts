@@ -39,14 +39,19 @@ const TOPICS: Option[] = [
 /** Topics that lead to the risk question: low mood or alcohol or drug use (and a baby under 18 months, below). */
 const RISK_TRIGGER_TOPICS = ["low_mood", "aod"];
 
-/** A follow-up asking for more detail about one topic from step one. */
-const followUp = (topic: string, prompt: string, optionIds: string[], summaryPrefix: string): Question => ({
+/** A follow-up asking for more detail about one topic from step one: DETAILS options by id, with new labels. */
+const followUp = (
+  topic: string,
+  prompt: string,
+  options: [id: string, label: string][],
+  summaryPrefix: string,
+): Question => ({
   id: `${topic}_detail`,
   prompt,
   hint: "Choose any that apply.",
   kind: "multi",
   showIf: (a) => chose(a, "concerns", topic),
-  options: [...optionIds.map(detail), NOT_SURE],
+  options: [...options.map(([id, label]) => ({ ...detail(id), label })), NOT_SURE],
   summaryPrefix,
 });
 
@@ -60,8 +65,16 @@ export const MULTIPLE_CHOICE_QUESTIONS: Question[] = [
   },
   followUp(
     "worry",
-    "My worry or anxiety includes…",
-    ["worry", "panic", "social", "health", "stress", "ocd"],
+    "What kind of worry or anxiety?",
+    [
+      // Multiple choice's own labels (Nov 2026); summaries and ids stay from Hybrid's DETAILS.
+      ["worry", "I worry a lot"],
+      ["panic", "I experience sudden feelings of panic"],
+      ["social", "I feel anxious around other people"],
+      ["health", "I worry a lot about my health"],
+      ["stress", "I sometimes feel overwhelmed or stressed"],
+      ["ocd", "I have unwanted thoughts that are hard to stop"],
+    ],
     "Their worry or anxiety involves",
   ),
   // Multiple choice's own low mood options (Nov 2026), not Hybrid's DETAILS. Courses: rules.ts.
@@ -137,26 +150,37 @@ export const MULTIPLE_CHOICE_QUESTIONS: Question[] = [
       { id: "no", label: "Haven't done it", summary: "They have not done the Overcoming Panic course." },
     ],
   },
+  // Wording and stages from the user (Nov 2026), Multiple choice only. Courses: rules.ts.
   {
     id: "aod_stage",
-    prompt: "With my alcohol or drug use…",
+    prompt: "Where are you at with your alcohol or drug use?",
     kind: "single",
     showIf: (a) => chose(a, "concerns", "aod"),
     options: [
       {
         id: "unsure",
-        label: "I'm not sure I want or need to change",
+        label: "I'm not sure I want or need to make a change",
         summary: "They are not sure whether they want or need to change their alcohol or drug use.",
       },
       {
+        id: "thinking",
+        label: "I'm thinking about making a change",
+        summary: "They are thinking about changing their alcohol or drug use.",
+      },
+      {
         id: "ready",
-        label: "I'm curious about making changes, or already making them",
-        summary: "They are curious about changing their alcohol or drug use, or are already making changes.",
+        label: "I'm ready to make a change or already taking steps",
+        summary: "They are ready to change their alcohol or drug use, or are already taking steps.",
       },
       {
         id: "relapse",
-        label: "I made changes but I'm finding it hard to keep them up",
-        summary: "They made changes to their alcohol or drug use but are finding it hard to keep them up.",
+        label: "I've made some changes, but I'm finding it hard to keep going",
+        summary: "They have made changes to their alcohol or drug use but are finding it hard to keep going.",
+      },
+      {
+        id: "building",
+        label: "I've made changes and want to keep building on them",
+        summary: "They have made changes to their alcohol or drug use and want to keep building on them.",
       },
     ],
   },
