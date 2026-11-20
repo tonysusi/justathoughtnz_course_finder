@@ -55,6 +55,22 @@ const followUp = (
   summaryPrefix,
 });
 
+/**
+ * A page for one kind of worry or anxiety ticked on "What kind of worry or anxiety?" (Nov 2026). Every option,
+ * including "I'm not sure", leads to the same course (rules.ts maps the kind, not these answers). Skipped when
+ * "I'm not sure" was ticked there, as that already offers every anxiety course.
+ */
+const anxietyPage = (kind: string, options: [id: string, label: string, summary: string][]): Question => ({
+  id: `${kind}_more`,
+  prompt: "Which of these sound like you?",
+  hint: "Choose any that apply.",
+  kind: "multi",
+  showIf: (a) =>
+    chose(a, "concerns", "worry") && chose(a, "worry_detail", kind) && !chose(a, "worry_detail", "not_sure"),
+  options: [...options.map(([id, label, summary]) => ({ id, label, summary })), NOT_SURE],
+  summaryPrefix: "They say",
+});
+
 export const MULTIPLE_CHOICE_QUESTIONS: Question[] = [
   {
     id: "concerns",
@@ -77,6 +93,52 @@ export const MULTIPLE_CHOICE_QUESTIONS: Question[] = [
     ],
     "Their worry or anxiety involves",
   ),
+  anxietyPage("worry", [
+    ["many_things", "I worry about lots of different things", "they worry about lots of different things"],
+    ["switch_off", "I find it hard to switch off my worrying", "they find it hard to switch off their worrying"],
+    ["on_edge", "I feel anxious or on edge much of the time", "they feel anxious or on edge much of the time"],
+  ]),
+  anxietyPage("panic", [
+    ["frightened", "I suddenly feel really frightened or overwhelmed", "they suddenly feel really frightened or overwhelmed"],
+    ["physical", "My heart races or I struggle to catch my breath", "their heart races or they struggle to catch their breath"],
+    ["another", "I'm worried about having another panic attack", "they are worried about having another panic attack"],
+  ]),
+  anxietyPage("social", [
+    ["think_of_me", "I worry about what other people think of me", "they worry about what other people think of them"],
+    ["nervous", "I feel nervous in social situations", "they feel nervous in social situations"],
+    [
+      "judged",
+      "I worry about being judged, embarrassed or making mistakes",
+      "they worry about being judged, embarrassed or making mistakes",
+    ],
+  ]),
+  anxietyPage("health", [
+    [
+      "something_wrong",
+      "I worry that something might be wrong with my health",
+      "they worry that something might be wrong with their health",
+    ],
+    ["check_body", "I often check my body for signs of illness", "they often check their body for signs of illness"],
+    [
+      "reassurance",
+      "I search for symptoms or need reassurance that I'm OK",
+      "they search for symptoms or need reassurance that they are OK",
+    ],
+  ]),
+  anxietyPage("stress", [
+    ["pressure", "I feel under pressure or unable to cope", "they feel under pressure or unable to cope"],
+    ["too_much", "Everyday things feel like too much", "everyday things feel like too much"],
+    ["manage", "I struggle to manage stress", "they struggle to manage stress"],
+  ]),
+  anxietyPage("ocd", [
+    ["images", "I have thoughts or images that upset or frighten me", "they have thoughts or images that upset or frighten them"],
+    ["going_over", "I keep going over things in my mind", "they keep going over things in their mind"],
+    [
+      "check_repeat",
+      "I feel I need to check, repeat or do certain things to feel OK",
+      "they feel they need to check, repeat or do certain things to feel OK",
+    ],
+  ]),
   // Multiple choice's own low mood options (Nov 2026), not Hybrid's DETAILS. Courses: rules.ts.
   {
     id: "low_mood_detail",

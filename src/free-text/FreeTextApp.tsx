@@ -43,7 +43,8 @@ export default function FreeTextApp() {
   const [riskAnswers, setRiskAnswers] = useState<Record<string, string>>({});
   // Both can be asked: about the person they're supporting first, then the writer's own two questions.
   const askTheirs = !!data && asksTheirRiskQuestion(data) && theirAnswer === null;
-  const nextRisk = RISK_QUESTIONS.find((q) => !(q.id in riskAnswers));
+  // The second is skipped after No to the first (its showIf).
+  const nextRisk = RISK_QUESTIONS.find((q) => !(q.id in riskAnswers) && (q.showIf?.(riskAnswers) ?? true));
   const askRisk = !askTheirs && !!data && asksRiskQuestion(data) ? nextRisk : undefined;
 
   return (

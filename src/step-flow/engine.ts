@@ -86,14 +86,15 @@ export function hasTheirConcerns(answers: StepAnswers): boolean {
  *   stored as the internal `text_risk` answer). It must be last in a set so all typed text comes before it.
  */
 export function riskQuestions(triggeredBy: (answers: StepAnswers) => boolean): Question[] {
-  // Two questions, wording from the user (Nov 2026), both always asked together. Any Yes shows the crisis panel;
-  // "I'm not sure" or "I'd prefer not to say" shows the gentler one (riskLevel).
-  const ask = (id: string, prompt: string): Question => ({
+  // Two questions, wording from the user (Nov 2026). The second is skipped after No to the first (user's decision,
+  // Nov 2026; for clinical sign-off). Any Yes shows the crisis panel; "I'm not sure" or "I'd prefer not to say" shows
+  // the gentler one (riskLevel).
+  const ask = (id: string, prompt: string, alsoIf: (a: StepAnswers) => boolean = () => true): Question => ({
     id,
     prompt,
     hint: "We ask this so we can point you to the right support.",
     kind: "single",
-    showIf: (a) => triggeredBy(a) || a.text_risk === "flagged" || a.text_risk === "unknown",
+    showIf: (a) => (triggeredBy(a) || a.text_risk === "flagged" || a.text_risk === "unknown") && alsoIf(a),
     options: [
       { id: "no", label: "No" },
       { id: "yes", label: "Yes" },
@@ -103,11 +104,15 @@ export function riskQuestions(triggeredBy: (answers: StepAnswers) => boolean): Q
   });
   return [
     ask("risk_harm", "Have you recently had thoughts about hurting yourself?"),
-    ask("risk_life", "Have you recently had thoughts about ending your life or not wanting to be alive?"),
+    ask(
+      "risk_life",
+      "Have you recently had thoughts about ending your life or not wanting to be alive?",
+      (a) => a.risk_harm !== undefined && a.risk_harm !== "no",
+    ),
   ];
 }
 
-/** The writer's own risk questions, in order. Support is shown after the last one. */
+/** The writer's own risk questions, in order. Support is shown after the last one (only asked after a Yes or unsure). */
 export const OWN_RISK_QUESTION_IDS = ["risk_harm", "risk_life"];
 
 /** Ids of the risk questions, which come after all typed text: about the person they support, then about them. */
