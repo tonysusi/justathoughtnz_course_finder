@@ -87,10 +87,10 @@ export default function StepFlowApp({
   // Their text says the person they support may be at risk, or the risk question about them was answered Yes or
   // Not sure. From visible answers, as for `risk`.
   const theirAnswer = visibleAnswers(answers, set).risk_them;
-  // Their first risk question was asked and answered No (so the second is skipped): the results page leaves out the
-  // top support banner (Nov 2026). The 1737 and 111 reminder under the courses still shows.
+  // Both of their risk questions were asked and answered No: the results page leaves out the top support banner
+  // (24 Nov 2026). The 1737 and 111 reminder under the courses still shows.
   const visibleNow = visibleAnswers(answers, set);
-  const saidNoToRisk = visibleNow[OWN_RISK_QUESTION_IDS[0]] === "no";
+  const saidNoToRisk = OWN_RISK_QUESTION_IDS.every((id) => visibleNow[id] === "no");
   const theirRiskFlagged =
     supporting &&
     ((answers.their_risk === "flagged" && answers.text_risk_for === text) ||
