@@ -1,0 +1,8047 @@
+[
+  {
+    "id": "GA-01",
+    "course": "generalised_anxiety",
+    "courseName": "Generalised Anxiety",
+    "age": "30s",
+    "profile": "Worries constantly about work, family and money.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "worry"
+      ]
+    },
+    "courses": [
+      "generalised_anxiety"
+    ],
+    "courseNames": [
+      "Generalised Anxiety"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "GA-02",
+    "course": "generalised_anxiety",
+    "courseName": "Generalised Anxiety",
+    "age": "40s",
+    "profile": "On edge most days and can't switch off at night, so sleep is poor.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry",
+        "sleep"
+      ],
+      "worry_detail": [
+        "worry"
+      ]
+    },
+    "courses": [
+      "generalised_anxiety",
+      "insomnia",
+      "depression"
+    ],
+    "courseNames": [
+      "Generalised Anxiety",
+      "Managing Insomnia",
+      "Depression"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "GA-03",
+    "course": "generalised_anxiety",
+    "courseName": "Generalised Anxiety",
+    "age": "20s",
+    "profile": "University student who worries about everything and feels pressure from exams.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "worry",
+        "stress"
+      ]
+    },
+    "courses": [
+      "generalised_anxiety",
+      "stress"
+    ],
+    "courseNames": [
+      "Generalised Anxiety",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "GA-04",
+    "course": "generalised_anxiety",
+    "courseName": "Generalised Anxiety",
+    "age": "50s",
+    "profile": "Persistent worry; their worrying thoughts race and feel hard to stop.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "worry",
+        "ocd"
+      ]
+    },
+    "courses": [
+      "generalised_anxiety",
+      "ocd",
+      "stress"
+    ],
+    "courseNames": [
+      "Generalised Anxiety",
+      "Obsessive Compulsive Disorder",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "GA-05",
+    "course": "generalised_anxiety",
+    "courseName": "Generalised Anxiety",
+    "age": "60s",
+    "profile": "Recently retired, worries about adult children and feels a bit flat.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "low_mood_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "worry",
+        "low_mood"
+      ],
+      "worry_detail": [
+        "worry"
+      ],
+      "low_mood_detail": [
+        "mixed"
+      ],
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "generalised_anxiety",
+      "mixed"
+    ],
+    "courseNames": [
+      "Generalised Anxiety",
+      "Mixed Depression and Anxiety"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Mixed Depression and Anxiety"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "GA-06",
+    "course": "generalised_anxiety",
+    "courseName": "Generalised Anxiety",
+    "age": "16–17",
+    "profile": "Secondary school student, tense about school, friends and the future.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "worry",
+        "social"
+      ]
+    },
+    "courses": [
+      "generalised_anxiety",
+      "social_anxiety"
+    ],
+    "courseNames": [
+      "Generalised Anxiety",
+      "Social Anxiety"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "GA-07",
+    "course": "generalised_anxiety",
+    "courseName": "Generalised Anxiety",
+    "age": "30s",
+    "profile": "Parent who worries all the time but can't say what kind of worry it is.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "not_sure"
+      ]
+    },
+    "courses": [
+      "generalised_anxiety",
+      "panic",
+      "social_anxiety",
+      "health_anxiety",
+      "stress",
+      "ocd"
+    ],
+    "courseNames": [
+      "Generalised Anxiety",
+      "Overcoming Panic",
+      "Social Anxiety",
+      "Health Anxiety",
+      "Coping with Stress",
+      "Obsessive Compulsive Disorder"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 6,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "GA-08",
+    "course": "generalised_anxiety",
+    "courseName": "Generalised Anxiety",
+    "age": "40s",
+    "profile": "Worry wears them down and leaves them feeling low.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "low_mood_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "worry",
+        "low_mood"
+      ],
+      "worry_detail": [
+        "worry"
+      ],
+      "low_mood_detail": [
+        "mixed"
+      ],
+      "risk_harm": "unsure",
+      "risk_life": "no"
+    },
+    "courses": [
+      "generalised_anxiety",
+      "mixed"
+    ],
+    "courseNames": [
+      "Generalised Anxiety",
+      "Mixed Depression and Anxiety"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "unsure",
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "It's okay not to be sure",
+      "tealReminder": false,
+      "aodBox": false,
+      "nzslLinks": [
+        "Mixed Depression and Anxiety"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "GA-09",
+    "course": "generalised_anxiety",
+    "courseName": "Generalised Anxiety",
+    "age": "20s",
+    "profile": "Always tense and wants to feel calmer.",
+    "steps": 3,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "coping_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry",
+        "coping"
+      ],
+      "worry_detail": [
+        "worry"
+      ],
+      "coping_detail": [
+        "calmer"
+      ]
+    },
+    "courses": [
+      "generalised_anxiety",
+      "stress",
+      "mindfulness"
+    ],
+    "courseNames": [
+      "Generalised Anxiety",
+      "Coping with Stress",
+      "Just a Pause – Intro to Mindfulness"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "GA-10",
+    "course": "generalised_anxiety",
+    "courseName": "Generalised Anxiety",
+    "age": "70s",
+    "profile": "Worries about health, money and family, and feels on edge.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "worry"
+      ]
+    },
+    "courses": [
+      "generalised_anxiety"
+    ],
+    "courseNames": [
+      "Generalised Anxiety"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "unsure",
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": true,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "D-01",
+    "course": "depression",
+    "courseName": "Depression",
+    "age": "30s",
+    "profile": "Has felt sad and flat for several months.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "low_mood_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "low_mood"
+      ],
+      "low_mood_detail": [
+        "sad"
+      ],
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "depression"
+    ],
+    "courseNames": [
+      "Depression"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "D-02",
+    "course": "depression",
+    "courseName": "Depression",
+    "age": "40s",
+    "profile": "Has stopped enjoying hobbies and seeing friends.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "low_mood_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "low_mood"
+      ],
+      "low_mood_detail": [
+        "interest"
+      ],
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "depression"
+    ],
+    "courseNames": [
+      "Depression"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "D-03",
+    "course": "depression",
+    "courseName": "Depression",
+    "age": "20s",
+    "profile": "Sad, lost interest in things, sleeping badly.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "low_mood_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "low_mood",
+        "sleep"
+      ],
+      "low_mood_detail": [
+        "sad",
+        "interest"
+      ],
+      "risk_harm": "yes",
+      "risk_life": "yes"
+    },
+    "courses": [
+      "depression",
+      "insomnia"
+    ],
+    "courseNames": [
+      "Depression",
+      "Managing Insomnia"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "yes",
+      "yes"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "You don't have to go through this alone",
+      "tealReminder": false,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "D-04",
+    "course": "depression",
+    "courseName": "Depression",
+    "age": "50s",
+    "profile": "Emotionally drained and not themselves since losing their job.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "low_mood_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "low_mood"
+      ],
+      "low_mood_detail": [
+        "drained"
+      ],
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "depression"
+    ],
+    "courseNames": [
+      "Depression"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "D-05",
+    "course": "depression",
+    "courseName": "Depression",
+    "age": "60s",
+    "profile": "Feeling sad since their partner died last year.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "low_mood_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "low_mood"
+      ],
+      "low_mood_detail": [
+        "sad"
+      ],
+      "risk_harm": "prefer_not",
+      "risk_life": "no"
+    },
+    "courses": [
+      "depression"
+    ],
+    "courseNames": [
+      "Depression"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "prefer_not",
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "It's okay not to be sure",
+      "tealReminder": false,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "D-06",
+    "course": "depression",
+    "courseName": "Depression",
+    "age": "18–19",
+    "profile": "Feels flat and unmotivated but isn't sure how to describe it.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "low_mood_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "low_mood"
+      ],
+      "low_mood_detail": [
+        "not_sure"
+      ],
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "depression",
+      "mixed"
+    ],
+    "courseNames": [
+      "Depression",
+      "Mixed Depression and Anxiety"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Mixed Depression and Anxiety"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "D-07",
+    "course": "depression",
+    "courseName": "Depression",
+    "age": "30s",
+    "profile": "Shift worker who feels drained and can't sleep well.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "low_mood_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "low_mood",
+        "sleep"
+      ],
+      "low_mood_detail": [
+        "drained"
+      ],
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "depression",
+      "insomnia"
+    ],
+    "courseNames": [
+      "Depression",
+      "Managing Insomnia"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "D-08",
+    "course": "depression",
+    "courseName": "Depression",
+    "age": "40s",
+    "profile": "Feeling low and wants to cope better day to day.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "low_mood_detail",
+      "coping_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "low_mood",
+        "coping"
+      ],
+      "low_mood_detail": [
+        "sad"
+      ],
+      "coping_detail": [
+        "cope"
+      ],
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "depression",
+      "staying_on_track"
+    ],
+    "courseNames": [
+      "Depression",
+      "Staying on Track"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Staying on Track"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "D-09",
+    "course": "depression",
+    "courseName": "Depression",
+    "age": "70s",
+    "profile": "Lonely since moving into a smaller home and has lost interest in things.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "low_mood_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "low_mood"
+      ],
+      "low_mood_detail": [
+        "interest",
+        "drained"
+      ],
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "depression"
+    ],
+    "courseNames": [
+      "Depression"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "D-10",
+    "course": "depression",
+    "courseName": "Depression",
+    "age": "20s",
+    "profile": "Feeling low and drinking more to cope.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "low_mood_detail",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "low_mood",
+        "aod"
+      ],
+      "low_mood_detail": [
+        "sad"
+      ],
+      "aod_stage": "thinking",
+      "risk_harm": "unsure",
+      "risk_life": "unsure"
+    },
+    "courses": [
+      "depression",
+      "thinking_about_change",
+      "taking_action"
+    ],
+    "courseNames": [
+      "Depression",
+      "Thinking about Change",
+      "Taking Action"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "unsure",
+      "unsure"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "It's okay not to be sure",
+      "tealReminder": false,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "M-01",
+    "course": "mixed",
+    "courseName": "Mixed Depression and Anxiety",
+    "age": "30s",
+    "profile": "Low and anxious most days.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "low_mood_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "worry",
+        "low_mood"
+      ],
+      "worry_detail": [
+        "worry"
+      ],
+      "low_mood_detail": [
+        "mixed"
+      ],
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "generalised_anxiety",
+      "mixed"
+    ],
+    "courseNames": [
+      "Generalised Anxiety",
+      "Mixed Depression and Anxiety"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Mixed Depression and Anxiety"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "M-02",
+    "course": "mixed",
+    "courseName": "Mixed Depression and Anxiety",
+    "age": "40s",
+    "profile": "Feels low as well as worried.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "low_mood_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "low_mood"
+      ],
+      "low_mood_detail": [
+        "mixed"
+      ],
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "mixed"
+    ],
+    "courseNames": [
+      "Mixed Depression and Anxiety"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Mixed Depression and Anxiety"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "M-03",
+    "course": "mixed",
+    "courseName": "Mixed Depression and Anxiety",
+    "age": "20s",
+    "profile": "Feels down and nervous around people.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "low_mood_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "worry",
+        "low_mood"
+      ],
+      "worry_detail": [
+        "social"
+      ],
+      "low_mood_detail": [
+        "sad"
+      ],
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "social_anxiety",
+      "depression",
+      "mixed"
+    ],
+    "courseNames": [
+      "Social Anxiety",
+      "Depression",
+      "Mixed Depression and Anxiety"
+    ],
+    "matched": true,
+    "rank": 3,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Mixed Depression and Anxiety"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "M-04",
+    "course": "mixed",
+    "courseName": "Mixed Depression and Anxiety",
+    "age": "50s",
+    "profile": "Low, worried and exhausted.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "low_mood_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "low_mood"
+      ],
+      "low_mood_detail": [
+        "mixed",
+        "drained"
+      ],
+      "risk_harm": "yes",
+      "risk_life": "no"
+    },
+    "courses": [
+      "mixed",
+      "depression"
+    ],
+    "courseNames": [
+      "Mixed Depression and Anxiety",
+      "Depression"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "yes",
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "You don't have to go through this alone",
+      "tealReminder": false,
+      "aodBox": false,
+      "nzslLinks": [
+        "Mixed Depression and Anxiety"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "M-05",
+    "course": "mixed",
+    "courseName": "Mixed Depression and Anxiety",
+    "age": "30s",
+    "profile": "Everyday things feel like too much and they feel drained.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "low_mood_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "worry",
+        "low_mood"
+      ],
+      "worry_detail": [
+        "stress"
+      ],
+      "low_mood_detail": [
+        "drained"
+      ],
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "stress",
+      "depression",
+      "mixed"
+    ],
+    "courseNames": [
+      "Coping with Stress",
+      "Depression",
+      "Mixed Depression and Anxiety"
+    ],
+    "matched": true,
+    "rank": 3,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Mixed Depression and Anxiety"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "M-06",
+    "course": "mixed",
+    "courseName": "Mixed Depression and Anxiety",
+    "age": "60s",
+    "profile": "Worried about their health and feeling sad.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "low_mood_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "worry",
+        "low_mood"
+      ],
+      "worry_detail": [
+        "health"
+      ],
+      "low_mood_detail": [
+        "sad"
+      ],
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "health_anxiety",
+      "depression",
+      "mixed"
+    ],
+    "courseNames": [
+      "Health Anxiety",
+      "Depression",
+      "Mixed Depression and Anxiety"
+    ],
+    "matched": true,
+    "rank": 3,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Mixed Depression and Anxiety"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "M-07",
+    "course": "mixed",
+    "courseName": "Mixed Depression and Anxiety",
+    "age": "20s",
+    "profile": "Deaf NZSL user who feels low and on edge.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "low_mood_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "worry",
+        "low_mood"
+      ],
+      "worry_detail": [
+        "worry"
+      ],
+      "low_mood_detail": [
+        "mixed"
+      ],
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "generalised_anxiety",
+      "mixed"
+    ],
+    "courseNames": [
+      "Generalised Anxiety",
+      "Mixed Depression and Anxiety"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Mixed Depression and Anxiety"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "M-08",
+    "course": "mixed",
+    "courseName": "Mixed Depression and Anxiety",
+    "age": "40s",
+    "profile": "Knows they're struggling but not sure how to put it.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "low_mood_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "low_mood"
+      ],
+      "low_mood_detail": [
+        "not_sure"
+      ],
+      "risk_harm": "unsure",
+      "risk_life": "no"
+    },
+    "courses": [
+      "depression",
+      "mixed"
+    ],
+    "courseNames": [
+      "Depression",
+      "Mixed Depression and Anxiety"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "unsure",
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "It's okay not to be sure",
+      "tealReminder": false,
+      "aodBox": false,
+      "nzslLinks": [
+        "Mixed Depression and Anxiety"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "M-09",
+    "course": "mixed",
+    "courseName": "Mixed Depression and Anxiety",
+    "age": "30s",
+    "profile": "Anxious most days and also flat, but sees anxiety as the main problem, so only ticks that.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "worry"
+      ]
+    },
+    "courses": [
+      "generalised_anxiety"
+    ],
+    "courseNames": [
+      "Generalised Anxiety"
+    ],
+    "matched": false,
+    "rank": null,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "M-10",
+    "course": "mixed",
+    "courseName": "Mixed Depression and Anxiety",
+    "age": "50s",
+    "profile": "Low and anxious but can't say what kind of anxiety.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "low_mood_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "worry",
+        "low_mood"
+      ],
+      "worry_detail": [
+        "not_sure"
+      ],
+      "low_mood_detail": [
+        "mixed"
+      ],
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "generalised_anxiety",
+      "panic",
+      "social_anxiety",
+      "health_anxiety",
+      "stress",
+      "ocd",
+      "mixed"
+    ],
+    "courseNames": [
+      "Generalised Anxiety",
+      "Overcoming Panic",
+      "Social Anxiety",
+      "Health Anxiety",
+      "Coping with Stress",
+      "Obsessive Compulsive Disorder",
+      "Mixed Depression and Anxiety"
+    ],
+    "matched": true,
+    "rank": 7,
+    "count": 7,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Mixed Depression and Anxiety"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "S-01",
+    "course": "social_anxiety",
+    "courseName": "Social Anxiety",
+    "age": "20s",
+    "profile": "Dreads speaking up in meetings.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "social"
+      ]
+    },
+    "courses": [
+      "social_anxiety"
+    ],
+    "courseNames": [
+      "Social Anxiety"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "S-02",
+    "course": "social_anxiety",
+    "courseName": "Social Anxiety",
+    "age": "16–17",
+    "profile": "Avoids class presentations and worries what classmates think.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "social"
+      ]
+    },
+    "courses": [
+      "social_anxiety"
+    ],
+    "courseNames": [
+      "Social Anxiety"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "S-03",
+    "course": "social_anxiety",
+    "courseName": "Social Anxiety",
+    "age": "30s",
+    "profile": "Avoids parties and gatherings.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "social"
+      ]
+    },
+    "courses": [
+      "social_anxiety"
+    ],
+    "courseNames": [
+      "Social Anxiety"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "S-04",
+    "course": "social_anxiety",
+    "courseName": "Social Anxiety",
+    "age": "40s",
+    "profile": "Worries what others think of them and feels low about it.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "low_mood_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "worry",
+        "low_mood"
+      ],
+      "worry_detail": [
+        "social"
+      ],
+      "low_mood_detail": [
+        "sad"
+      ],
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "social_anxiety",
+      "depression",
+      "mixed"
+    ],
+    "courseNames": [
+      "Social Anxiety",
+      "Depression",
+      "Mixed Depression and Anxiety"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Mixed Depression and Anxiety"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "S-05",
+    "course": "social_anxiety",
+    "courseName": "Social Anxiety",
+    "age": "20s",
+    "profile": "Gets panicky in social situations.",
+    "steps": 3,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "panic_done"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "social",
+        "panic"
+      ],
+      "panic_done": "no"
+    },
+    "courses": [
+      "social_anxiety",
+      "panic",
+      "stress"
+    ],
+    "courseNames": [
+      "Social Anxiety",
+      "Overcoming Panic",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "S-06",
+    "course": "social_anxiety",
+    "courseName": "Social Anxiety",
+    "age": "30s",
+    "profile": "New to town and too anxious to meet people.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "social"
+      ]
+    },
+    "courses": [
+      "social_anxiety"
+    ],
+    "courseNames": [
+      "Social Anxiety"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "S-07",
+    "course": "social_anxiety",
+    "courseName": "Social Anxiety",
+    "age": "50s",
+    "profile": "Fears being judged and replays conversations at night.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "social",
+        "worry"
+      ]
+    },
+    "courses": [
+      "social_anxiety",
+      "generalised_anxiety"
+    ],
+    "courseNames": [
+      "Social Anxiety",
+      "Generalised Anxiety"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "S-08",
+    "course": "social_anxiety",
+    "courseName": "Social Anxiety",
+    "age": "20s",
+    "profile": "Goes over social events in their mind for days afterwards.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "social",
+        "ocd"
+      ]
+    },
+    "courses": [
+      "social_anxiety",
+      "ocd",
+      "stress"
+    ],
+    "courseNames": [
+      "Social Anxiety",
+      "Obsessive Compulsive Disorder",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "S-09",
+    "course": "social_anxiety",
+    "courseName": "Social Anxiety",
+    "age": "15",
+    "profile": "Under 16; nervous at school and with friends.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "social"
+      ]
+    },
+    "courses": [
+      "social_anxiety"
+    ],
+    "courseNames": [
+      "Social Anxiety"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "S-10",
+    "course": "social_anxiety",
+    "courseName": "Social Anxiety",
+    "age": "30s",
+    "profile": "Anxious, but unsure what kind of anxiety it is.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "not_sure"
+      ]
+    },
+    "courses": [
+      "generalised_anxiety",
+      "panic",
+      "social_anxiety",
+      "health_anxiety",
+      "stress",
+      "ocd"
+    ],
+    "courseNames": [
+      "Generalised Anxiety",
+      "Overcoming Panic",
+      "Social Anxiety",
+      "Health Anxiety",
+      "Coping with Stress",
+      "Obsessive Compulsive Disorder"
+    ],
+    "matched": true,
+    "rank": 3,
+    "count": 6,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "P-01",
+    "course": "panic",
+    "courseName": "Overcoming Panic",
+    "age": "20s",
+    "profile": "Started having panic attacks recently.",
+    "steps": 3,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "panic_done"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "panic"
+      ],
+      "panic_done": "no"
+    },
+    "courses": [
+      "panic",
+      "stress"
+    ],
+    "courseNames": [
+      "Overcoming Panic",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "P-02",
+    "course": "panic",
+    "courseName": "Overcoming Panic",
+    "age": "30s",
+    "profile": "Afraid of another attack, so avoids the supermarket.",
+    "steps": 3,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "panic_done"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "panic"
+      ],
+      "panic_done": "no"
+    },
+    "courses": [
+      "panic",
+      "stress"
+    ],
+    "courseNames": [
+      "Overcoming Panic",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "P-03",
+    "course": "panic",
+    "courseName": "Overcoming Panic",
+    "age": "40s",
+    "profile": "Heart races during attacks; went to ED thinking it was a heart attack.",
+    "steps": 3,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "panic_done"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "panic",
+        "health"
+      ],
+      "panic_done": "no"
+    },
+    "courses": [
+      "panic",
+      "health_anxiety",
+      "stress"
+    ],
+    "courseNames": [
+      "Overcoming Panic",
+      "Health Anxiety",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "P-04",
+    "course": "panic",
+    "courseName": "Overcoming Panic",
+    "age": "50s",
+    "profile": "Started Overcoming Panic but didn't finish it.",
+    "steps": 3,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "panic_done"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "panic"
+      ],
+      "panic_done": "started"
+    },
+    "courses": [
+      "panic",
+      "stress"
+    ],
+    "courseNames": [
+      "Overcoming Panic",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "P-05",
+    "course": "panic",
+    "courseName": "Overcoming Panic",
+    "age": "20s",
+    "profile": "Sudden fear and feels low and worried.",
+    "steps": 6,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "low_mood_detail",
+      "panic_done",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "worry",
+        "low_mood"
+      ],
+      "worry_detail": [
+        "panic"
+      ],
+      "low_mood_detail": [
+        "mixed"
+      ],
+      "panic_done": "no",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "panic",
+      "mixed",
+      "stress"
+    ],
+    "courseNames": [
+      "Overcoming Panic",
+      "Mixed Depression and Anxiety",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Mixed Depression and Anxiety"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "P-06",
+    "course": "panic",
+    "courseName": "Overcoming Panic",
+    "age": "30s",
+    "profile": "Panic attacks under work pressure.",
+    "steps": 3,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "panic_done"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "panic",
+        "stress"
+      ],
+      "panic_done": "no"
+    },
+    "courses": [
+      "panic",
+      "stress"
+    ],
+    "courseNames": [
+      "Overcoming Panic",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "P-07",
+    "course": "panic",
+    "courseName": "Overcoming Panic",
+    "age": "60s",
+    "profile": "Has had a few frightening episodes and isn't sure they're panic.",
+    "steps": 3,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "panic_done"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "panic"
+      ],
+      "panic_done": "no"
+    },
+    "courses": [
+      "panic",
+      "stress"
+    ],
+    "courseNames": [
+      "Overcoming Panic",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "P-08",
+    "course": "panic",
+    "courseName": "Overcoming Panic",
+    "age": "20s",
+    "profile": "Pregnant and having panic attacks.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "life_stage",
+      "panic_done"
+    ],
+    "answers": {
+      "concerns": [
+        "worry",
+        "perinatal"
+      ],
+      "worry_detail": [
+        "panic"
+      ],
+      "life_stage": "pregnant",
+      "panic_done": "no"
+    },
+    "courses": [
+      "panic",
+      "pregnancy",
+      "stress"
+    ],
+    "courseNames": [
+      "Overcoming Panic",
+      "Pregnancy Wellbeing",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "unsure",
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": true,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "P-09",
+    "course": "panic",
+    "courseName": "Overcoming Panic",
+    "age": "40s",
+    "profile": "Struggles to breathe during attacks and fears the next one.",
+    "steps": 3,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "panic_done"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "panic"
+      ],
+      "panic_done": "no"
+    },
+    "courses": [
+      "panic",
+      "stress"
+    ],
+    "courseNames": [
+      "Overcoming Panic",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "P-10",
+    "course": "panic",
+    "courseName": "Overcoming Panic",
+    "age": "30s",
+    "profile": "Panic attacks in crowded social places.",
+    "steps": 3,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "panic_done"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "panic",
+        "social"
+      ],
+      "panic_done": "no"
+    },
+    "courses": [
+      "panic",
+      "social_anxiety",
+      "stress"
+    ],
+    "courseNames": [
+      "Overcoming Panic",
+      "Social Anxiety",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PN-01",
+    "course": "panic_next_steps",
+    "courseName": "Overcoming Panic – Next Steps",
+    "age": "30s",
+    "profile": "Finished Overcoming Panic; has had setbacks since.",
+    "steps": 3,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "panic_done"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "panic"
+      ],
+      "panic_done": "yes"
+    },
+    "courses": [
+      "panic_next_steps",
+      "stress"
+    ],
+    "courseNames": [
+      "Overcoming Panic – Next Steps",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PN-02",
+    "course": "panic_next_steps",
+    "courseName": "Overcoming Panic – Next Steps",
+    "age": "40s",
+    "profile": "Finished the course; attacks have come back.",
+    "steps": 3,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "panic_done"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "panic"
+      ],
+      "panic_done": "yes"
+    },
+    "courses": [
+      "panic_next_steps",
+      "stress"
+    ],
+    "courseNames": [
+      "Overcoming Panic – Next Steps",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PN-03",
+    "course": "panic_next_steps",
+    "courseName": "Overcoming Panic – Next Steps",
+    "age": "20s",
+    "profile": "Finished the course; now worries more generally too.",
+    "steps": 3,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "panic_done"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "panic",
+        "worry"
+      ],
+      "panic_done": "yes"
+    },
+    "courses": [
+      "panic_next_steps",
+      "generalised_anxiety",
+      "stress"
+    ],
+    "courseNames": [
+      "Overcoming Panic – Next Steps",
+      "Generalised Anxiety",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PN-04",
+    "course": "panic_next_steps",
+    "courseName": "Overcoming Panic – Next Steps",
+    "age": "50s",
+    "profile": "Finished the course some time ago and isn't sure what's going on now.",
+    "steps": 3,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "panic_done"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "panic"
+      ],
+      "panic_done": "yes"
+    },
+    "courses": [
+      "panic_next_steps",
+      "stress"
+    ],
+    "courseNames": [
+      "Overcoming Panic – Next Steps",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PN-05",
+    "course": "panic_next_steps",
+    "courseName": "Overcoming Panic – Next Steps",
+    "age": "30s",
+    "profile": "Finished the course; fears another attack and feels drained.",
+    "steps": 6,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "low_mood_detail",
+      "panic_done",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "worry",
+        "low_mood"
+      ],
+      "worry_detail": [
+        "panic"
+      ],
+      "low_mood_detail": [
+        "drained"
+      ],
+      "panic_done": "yes",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "panic_next_steps",
+      "depression",
+      "mixed",
+      "stress"
+    ],
+    "courseNames": [
+      "Overcoming Panic – Next Steps",
+      "Depression",
+      "Mixed Depression and Anxiety",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 4,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Mixed Depression and Anxiety"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "PN-06",
+    "course": "panic_next_steps",
+    "courseName": "Overcoming Panic – Next Steps",
+    "age": "20s",
+    "profile": "Finished the course; attacks have eased but they now worry about them coming back, so they tick 'I worry a lot' rather than panic.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "worry"
+      ]
+    },
+    "courses": [
+      "generalised_anxiety"
+    ],
+    "courseNames": [
+      "Generalised Anxiety"
+    ],
+    "matched": false,
+    "rank": null,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PN-07",
+    "course": "panic_next_steps",
+    "courseName": "Overcoming Panic – Next Steps",
+    "age": "40s",
+    "profile": "Finished the course; racing heart has returned.",
+    "steps": 3,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "panic_done"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "panic"
+      ],
+      "panic_done": "yes"
+    },
+    "courses": [
+      "panic_next_steps",
+      "stress"
+    ],
+    "courseNames": [
+      "Overcoming Panic – Next Steps",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PN-08",
+    "course": "panic_next_steps",
+    "courseName": "Overcoming Panic – Next Steps",
+    "age": "60s",
+    "profile": "Finished the course; stress is setting off attacks again.",
+    "steps": 3,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "panic_done"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "panic",
+        "stress"
+      ],
+      "panic_done": "yes"
+    },
+    "courses": [
+      "panic_next_steps",
+      "stress"
+    ],
+    "courseNames": [
+      "Overcoming Panic – Next Steps",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PN-09",
+    "course": "panic_next_steps",
+    "courseName": "Overcoming Panic – Next Steps",
+    "age": "30s",
+    "profile": "Did most of the course but skipped the last lesson, so picks 'Started it but didn't finish'.",
+    "steps": 3,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "panic_done"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "panic"
+      ],
+      "panic_done": "started"
+    },
+    "courses": [
+      "panic",
+      "stress"
+    ],
+    "courseNames": [
+      "Overcoming Panic",
+      "Coping with Stress"
+    ],
+    "matched": false,
+    "rank": null,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PN-10",
+    "course": "panic_next_steps",
+    "courseName": "Overcoming Panic – Next Steps",
+    "age": "20s",
+    "profile": "Finished the course; attacks are back and they feel very low.",
+    "steps": 6,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "low_mood_detail",
+      "panic_done",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "worry",
+        "low_mood"
+      ],
+      "worry_detail": [
+        "panic"
+      ],
+      "low_mood_detail": [
+        "sad"
+      ],
+      "panic_done": "yes",
+      "risk_harm": "yes",
+      "risk_life": "yes"
+    },
+    "courses": [
+      "panic_next_steps",
+      "depression",
+      "mixed",
+      "stress"
+    ],
+    "courseNames": [
+      "Overcoming Panic – Next Steps",
+      "Depression",
+      "Mixed Depression and Anxiety",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 4,
+    "riskAnswersIfAsked": [
+      "yes",
+      "yes"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "You don't have to go through this alone",
+      "tealReminder": false,
+      "aodBox": false,
+      "nzslLinks": [
+        "Mixed Depression and Anxiety"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "O-01",
+    "course": "ocd",
+    "courseName": "Obsessive Compulsive Disorder",
+    "age": "30s",
+    "profile": "Checks locks and appliances many times before leaving home.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "ocd"
+      ]
+    },
+    "courses": [
+      "ocd",
+      "stress"
+    ],
+    "courseNames": [
+      "Obsessive Compulsive Disorder",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "O-02",
+    "course": "ocd",
+    "courseName": "Obsessive Compulsive Disorder",
+    "age": "20s",
+    "profile": "Has upsetting images that pop into their head.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "ocd"
+      ]
+    },
+    "courses": [
+      "ocd",
+      "stress"
+    ],
+    "courseNames": [
+      "Obsessive Compulsive Disorder",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "O-03",
+    "course": "ocd",
+    "courseName": "Obsessive Compulsive Disorder",
+    "age": "40s",
+    "profile": "Washes hands repeatedly and fears contamination.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "ocd"
+      ]
+    },
+    "courses": [
+      "ocd",
+      "stress"
+    ],
+    "courseNames": [
+      "Obsessive Compulsive Disorder",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "O-04",
+    "course": "ocd",
+    "courseName": "Obsessive Compulsive Disorder",
+    "age": "50s",
+    "profile": "Goes over things in their mind and can't switch off.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "ocd",
+        "worry"
+      ]
+    },
+    "courses": [
+      "ocd",
+      "generalised_anxiety",
+      "stress"
+    ],
+    "courseNames": [
+      "Obsessive Compulsive Disorder",
+      "Generalised Anxiety",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "O-05",
+    "course": "ocd",
+    "courseName": "Obsessive Compulsive Disorder",
+    "age": "20s",
+    "profile": "Frightened by unwanted thoughts about harming someone they love.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "ocd"
+      ]
+    },
+    "courses": [
+      "ocd",
+      "stress"
+    ],
+    "courseNames": [
+      "Obsessive Compulsive Disorder",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "O-06",
+    "course": "ocd",
+    "courseName": "Obsessive Compulsive Disorder",
+    "age": "30s",
+    "profile": "New parent with frightening intrusive thoughts about the baby.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "life_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "worry",
+        "perinatal"
+      ],
+      "worry_detail": [
+        "ocd"
+      ],
+      "life_stage": "baby",
+      "risk_harm": "unsure",
+      "risk_life": "no"
+    },
+    "courses": [
+      "ocd",
+      "postnatal",
+      "stress"
+    ],
+    "courseNames": [
+      "Obsessive Compulsive Disorder",
+      "Postnatal Wellbeing",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "unsure",
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "It's okay not to be sure",
+      "tealReminder": false,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "O-07",
+    "course": "ocd",
+    "courseName": "Obsessive Compulsive Disorder",
+    "age": "16–17",
+    "profile": "Has to repeat routines until they feel 'just right'.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "ocd"
+      ]
+    },
+    "courses": [
+      "ocd",
+      "stress"
+    ],
+    "courseNames": [
+      "Obsessive Compulsive Disorder",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "O-08",
+    "course": "ocd",
+    "courseName": "Obsessive Compulsive Disorder",
+    "age": "40s",
+    "profile": "Checking rituals leave them drained.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "low_mood_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "worry",
+        "low_mood"
+      ],
+      "worry_detail": [
+        "ocd"
+      ],
+      "low_mood_detail": [
+        "drained"
+      ],
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "ocd",
+      "depression",
+      "mixed",
+      "stress"
+    ],
+    "courseNames": [
+      "Obsessive Compulsive Disorder",
+      "Depression",
+      "Mixed Depression and Anxiety",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 4,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Mixed Depression and Anxiety"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "O-09",
+    "course": "ocd",
+    "courseName": "Obsessive Compulsive Disorder",
+    "age": "60s",
+    "profile": "Needs things arranged a certain way or feels very uneasy.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "ocd"
+      ]
+    },
+    "courses": [
+      "ocd",
+      "stress"
+    ],
+    "courseNames": [
+      "Obsessive Compulsive Disorder",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "O-10",
+    "course": "ocd",
+    "courseName": "Obsessive Compulsive Disorder",
+    "age": "30s",
+    "profile": "Doesn't think of the rituals as worry, so ticks only 'I'd like to cope better' and wants to feel calmer.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "coping_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "coping"
+      ],
+      "coping_detail": [
+        "calmer"
+      ]
+    },
+    "courses": [
+      "stress",
+      "mindfulness"
+    ],
+    "courseNames": [
+      "Coping with Stress",
+      "Just a Pause – Intro to Mindfulness"
+    ],
+    "matched": false,
+    "rank": null,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "H-01",
+    "course": "health_anxiety",
+    "courseName": "Health Anxiety",
+    "age": "40s",
+    "profile": "Searches symptoms online for hours.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "health"
+      ]
+    },
+    "courses": [
+      "health_anxiety"
+    ],
+    "courseNames": [
+      "Health Anxiety"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "H-02",
+    "course": "health_anxiety",
+    "courseName": "Health Anxiety",
+    "age": "30s",
+    "profile": "Checks their body for lumps every day.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "health"
+      ]
+    },
+    "courses": [
+      "health_anxiety"
+    ],
+    "courseNames": [
+      "Health Anxiety"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "H-03",
+    "course": "health_anxiety",
+    "courseName": "Health Anxiety",
+    "age": "50s",
+    "profile": "Since a health scare, believes something is wrong.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "health"
+      ]
+    },
+    "courses": [
+      "health_anxiety"
+    ],
+    "courseNames": [
+      "Health Anxiety"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "H-04",
+    "course": "health_anxiety",
+    "courseName": "Health Anxiety",
+    "age": "20s",
+    "profile": "Seeks reassurance and gets a racing heart when worried about illness.",
+    "steps": 3,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "panic_done"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "health",
+        "panic"
+      ],
+      "panic_done": "no"
+    },
+    "courses": [
+      "health_anxiety",
+      "panic",
+      "stress"
+    ],
+    "courseNames": [
+      "Health Anxiety",
+      "Overcoming Panic",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "H-05",
+    "course": "health_anxiety",
+    "courseName": "Health Anxiety",
+    "age": "60s",
+    "profile": "Worries about their health and many other things.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "health",
+        "worry"
+      ]
+    },
+    "courses": [
+      "health_anxiety",
+      "generalised_anxiety"
+    ],
+    "courseNames": [
+      "Health Anxiety",
+      "Generalised Anxiety"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "H-06",
+    "course": "health_anxiety",
+    "courseName": "Health Anxiety",
+    "age": "30s",
+    "profile": "Pregnant and constantly worried about their own health.",
+    "steps": 3,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "life_stage"
+    ],
+    "answers": {
+      "concerns": [
+        "worry",
+        "perinatal"
+      ],
+      "worry_detail": [
+        "health"
+      ],
+      "life_stage": "pregnant"
+    },
+    "courses": [
+      "health_anxiety",
+      "pregnancy"
+    ],
+    "courseNames": [
+      "Health Anxiety",
+      "Pregnancy Wellbeing"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "H-07",
+    "course": "health_anxiety",
+    "courseName": "Health Anxiety",
+    "age": "40s",
+    "profile": "Health worries, but not sure which description fits.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "health"
+      ]
+    },
+    "courses": [
+      "health_anxiety"
+    ],
+    "courseNames": [
+      "Health Anxiety"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "H-08",
+    "course": "health_anxiety",
+    "courseName": "Health Anxiety",
+    "age": "70s",
+    "profile": "Checks pulse and blood pressure many times a day.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "health"
+      ]
+    },
+    "courses": [
+      "health_anxiety"
+    ],
+    "courseNames": [
+      "Health Anxiety"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "H-09",
+    "course": "health_anxiety",
+    "courseName": "Health Anxiety",
+    "age": "30s",
+    "profile": "Needs reassurance and checks repeatedly.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "health",
+        "ocd"
+      ]
+    },
+    "courses": [
+      "health_anxiety",
+      "ocd",
+      "stress"
+    ],
+    "courseNames": [
+      "Health Anxiety",
+      "Obsessive Compulsive Disorder",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "H-10",
+    "course": "health_anxiety",
+    "courseName": "Health Anxiety",
+    "age": "20s",
+    "profile": "Health worries and feels low.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "low_mood_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "worry",
+        "low_mood"
+      ],
+      "worry_detail": [
+        "health"
+      ],
+      "low_mood_detail": [
+        "mixed"
+      ],
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "health_anxiety",
+      "mixed"
+    ],
+    "courseNames": [
+      "Health Anxiety",
+      "Mixed Depression and Anxiety"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Mixed Depression and Anxiety"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "ST-01",
+    "course": "staying_on_track",
+    "courseName": "Staying on Track",
+    "age": "30s",
+    "profile": "Going through a tough time and wants general coping skills.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "coping_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "coping"
+      ],
+      "coping_detail": [
+        "cope"
+      ]
+    },
+    "courses": [
+      "staying_on_track"
+    ],
+    "courseNames": [
+      "Staying on Track"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Staying on Track"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "ST-02",
+    "course": "staying_on_track",
+    "courseName": "Staying on Track",
+    "age": "40s",
+    "profile": "Community worker wanting everyday wellbeing skills.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "coping_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "coping"
+      ],
+      "coping_detail": [
+        "skills"
+      ]
+    },
+    "courses": [
+      "staying_on_track"
+    ],
+    "courseNames": [
+      "Staying on Track"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Staying on Track"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "ST-03",
+    "course": "staying_on_track",
+    "courseName": "Staying on Track",
+    "age": "50s",
+    "profile": "Made redundant and wants to cope and build skills.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "coping_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "coping"
+      ],
+      "coping_detail": [
+        "cope",
+        "skills"
+      ]
+    },
+    "courses": [
+      "staying_on_track"
+    ],
+    "courseNames": [
+      "Staying on Track"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Staying on Track"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "ST-04",
+    "course": "staying_on_track",
+    "courseName": "Staying on Track",
+    "age": "20s",
+    "profile": "Uncertain times and feeling stressed, so ticks the worry topic.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "stress"
+      ]
+    },
+    "courses": [
+      "stress"
+    ],
+    "courseNames": [
+      "Coping with Stress"
+    ],
+    "matched": false,
+    "rank": null,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "ST-05",
+    "course": "staying_on_track",
+    "courseName": "Staying on Track",
+    "age": "60s",
+    "profile": "Family going through a hard time; wants to cope better.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "coping_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "coping"
+      ],
+      "coping_detail": [
+        "cope"
+      ]
+    },
+    "courses": [
+      "staying_on_track"
+    ],
+    "courseNames": [
+      "Staying on Track"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Staying on Track"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "ST-06",
+    "course": "staying_on_track",
+    "courseName": "Staying on Track",
+    "age": "30s",
+    "profile": "Deaf NZSL user wanting everyday coping skills.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "coping_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "coping"
+      ],
+      "coping_detail": [
+        "skills"
+      ]
+    },
+    "courses": [
+      "staying_on_track"
+    ],
+    "courseNames": [
+      "Staying on Track"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Staying on Track"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "ST-07",
+    "course": "staying_on_track",
+    "courseName": "Staying on Track",
+    "age": "40s",
+    "profile": "Wants to feel better but isn't sure what would help.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "coping_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "coping"
+      ],
+      "coping_detail": [
+        "not_sure"
+      ]
+    },
+    "courses": [
+      "staying_on_track",
+      "stress",
+      "mindfulness"
+    ],
+    "courseNames": [
+      "Staying on Track",
+      "Coping with Stress",
+      "Just a Pause – Intro to Mindfulness"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Staying on Track"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "ST-08",
+    "course": "staying_on_track",
+    "courseName": "Staying on Track",
+    "age": "20s",
+    "profile": "Wants to feel calmer and build skills.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "coping_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "coping"
+      ],
+      "coping_detail": [
+        "calmer",
+        "skills"
+      ]
+    },
+    "courses": [
+      "stress",
+      "mindfulness",
+      "staying_on_track"
+    ],
+    "courseNames": [
+      "Coping with Stress",
+      "Just a Pause – Intro to Mindfulness",
+      "Staying on Track"
+    ],
+    "matched": true,
+    "rank": 3,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Staying on Track"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "ST-09",
+    "course": "staying_on_track",
+    "courseName": "Staying on Track",
+    "age": "30s",
+    "profile": "After a flood damaged their home, coping with uncertainty and poor sleep.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "coping_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "coping",
+        "sleep"
+      ],
+      "coping_detail": [
+        "cope"
+      ]
+    },
+    "courses": [
+      "insomnia",
+      "staying_on_track",
+      "depression"
+    ],
+    "courseNames": [
+      "Managing Insomnia",
+      "Staying on Track",
+      "Depression"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Staying on Track"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "ST-10",
+    "course": "staying_on_track",
+    "courseName": "Staying on Track",
+    "age": "50s",
+    "profile": "Wants to cope better and feels drained.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "low_mood_detail",
+      "coping_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "coping",
+        "low_mood"
+      ],
+      "low_mood_detail": [
+        "drained"
+      ],
+      "coping_detail": [
+        "cope"
+      ],
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "depression",
+      "staying_on_track"
+    ],
+    "courseNames": [
+      "Depression",
+      "Staying on Track"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Staying on Track"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "I-01",
+    "course": "insomnia",
+    "courseName": "Managing Insomnia",
+    "age": "40s",
+    "profile": "Takes hours to fall asleep.",
+    "steps": 1,
+    "questions": [
+      "concerns"
+    ],
+    "answers": {
+      "concerns": [
+        "sleep"
+      ]
+    },
+    "courses": [
+      "insomnia",
+      "depression"
+    ],
+    "courseNames": [
+      "Managing Insomnia",
+      "Depression"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "I-02",
+    "course": "insomnia",
+    "courseName": "Managing Insomnia",
+    "age": "30s",
+    "profile": "Wakes at 3am and can't get back to sleep.",
+    "steps": 1,
+    "questions": [
+      "concerns"
+    ],
+    "answers": {
+      "concerns": [
+        "sleep"
+      ]
+    },
+    "courses": [
+      "insomnia",
+      "depression"
+    ],
+    "courseNames": [
+      "Managing Insomnia",
+      "Depression"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "I-03",
+    "course": "insomnia",
+    "courseName": "Managing Insomnia",
+    "age": "50s",
+    "profile": "Broken sleep during menopause.",
+    "steps": 1,
+    "questions": [
+      "concerns"
+    ],
+    "answers": {
+      "concerns": [
+        "sleep"
+      ]
+    },
+    "courses": [
+      "insomnia",
+      "depression"
+    ],
+    "courseNames": [
+      "Managing Insomnia",
+      "Depression"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "I-04",
+    "course": "insomnia",
+    "courseName": "Managing Insomnia",
+    "age": "20s",
+    "profile": "Can't switch off at night.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "sleep",
+        "worry"
+      ],
+      "worry_detail": [
+        "worry"
+      ]
+    },
+    "courses": [
+      "generalised_anxiety",
+      "insomnia",
+      "depression"
+    ],
+    "courseNames": [
+      "Generalised Anxiety",
+      "Managing Insomnia",
+      "Depression"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "I-05",
+    "course": "insomnia",
+    "courseName": "Managing Insomnia",
+    "age": "60s",
+    "profile": "Poor sleep and feels drained.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "low_mood_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "sleep",
+        "low_mood"
+      ],
+      "low_mood_detail": [
+        "drained"
+      ],
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "depression",
+      "insomnia"
+    ],
+    "courseNames": [
+      "Depression",
+      "Managing Insomnia"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "I-06",
+    "course": "insomnia",
+    "courseName": "Managing Insomnia",
+    "age": "30s",
+    "profile": "Rotating shifts have wrecked their sleep.",
+    "steps": 1,
+    "questions": [
+      "concerns"
+    ],
+    "answers": {
+      "concerns": [
+        "sleep"
+      ]
+    },
+    "courses": [
+      "insomnia",
+      "depression"
+    ],
+    "courseNames": [
+      "Managing Insomnia",
+      "Depression"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "I-07",
+    "course": "insomnia",
+    "courseName": "Managing Insomnia",
+    "age": "40s",
+    "profile": "Stress keeps them awake.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "sleep",
+        "worry"
+      ],
+      "worry_detail": [
+        "stress"
+      ]
+    },
+    "courses": [
+      "stress",
+      "insomnia",
+      "depression"
+    ],
+    "courseNames": [
+      "Coping with Stress",
+      "Managing Insomnia",
+      "Depression"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "I-08",
+    "course": "insomnia",
+    "courseName": "Managing Insomnia",
+    "age": "30s",
+    "profile": "Parent of a 10-month-old who still can't sleep even when the baby does.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "life_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "sleep",
+        "perinatal"
+      ],
+      "life_stage": "baby",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "insomnia",
+      "postnatal",
+      "depression"
+    ],
+    "courseNames": [
+      "Managing Insomnia",
+      "Postnatal Wellbeing",
+      "Depression"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "I-09",
+    "course": "insomnia",
+    "courseName": "Managing Insomnia",
+    "age": "70s",
+    "profile": "Wakes early every morning feeling unrested.",
+    "steps": 1,
+    "questions": [
+      "concerns"
+    ],
+    "answers": {
+      "concerns": [
+        "sleep"
+      ]
+    },
+    "courses": [
+      "insomnia",
+      "depression"
+    ],
+    "courseNames": [
+      "Managing Insomnia",
+      "Depression"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "I-10",
+    "course": "insomnia",
+    "courseName": "Managing Insomnia",
+    "age": "20s",
+    "profile": "Can't sleep and wants to feel calmer.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "coping_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "sleep",
+        "coping"
+      ],
+      "coping_detail": [
+        "calmer"
+      ]
+    },
+    "courses": [
+      "insomnia",
+      "stress",
+      "mindfulness",
+      "depression"
+    ],
+    "courseNames": [
+      "Managing Insomnia",
+      "Coping with Stress",
+      "Just a Pause – Intro to Mindfulness",
+      "Depression"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 4,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "MF-01",
+    "course": "mindfulness",
+    "courseName": "Just a Pause – Intro to Mindfulness",
+    "age": "30s",
+    "profile": "Wants to be more present with their kids.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "coping_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "coping"
+      ],
+      "coping_detail": [
+        "present"
+      ]
+    },
+    "courses": [
+      "mindfulness"
+    ],
+    "courseNames": [
+      "Just a Pause – Intro to Mindfulness"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "MF-02",
+    "course": "mindfulness",
+    "courseName": "Just a Pause – Intro to Mindfulness",
+    "age": "40s",
+    "profile": "Wants to feel calmer.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "coping_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "coping"
+      ],
+      "coping_detail": [
+        "calmer"
+      ]
+    },
+    "courses": [
+      "stress",
+      "mindfulness"
+    ],
+    "courseNames": [
+      "Coping with Stress",
+      "Just a Pause – Intro to Mindfulness"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "MF-03",
+    "course": "mindfulness",
+    "courseName": "Just a Pause – Intro to Mindfulness",
+    "age": "20s",
+    "profile": "Wants to be calmer and more present.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "coping_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "coping"
+      ],
+      "coping_detail": [
+        "present",
+        "calmer"
+      ]
+    },
+    "courses": [
+      "mindfulness",
+      "stress"
+    ],
+    "courseNames": [
+      "Just a Pause – Intro to Mindfulness",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "MF-04",
+    "course": "mindfulness",
+    "courseName": "Just a Pause – Intro to Mindfulness",
+    "age": "50s",
+    "profile": "Busy and stressed, wants calm, so ticks the worry topic.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "stress"
+      ]
+    },
+    "courses": [
+      "stress"
+    ],
+    "courseNames": [
+      "Coping with Stress"
+    ],
+    "matched": false,
+    "rank": null,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "MF-05",
+    "course": "mindfulness",
+    "courseName": "Just a Pause – Intro to Mindfulness",
+    "age": "60s",
+    "profile": "Retired and wants to enjoy the moment.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "coping_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "coping"
+      ],
+      "coping_detail": [
+        "present"
+      ]
+    },
+    "courses": [
+      "mindfulness"
+    ],
+    "courseNames": [
+      "Just a Pause – Intro to Mindfulness"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "MF-06",
+    "course": "mindfulness",
+    "courseName": "Just a Pause – Intro to Mindfulness",
+    "age": "30s",
+    "profile": "Wants everyday skills and to be more present.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "coping_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "coping"
+      ],
+      "coping_detail": [
+        "skills",
+        "present"
+      ]
+    },
+    "courses": [
+      "staying_on_track",
+      "mindfulness"
+    ],
+    "courseNames": [
+      "Staying on Track",
+      "Just a Pause – Intro to Mindfulness"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Staying on Track"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "MF-07",
+    "course": "mindfulness",
+    "courseName": "Just a Pause – Intro to Mindfulness",
+    "age": "20s",
+    "profile": "Curious about feeling better, not sure how.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "coping_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "coping"
+      ],
+      "coping_detail": [
+        "not_sure"
+      ]
+    },
+    "courses": [
+      "staying_on_track",
+      "stress",
+      "mindfulness"
+    ],
+    "courseNames": [
+      "Staying on Track",
+      "Coping with Stress",
+      "Just a Pause – Intro to Mindfulness"
+    ],
+    "matched": true,
+    "rank": 3,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Staying on Track"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "MF-08",
+    "course": "mindfulness",
+    "courseName": "Just a Pause – Intro to Mindfulness",
+    "age": "40s",
+    "profile": "On edge and wants to feel calmer.",
+    "steps": 3,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "coping_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "coping",
+        "worry"
+      ],
+      "worry_detail": [
+        "worry"
+      ],
+      "coping_detail": [
+        "calmer"
+      ]
+    },
+    "courses": [
+      "generalised_anxiety",
+      "stress",
+      "mindfulness"
+    ],
+    "courseNames": [
+      "Generalised Anxiety",
+      "Coping with Stress",
+      "Just a Pause – Intro to Mindfulness"
+    ],
+    "matched": true,
+    "rank": 3,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "MF-09",
+    "course": "mindfulness",
+    "courseName": "Just a Pause – Intro to Mindfulness",
+    "age": "30s",
+    "profile": "Can't sleep and wants to feel calmer.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "coping_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "coping",
+        "sleep"
+      ],
+      "coping_detail": [
+        "calmer"
+      ]
+    },
+    "courses": [
+      "insomnia",
+      "stress",
+      "mindfulness",
+      "depression"
+    ],
+    "courseNames": [
+      "Managing Insomnia",
+      "Coping with Stress",
+      "Just a Pause – Intro to Mindfulness",
+      "Depression"
+    ],
+    "matched": true,
+    "rank": 3,
+    "count": 4,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "MF-10",
+    "course": "mindfulness",
+    "courseName": "Just a Pause – Intro to Mindfulness",
+    "age": "50s",
+    "profile": "Wants to slow down and notice the moment.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "coping_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "coping"
+      ],
+      "coping_detail": [
+        "present"
+      ]
+    },
+    "courses": [
+      "mindfulness"
+    ],
+    "courseNames": [
+      "Just a Pause – Intro to Mindfulness"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "CS-01",
+    "course": "stress",
+    "courseName": "Coping with Stress",
+    "age": "30s",
+    "profile": "Overwhelmed at work.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "stress"
+      ]
+    },
+    "courses": [
+      "stress"
+    ],
+    "courseNames": [
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "CS-02",
+    "course": "stress",
+    "courseName": "Coping with Stress",
+    "age": "40s",
+    "profile": "Caring for a parent and everything feels like too much.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "stress"
+      ]
+    },
+    "courses": [
+      "stress"
+    ],
+    "courseNames": [
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "CS-03",
+    "course": "stress",
+    "courseName": "Coping with Stress",
+    "age": "20s",
+    "profile": "Student struggling to manage stress.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "stress"
+      ]
+    },
+    "courses": [
+      "stress"
+    ],
+    "courseNames": [
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "CS-04",
+    "course": "stress",
+    "courseName": "Coping with Stress",
+    "age": "50s",
+    "profile": "Wants to feel calmer and less overwhelmed.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "coping_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "coping"
+      ],
+      "coping_detail": [
+        "calmer"
+      ]
+    },
+    "courses": [
+      "stress",
+      "mindfulness"
+    ],
+    "courseNames": [
+      "Coping with Stress",
+      "Just a Pause – Intro to Mindfulness"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "CS-05",
+    "course": "stress",
+    "courseName": "Coping with Stress",
+    "age": "30s",
+    "profile": "Stressed and not sleeping.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry",
+        "sleep"
+      ],
+      "worry_detail": [
+        "stress"
+      ]
+    },
+    "courses": [
+      "stress",
+      "insomnia",
+      "depression"
+    ],
+    "courseNames": [
+      "Coping with Stress",
+      "Managing Insomnia",
+      "Depression"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "CS-06",
+    "course": "stress",
+    "courseName": "Coping with Stress",
+    "age": "40s",
+    "profile": "Overwhelmed and drained.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "low_mood_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "worry",
+        "low_mood"
+      ],
+      "worry_detail": [
+        "stress"
+      ],
+      "low_mood_detail": [
+        "drained"
+      ],
+      "risk_harm": "yes",
+      "risk_life": "no"
+    },
+    "courses": [
+      "stress",
+      "depression",
+      "mixed"
+    ],
+    "courseNames": [
+      "Coping with Stress",
+      "Depression",
+      "Mixed Depression and Anxiety"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "yes",
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "You don't have to go through this alone",
+      "tealReminder": false,
+      "aodBox": false,
+      "nzslLinks": [
+        "Mixed Depression and Anxiety"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "CS-07",
+    "course": "stress",
+    "courseName": "Coping with Stress",
+    "age": "60s",
+    "profile": "Stressed, but thinks of it as needing to cope, so ticks only coping.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "coping_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "coping"
+      ],
+      "coping_detail": [
+        "cope"
+      ]
+    },
+    "courses": [
+      "staying_on_track"
+    ],
+    "courseNames": [
+      "Staying on Track"
+    ],
+    "matched": false,
+    "rank": null,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Staying on Track"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "CS-08",
+    "course": "stress",
+    "courseName": "Coping with Stress",
+    "age": "20s",
+    "profile": "Stressed and can't switch off.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "stress",
+        "worry"
+      ]
+    },
+    "courses": [
+      "stress",
+      "generalised_anxiety"
+    ],
+    "courseNames": [
+      "Coping with Stress",
+      "Generalised Anxiety"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "CS-09",
+    "course": "stress",
+    "courseName": "Coping with Stress",
+    "age": "30s",
+    "profile": "Stressed but not sure which description fits.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "worry_detail"
+    ],
+    "answers": {
+      "concerns": [
+        "worry"
+      ],
+      "worry_detail": [
+        "stress"
+      ]
+    },
+    "courses": [
+      "stress"
+    ],
+    "courseNames": [
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "CS-10",
+    "course": "stress",
+    "courseName": "Coping with Stress",
+    "age": "40s",
+    "profile": "Parent of a 5-month-old who feels everything is too much.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "life_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "worry",
+        "perinatal"
+      ],
+      "worry_detail": [
+        "stress"
+      ],
+      "life_stage": "baby",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "stress",
+      "postnatal"
+    ],
+    "courseNames": [
+      "Coping with Stress",
+      "Postnatal Wellbeing"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "TC-01",
+    "course": "thinking_about_change",
+    "courseName": "Thinking about Change",
+    "age": "30s",
+    "profile": "Partner commented on their drinking; not sure it's a problem.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod"
+      ],
+      "aod_stage": "unsure",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "thinking_about_change"
+    ],
+    "courseNames": [
+      "Thinking about Change"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "TC-02",
+    "course": "thinking_about_change",
+    "courseName": "Thinking about Change",
+    "age": "40s",
+    "profile": "Drinks most nights and is thinking about it.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod"
+      ],
+      "aod_stage": "thinking",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "thinking_about_change",
+      "taking_action"
+    ],
+    "courseNames": [
+      "Thinking about Change",
+      "Taking Action"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "TC-03",
+    "course": "thinking_about_change",
+    "courseName": "Thinking about Change",
+    "age": "20s",
+    "profile": "Uses cannabis daily; unsure if it's an issue.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod"
+      ],
+      "aod_stage": "unsure",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "thinking_about_change"
+    ],
+    "courseNames": [
+      "Thinking about Change"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "TC-04",
+    "course": "thinking_about_change",
+    "courseName": "Thinking about Change",
+    "age": "50s",
+    "profile": "Drinking more and feeling sad.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "low_mood_detail",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod",
+        "low_mood"
+      ],
+      "low_mood_detail": [
+        "sad"
+      ],
+      "aod_stage": "thinking",
+      "risk_harm": "unsure",
+      "risk_life": "no"
+    },
+    "courses": [
+      "depression",
+      "thinking_about_change",
+      "taking_action"
+    ],
+    "courseNames": [
+      "Depression",
+      "Thinking about Change",
+      "Taking Action"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "unsure",
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "It's okay not to be sure",
+      "tealReminder": false,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "TC-05",
+    "course": "thinking_about_change",
+    "courseName": "Thinking about Change",
+    "age": "20s",
+    "profile": "Weekend binge drinking; not sure they need to change.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod"
+      ],
+      "aod_stage": "unsure",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "thinking_about_change"
+    ],
+    "courseNames": [
+      "Thinking about Change"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "TC-06",
+    "course": "thinking_about_change",
+    "courseName": "Thinking about Change",
+    "age": "60s",
+    "profile": "Drinking has crept up since retiring.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod"
+      ],
+      "aod_stage": "thinking",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "thinking_about_change",
+      "taking_action"
+    ],
+    "courseNames": [
+      "Thinking about Change",
+      "Taking Action"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "TC-07",
+    "course": "thinking_about_change",
+    "courseName": "Thinking about Change",
+    "age": "30s",
+    "profile": "Uses alcohol to get to sleep.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod",
+        "sleep"
+      ],
+      "aod_stage": "unsure",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "insomnia",
+      "thinking_about_change",
+      "depression"
+    ],
+    "courseNames": [
+      "Managing Insomnia",
+      "Thinking about Change",
+      "Depression"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "TC-08",
+    "course": "thinking_about_change",
+    "courseName": "Thinking about Change",
+    "age": "40s",
+    "profile": "Struggles with stress and drinks to unwind.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod",
+        "worry"
+      ],
+      "worry_detail": [
+        "stress"
+      ],
+      "aod_stage": "thinking",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "stress",
+      "thinking_about_change",
+      "taking_action"
+    ],
+    "courseNames": [
+      "Coping with Stress",
+      "Thinking about Change",
+      "Taking Action"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "TC-09",
+    "course": "thinking_about_change",
+    "courseName": "Thinking about Change",
+    "age": "20s",
+    "profile": "Thinking about their drug use.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod"
+      ],
+      "aod_stage": "thinking",
+      "risk_harm": "prefer_not",
+      "risk_life": "prefer_not"
+    },
+    "courses": [
+      "thinking_about_change",
+      "taking_action"
+    ],
+    "courseNames": [
+      "Thinking about Change",
+      "Taking Action"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "prefer_not",
+      "prefer_not"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "It's okay not to be sure",
+      "tealReminder": false,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "TC-10",
+    "course": "thinking_about_change",
+    "courseName": "Thinking about Change",
+    "age": "30s",
+    "profile": "Pregnant and unsure about their drinking.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "life_stage",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod",
+        "perinatal"
+      ],
+      "life_stage": "pregnant",
+      "aod_stage": "unsure",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "pregnancy",
+      "thinking_about_change"
+    ],
+    "courseNames": [
+      "Pregnancy Wellbeing",
+      "Thinking about Change"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "TA-01",
+    "course": "taking_action",
+    "courseName": "Taking Action",
+    "age": "30s",
+    "profile": "Ready to cut back on drinking.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod"
+      ],
+      "aod_stage": "ready",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "taking_action"
+    ],
+    "courseNames": [
+      "Taking Action"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "TA-02",
+    "course": "taking_action",
+    "courseName": "Taking Action",
+    "age": "40s",
+    "profile": "Stopped drinking two weeks ago.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod"
+      ],
+      "aod_stage": "ready",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "taking_action"
+    ],
+    "courseNames": [
+      "Taking Action"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "TA-03",
+    "course": "taking_action",
+    "courseName": "Taking Action",
+    "age": "20s",
+    "profile": "Thinking about cutting down on vaping cannabis.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod"
+      ],
+      "aod_stage": "thinking",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "thinking_about_change",
+      "taking_action"
+    ],
+    "courseNames": [
+      "Thinking about Change",
+      "Taking Action"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "TA-04",
+    "course": "taking_action",
+    "courseName": "Taking Action",
+    "age": "50s",
+    "profile": "Three months alcohol-free and wants to keep it going.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod"
+      ],
+      "aod_stage": "building",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "getting_back_on_track"
+    ],
+    "courseNames": [
+      "Getting Back on Track"
+    ],
+    "matched": false,
+    "rank": null,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "TA-05",
+    "course": "taking_action",
+    "courseName": "Taking Action",
+    "age": "30s",
+    "profile": "Ready to change; feels drained.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "low_mood_detail",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod",
+        "low_mood"
+      ],
+      "low_mood_detail": [
+        "drained"
+      ],
+      "aod_stage": "ready",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "depression",
+      "taking_action"
+    ],
+    "courseNames": [
+      "Depression",
+      "Taking Action"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "TA-06",
+    "course": "taking_action",
+    "courseName": "Taking Action",
+    "age": "60s",
+    "profile": "Has started cutting back.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod"
+      ],
+      "aod_stage": "ready",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "taking_action"
+    ],
+    "courseNames": [
+      "Taking Action"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "TA-07",
+    "course": "taking_action",
+    "courseName": "Taking Action",
+    "age": "20s",
+    "profile": "Drinks to cope socially and is ready to change.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod",
+        "worry"
+      ],
+      "worry_detail": [
+        "social"
+      ],
+      "aod_stage": "ready",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "social_anxiety",
+      "taking_action"
+    ],
+    "courseNames": [
+      "Social Anxiety",
+      "Taking Action"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "TA-08",
+    "course": "taking_action",
+    "courseName": "Taking Action",
+    "age": "40s",
+    "profile": "Ready to stop using.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod"
+      ],
+      "aod_stage": "ready",
+      "risk_harm": "yes",
+      "risk_life": "no"
+    },
+    "courses": [
+      "taking_action"
+    ],
+    "courseNames": [
+      "Taking Action"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "yes",
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "You don't have to go through this alone",
+      "tealReminder": false,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "TA-09",
+    "course": "taking_action",
+    "courseName": "Taking Action",
+    "age": "30s",
+    "profile": "Six weeks without drugs and wants to keep building on it.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod"
+      ],
+      "aod_stage": "building",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "getting_back_on_track"
+    ],
+    "courseNames": [
+      "Getting Back on Track"
+    ],
+    "matched": false,
+    "rank": null,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "TA-10",
+    "course": "taking_action",
+    "courseName": "Taking Action",
+    "age": "50s",
+    "profile": "Ready to change and wants everyday skills.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "coping_detail",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod",
+        "coping"
+      ],
+      "coping_detail": [
+        "skills"
+      ],
+      "aod_stage": "ready",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "staying_on_track",
+      "taking_action"
+    ],
+    "courseNames": [
+      "Staying on Track",
+      "Taking Action"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": true,
+      "nzslLinks": [
+        "Staying on Track"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "GB-01",
+    "course": "getting_back_on_track",
+    "courseName": "Getting Back on Track",
+    "age": "30s",
+    "profile": "Started drinking again after six months off.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod"
+      ],
+      "aod_stage": "relapse",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "getting_back_on_track"
+    ],
+    "courseNames": [
+      "Getting Back on Track"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "GB-02",
+    "course": "getting_back_on_track",
+    "courseName": "Getting Back on Track",
+    "age": "40s",
+    "profile": "Slipping back into old habits.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod"
+      ],
+      "aod_stage": "relapse",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "getting_back_on_track"
+    ],
+    "courseNames": [
+      "Getting Back on Track"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "GB-03",
+    "course": "getting_back_on_track",
+    "courseName": "Getting Back on Track",
+    "age": "50s",
+    "profile": "Relapsed and feels very low.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "low_mood_detail",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod",
+        "low_mood"
+      ],
+      "low_mood_detail": [
+        "sad"
+      ],
+      "aod_stage": "relapse",
+      "risk_harm": "yes",
+      "risk_life": "yes"
+    },
+    "courses": [
+      "depression",
+      "getting_back_on_track"
+    ],
+    "courseNames": [
+      "Depression",
+      "Getting Back on Track"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "yes",
+      "yes"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "You don't have to go through this alone",
+      "tealReminder": false,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "GB-04",
+    "course": "getting_back_on_track",
+    "courseName": "Getting Back on Track",
+    "age": "20s",
+    "profile": "Finding it hard to stay off drugs.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod"
+      ],
+      "aod_stage": "relapse",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "getting_back_on_track"
+    ],
+    "courseNames": [
+      "Getting Back on Track"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "GB-05",
+    "course": "getting_back_on_track",
+    "courseName": "Getting Back on Track",
+    "age": "30s",
+    "profile": "One big night after four months sober; feels like starting over, so picks 'thinking about making a change'.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod"
+      ],
+      "aod_stage": "thinking",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "thinking_about_change",
+      "taking_action"
+    ],
+    "courseNames": [
+      "Thinking about Change",
+      "Taking Action"
+    ],
+    "matched": false,
+    "rank": null,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "GB-06",
+    "course": "getting_back_on_track",
+    "courseName": "Getting Back on Track",
+    "age": "60s",
+    "profile": "Back to drinking after a family loss.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod"
+      ],
+      "aod_stage": "relapse",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "getting_back_on_track"
+    ],
+    "courseNames": [
+      "Getting Back on Track"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "GB-07",
+    "course": "getting_back_on_track",
+    "courseName": "Getting Back on Track",
+    "age": "40s",
+    "profile": "Work pressure led them back to using.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod",
+        "worry"
+      ],
+      "worry_detail": [
+        "stress"
+      ],
+      "aod_stage": "relapse",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "stress",
+      "getting_back_on_track"
+    ],
+    "courseNames": [
+      "Coping with Stress",
+      "Getting Back on Track"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "GB-08",
+    "course": "getting_back_on_track",
+    "courseName": "Getting Back on Track",
+    "age": "30s",
+    "profile": "Has made changes and wants to keep building on them.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod"
+      ],
+      "aod_stage": "building",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "getting_back_on_track"
+    ],
+    "courseNames": [
+      "Getting Back on Track"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "GB-09",
+    "course": "getting_back_on_track",
+    "courseName": "Getting Back on Track",
+    "age": "20s",
+    "profile": "Struggling to keep changes going.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod"
+      ],
+      "aod_stage": "relapse",
+      "risk_harm": "unsure",
+      "risk_life": "prefer_not"
+    },
+    "courses": [
+      "getting_back_on_track"
+    ],
+    "courseNames": [
+      "Getting Back on Track"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "unsure",
+      "prefer_not"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "It's okay not to be sure",
+      "tealReminder": false,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "GB-10",
+    "course": "getting_back_on_track",
+    "courseName": "Getting Back on Track",
+    "age": "50s",
+    "profile": "Lapsed and isn't sleeping well.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "aod_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "aod",
+        "sleep"
+      ],
+      "aod_stage": "relapse",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "insomnia",
+      "getting_back_on_track",
+      "depression"
+    ],
+    "courseNames": [
+      "Managing Insomnia",
+      "Getting Back on Track",
+      "Depression"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": true,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PR-01",
+    "course": "pregnancy",
+    "courseName": "Pregnancy Wellbeing",
+    "age": "30s",
+    "profile": "Anxious during pregnancy.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "life_stage"
+    ],
+    "answers": {
+      "concerns": [
+        "perinatal"
+      ],
+      "life_stage": "pregnant"
+    },
+    "courses": [
+      "pregnancy"
+    ],
+    "courseNames": [
+      "Pregnancy Wellbeing"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PR-02",
+    "course": "pregnancy",
+    "courseName": "Pregnancy Wellbeing",
+    "age": "20s",
+    "profile": "Feeling low during pregnancy.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "low_mood_detail",
+      "life_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "perinatal",
+        "low_mood"
+      ],
+      "low_mood_detail": [
+        "sad"
+      ],
+      "life_stage": "pregnant",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "depression",
+      "pregnancy"
+    ],
+    "courseNames": [
+      "Depression",
+      "Pregnancy Wellbeing"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PR-03",
+    "course": "pregnancy",
+    "courseName": "Pregnancy Wellbeing",
+    "age": "30s",
+    "profile": "Worried about the birth and much else.",
+    "steps": 3,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "life_stage"
+    ],
+    "answers": {
+      "concerns": [
+        "perinatal",
+        "worry"
+      ],
+      "worry_detail": [
+        "worry"
+      ],
+      "life_stage": "pregnant"
+    },
+    "courses": [
+      "generalised_anxiety",
+      "pregnancy"
+    ],
+    "courseNames": [
+      "Generalised Anxiety",
+      "Pregnancy Wellbeing"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PR-04",
+    "course": "pregnancy",
+    "courseName": "Pregnancy Wellbeing",
+    "age": "40s",
+    "profile": "Pregnant after IVF and worried something is wrong.",
+    "steps": 3,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "life_stage"
+    ],
+    "answers": {
+      "concerns": [
+        "perinatal",
+        "worry"
+      ],
+      "worry_detail": [
+        "health"
+      ],
+      "life_stage": "pregnant"
+    },
+    "courses": [
+      "health_anxiety",
+      "pregnancy"
+    ],
+    "courseNames": [
+      "Health Anxiety",
+      "Pregnancy Wellbeing"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PR-05",
+    "course": "pregnancy",
+    "courseName": "Pregnancy Wellbeing",
+    "age": "20s",
+    "profile": "Pregnant with a toddler under 18 months; can only choose one of 'pregnant' or 'baby', so picks pregnant.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "life_stage"
+    ],
+    "answers": {
+      "concerns": [
+        "perinatal"
+      ],
+      "life_stage": "pregnant"
+    },
+    "courses": [
+      "pregnancy"
+    ],
+    "courseNames": [
+      "Pregnancy Wellbeing"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PR-06",
+    "course": "pregnancy",
+    "courseName": "Pregnancy Wellbeing",
+    "age": "30s",
+    "profile": "Surrogate carrying a pregnancy and feeling anxious.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "life_stage"
+    ],
+    "answers": {
+      "concerns": [
+        "perinatal"
+      ],
+      "life_stage": "pregnant"
+    },
+    "courses": [
+      "pregnancy"
+    ],
+    "courseNames": [
+      "Pregnancy Wellbeing"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PR-07",
+    "course": "pregnancy",
+    "courseName": "Pregnancy Wellbeing",
+    "age": "30s",
+    "profile": "Pregnant and can't sleep.",
+    "steps": 2,
+    "questions": [
+      "concerns",
+      "life_stage"
+    ],
+    "answers": {
+      "concerns": [
+        "perinatal",
+        "sleep"
+      ],
+      "life_stage": "pregnant"
+    },
+    "courses": [
+      "insomnia",
+      "pregnancy",
+      "depression"
+    ],
+    "courseNames": [
+      "Managing Insomnia",
+      "Pregnancy Wellbeing",
+      "Depression"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PR-08",
+    "course": "pregnancy",
+    "courseName": "Pregnancy Wellbeing",
+    "age": "20s",
+    "profile": "Pregnant, drained and struggling.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "low_mood_detail",
+      "life_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "perinatal",
+        "low_mood"
+      ],
+      "low_mood_detail": [
+        "drained"
+      ],
+      "life_stage": "pregnant",
+      "risk_harm": "yes",
+      "risk_life": "no"
+    },
+    "courses": [
+      "depression",
+      "pregnancy"
+    ],
+    "courseNames": [
+      "Depression",
+      "Pregnancy Wellbeing"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "yes",
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "You don't have to go through this alone",
+      "tealReminder": false,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PR-09",
+    "course": "pregnancy",
+    "courseName": "Pregnancy Wellbeing",
+    "age": "30s",
+    "profile": "Pregnant and just doesn't feel themselves.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "low_mood_detail",
+      "life_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "perinatal",
+        "low_mood"
+      ],
+      "low_mood_detail": [
+        "not_sure"
+      ],
+      "life_stage": "pregnant",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "depression",
+      "mixed",
+      "pregnancy"
+    ],
+    "courseNames": [
+      "Depression",
+      "Mixed Depression and Anxiety",
+      "Pregnancy Wellbeing"
+    ],
+    "matched": true,
+    "rank": 3,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": [
+        "Mixed Depression and Anxiety"
+      ]
+    },
+    "problems": []
+  },
+  {
+    "id": "PR-10",
+    "course": "pregnancy",
+    "courseName": "Pregnancy Wellbeing",
+    "age": "40s",
+    "profile": "Pregnant and under pressure at work.",
+    "steps": 3,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "life_stage"
+    ],
+    "answers": {
+      "concerns": [
+        "perinatal",
+        "worry"
+      ],
+      "worry_detail": [
+        "stress"
+      ],
+      "life_stage": "pregnant"
+    },
+    "courses": [
+      "stress",
+      "pregnancy"
+    ],
+    "courseNames": [
+      "Coping with Stress",
+      "Pregnancy Wellbeing"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": false,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PO-01",
+    "course": "postnatal",
+    "courseName": "Postnatal Wellbeing",
+    "age": "30s",
+    "profile": "Anxious since their baby was born three months ago.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "life_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "perinatal",
+        "worry"
+      ],
+      "worry_detail": [
+        "worry"
+      ],
+      "life_stage": "baby",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "generalised_anxiety",
+      "postnatal"
+    ],
+    "courseNames": [
+      "Generalised Anxiety",
+      "Postnatal Wellbeing"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PO-02",
+    "course": "postnatal",
+    "courseName": "Postnatal Wellbeing",
+    "age": "20s",
+    "profile": "Low and drained with a 6-month-old.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "low_mood_detail",
+      "life_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "perinatal",
+        "low_mood"
+      ],
+      "low_mood_detail": [
+        "sad",
+        "drained"
+      ],
+      "life_stage": "baby",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "depression",
+      "postnatal"
+    ],
+    "courseNames": [
+      "Depression",
+      "Postnatal Wellbeing"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PO-03",
+    "course": "postnatal",
+    "courseName": "Postnatal Wellbeing",
+    "age": "30s",
+    "profile": "Father of a 9-month-old who feels overwhelmed.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "life_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "perinatal"
+      ],
+      "life_stage": "baby",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "postnatal"
+    ],
+    "courseNames": [
+      "Postnatal Wellbeing"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PO-04",
+    "course": "postnatal",
+    "courseName": "Postnatal Wellbeing",
+    "age": "40s",
+    "profile": "Exhausted parent of a 1-year-old.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "life_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "perinatal",
+        "sleep"
+      ],
+      "life_stage": "baby",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "insomnia",
+      "postnatal",
+      "depression"
+    ],
+    "courseNames": [
+      "Managing Insomnia",
+      "Postnatal Wellbeing",
+      "Depression"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 3,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PO-05",
+    "course": "postnatal",
+    "courseName": "Postnatal Wellbeing",
+    "age": "20s",
+    "profile": "Newborn at home and struggling a lot.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "life_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "perinatal"
+      ],
+      "life_stage": "baby",
+      "risk_harm": "yes",
+      "risk_life": "yes"
+    },
+    "courses": [
+      "postnatal"
+    ],
+    "courseNames": [
+      "Postnatal Wellbeing"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "yes",
+      "yes"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "You don't have to go through this alone",
+      "tealReminder": false,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PO-06",
+    "course": "postnatal",
+    "courseName": "Postnatal Wellbeing",
+    "age": "30s",
+    "profile": "Adoptive parent of a 4-month-old.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "life_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "perinatal"
+      ],
+      "life_stage": "baby",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "postnatal"
+    ],
+    "courseNames": [
+      "Postnatal Wellbeing"
+    ],
+    "matched": true,
+    "rank": 1,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PO-07",
+    "course": "postnatal",
+    "courseName": "Postnatal Wellbeing",
+    "age": "30s",
+    "profile": "Has lost interest in things since having their baby 17 months ago.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "low_mood_detail",
+      "life_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "perinatal",
+        "low_mood"
+      ],
+      "low_mood_detail": [
+        "interest"
+      ],
+      "life_stage": "baby",
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "depression",
+      "postnatal"
+    ],
+    "courseNames": [
+      "Depression",
+      "Postnatal Wellbeing"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PO-08",
+    "course": "postnatal",
+    "courseName": "Postnatal Wellbeing",
+    "age": "20s",
+    "profile": "Intrusive worries about their 2-month-old.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "life_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "perinatal",
+        "worry"
+      ],
+      "worry_detail": [
+        "worry",
+        "ocd"
+      ],
+      "life_stage": "baby",
+      "risk_harm": "unsure",
+      "risk_life": "no"
+    },
+    "courses": [
+      "generalised_anxiety",
+      "ocd",
+      "postnatal",
+      "stress"
+    ],
+    "courseNames": [
+      "Generalised Anxiety",
+      "Obsessive Compulsive Disorder",
+      "Postnatal Wellbeing",
+      "Coping with Stress"
+    ],
+    "matched": true,
+    "rank": 3,
+    "count": 4,
+    "riskAnswersIfAsked": [
+      "unsure",
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "It's okay not to be sure",
+      "tealReminder": false,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PO-09",
+    "course": "postnatal",
+    "courseName": "Postnatal Wellbeing",
+    "age": "30s",
+    "profile": "Drained with an 8-month-old, but sees it as low mood only, so doesn't tick the baby option.",
+    "steps": 4,
+    "questions": [
+      "concerns",
+      "low_mood_detail",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "low_mood"
+      ],
+      "low_mood_detail": [
+        "drained"
+      ],
+      "risk_harm": "no",
+      "risk_life": "no"
+    },
+    "courses": [
+      "depression"
+    ],
+    "courseNames": [
+      "Depression"
+    ],
+    "matched": false,
+    "rank": null,
+    "count": 1,
+    "riskAnswersIfAsked": [
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": false,
+      "crisisPanel": "",
+      "tealReminder": true,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  },
+  {
+    "id": "PO-10",
+    "course": "postnatal",
+    "courseName": "Postnatal Wellbeing",
+    "age": "40s",
+    "profile": "Everything feels like too much with a 5-month-old.",
+    "steps": 5,
+    "questions": [
+      "concerns",
+      "worry_detail",
+      "life_stage",
+      "risk_harm",
+      "risk_life"
+    ],
+    "answers": {
+      "concerns": [
+        "perinatal",
+        "worry"
+      ],
+      "worry_detail": [
+        "stress"
+      ],
+      "life_stage": "baby",
+      "risk_harm": "prefer_not",
+      "risk_life": "no"
+    },
+    "courses": [
+      "stress",
+      "postnatal"
+    ],
+    "courseNames": [
+      "Coping with Stress",
+      "Postnatal Wellbeing"
+    ],
+    "matched": true,
+    "rank": 2,
+    "count": 2,
+    "riskAnswersIfAsked": [
+      "prefer_not",
+      "no"
+    ],
+    "riskAsked": true,
+    "riskMissed": false,
+    "support": {
+      "yellowBanner": true,
+      "crisisPanel": "It's okay not to be sure",
+      "tealReminder": false,
+      "aodBox": false,
+      "nzslLinks": []
+    },
+    "problems": []
+  }
+]

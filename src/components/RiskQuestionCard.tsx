@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { riskQuestion, theirRiskQuestion, type Question } from "../step-flow/engine";
+import { riskQuestions, theirRiskQuestion, type Question } from "../step-flow/engine";
 
 // The step flows' risk questions, worded the same, for Free text: asked before the results when what they wrote is
 // flagged for self-harm or mentions low mood, alcohol and drugs or a new baby (clinical lead, Oct 2026), for the
 // writer or for someone they're supporting.
-export const RISK_QUESTION = riskQuestion(() => true);
+export const RISK_QUESTIONS = riskQuestions(() => true);
 export const THEIR_RISK_QUESTION = theirRiskQuestion(() => true);
 
 /** Give it a `key` per question, so the choice resets between them. */

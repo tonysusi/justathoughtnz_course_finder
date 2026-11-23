@@ -3,7 +3,6 @@ import type { StepAnswers } from "../types";
 import { Page } from "../components/Page";
 import { PrivacyNotice } from "../components/PrivacyNotice";
 import { MatchOutcome } from "../components/MatchOutcome";
-import { CrisisPanel } from "../components/Crisis";
 import { useMatch } from "../useMatch";
 import { checkTextRisk } from "./riskCheck";
 import {
@@ -19,6 +18,7 @@ import {
   supportingSomeoneElse,
   optionsOf,
   riskLevel,
+  OWN_RISK_QUESTION_IDS,
   RISK_QUESTION_IDS,
   TEXT_HINT,
   visibleAnswers,
@@ -47,7 +47,6 @@ export default function StepFlowApp({
   const [answers, setAnswers] = useState<StepAnswers>({});
   const [step, setStep] = useState(0);
   /** Shown after a "Yes" or "not sure" risk answer, before anything else. */
-  const [support, setSupport] = useState(false);
   /** Set once "Find courses" is pressed; results show when the matches come back. */
   const [done, setDone] = useState(false);
   // Separate matches: courses for the user, and courses to share with the person they're supporting.
@@ -88,6 +87,10 @@ export default function StepFlowApp({
   // Their text says the person they support may be at risk, or the risk question about them was answered Yes or
   // Not sure. From visible answers, as for `risk`.
   const theirAnswer = visibleAnswers(answers, set).risk_them;
+  // Both of their risk questions were asked and answered No: the results page leaves out the top support banner
+  // (24 Nov 2026). The 1737 and 111 reminder under the courses still shows.
+  const visibleNow = visibleAnswers(answers, set);
+  const saidNoToRisk = OWN_RISK_QUESTION_IDS.every((id) => visibleNow[id] === "no");
   const theirRiskFlagged =
     supporting &&
     ((answers.their_risk === "flagged" && answers.text_risk_for === text) ||
@@ -128,11 +131,8 @@ export default function StepFlowApp({
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     if (!isAnswered(question, answers) || loading || checking) return;
-    // Support comes first: handled here in the browser, not by JEV.
-    if (question.id === "risk" && risk) {
-      setSupport(true);
-      return;
-    }
+    // The risk answers go straight to the results page, where they only decide the support shown: the top banner,
+    // the crisis panel and the 1737/111 reminder (Nov 2026; no separate support page).
     if (beforeRisk) {
       // Decide whether to ask the risk question: check typed text with JEV (once per version of the text).
       let current = answers;
@@ -167,7 +167,6 @@ export default function StepFlowApp({
   function startAgain() {
     setAnswers({});
     setStep(0);
-    setSupport(false);
     setDone(false);
     setRiskCheck(undefined);
     own.reset();
@@ -176,7 +175,7 @@ export default function StepFlowApp({
 
   if (done && !loading && (own.data || theirs.data)) {
     return (
-      <Page current={navId} title={supporting ? "Support for them" : "Courses for you"}>
+      <Page current={navId} title={supporting ? "Support for them" : "Courses for you"} hideBanner={saidNoToRisk}>
         <div className="card form-row">
           <span className="hint">Based on your answers.</span>
           <button type="button" className="secondary" onClick={startAgain}>
@@ -207,28 +206,6 @@ export default function StepFlowApp({
             .
           </p>
         )}
-      </Page>
-    );
-  }
-
-  if (support && risk) {
-    return (
-      <Page current={navId} title="Support is available">
-        <CrisisPanel variant={risk === "unsure" ? "unsure" : "risk"} />
-        <div className="card form support-next">
-          <p>
-            Our courses can help alongside talking to someone. You can look at some now, or come back to them later.
-          </p>
-          <div className="form-row">
-            <button type="button" className="secondary" onClick={() => setSupport(false)} disabled={loading}>
-              Back
-            </button>
-            <button type="button" onClick={() => findCourses()} disabled={loading}>
-              {loading ? "Finding courses…" : theirRiskFlagged ? "Continue" : "See courses for later"}
-            </button>
-          </div>
-        </div>
-        <MatchOutcome error={error} data={null} source={source} />
       </Page>
     );
   }
